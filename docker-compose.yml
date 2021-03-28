@@ -8,4 +8,5 @@ services:
             - '.:/srv/jekyll'
         ports:
             - 4000:4000
+        # command: 'jekyll serve --force_polling --incremental --no-watch'
         command: 'jekyll serve --force_polling --incremental'
