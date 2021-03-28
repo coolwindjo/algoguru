@@ -180,6 +180,6 @@ tags:
 
 ### GitHub
 
-[AtomDecaying](https://github.com/coolwindjo/RefCodes/tree/master/AlgoGuruProject/Cpp/Done/AtomDecaying "AtomDecaying")
+[AtomDecaying](https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/AtomDecaying "AtomDecaying")
 
 ![AtomDecaying]({{ "/assets/img/posting/atom_decaying.png" | relative_url }})

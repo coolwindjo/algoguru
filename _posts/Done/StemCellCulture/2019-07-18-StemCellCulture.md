@@ -206,6 +206,6 @@ int main() {
 
 ### GitHub
 
-[StemCellCulture](https://github.com/coolwindjo/RefCodes/tree/master/AlgoGuruProject/Cpp/Done/StemCellCulture "StemCellCulture")
+[StemCellCulture](https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/StemCellCulture "StemCellCulture")
 
 ![StemCellCulture]({{ "/assets/img/posting/stem_cell_culture.png" | relative_url }})

@@ -39,6 +39,6 @@ tags:
 
 ### GitHub
 
-[TitleName](https://github.com/coolwindjo/RefCodes/tree/master/AlgoGuruProject/Cpp/Done/TitleName "TitleName")
+[TitleName](https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/TitleName "TitleName")
 
 ![TitleName]({{ "/assets/img/posting/title_name.png" | relative_url }})

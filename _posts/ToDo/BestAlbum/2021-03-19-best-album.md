@@ -146,6 +146,6 @@ tags:
 
 ### GitHub
 
-[BestAlbum](https://github.com/coolwindjo/RefCodes/tree/master/AlgoGuruProject/Cpp/Done/BestAlbum "BestAlbum")
+[BestAlbum](https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/BestAlbum "BestAlbum")
 
 ![BestAlbum]({{ "/assets/img/posting/best_album.png" | relative_url }})
