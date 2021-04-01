@@ -2,27 +2,27 @@
 
 <https://www.acmicpc.net/problem/1406>
 
-- dynamic programing
+- dynamic-programming
 - mathematics
-- big number
+- big-number
 - implementation
-- greedy alogrithm
-- DFS
-- DFS pitfall
-- DFS with backtracking
-- BFS
-- BFS with generations
-- Floyd-Warshall
-- Dijkstra
+- greedy-alogrithm
+- dfs
+- dfs-pitfall
+- dfs-with-backtracking
+- bfs
+- bfs-with-generations
+- floyd-warshall
+- dijkstra
 - sort
-- string manipulation
-- unique and erase vector
-- edit distance
-- std::cin.get
-- std::stringstream
-- std::unordered_set
-- std::list
-- std::queue
-- std::priority_queue
+- string-manipulation
+- unique-and-erase-vector
+- edit-distance
+- std-cin-get
+- std-stringstream
+- std-unordered-set
+- std-list
+- std-queue
+- std-priority-queue
 
 <https://coolwindjo.github.io/algoguru/2019/07/16/Naming-Daughter.html>

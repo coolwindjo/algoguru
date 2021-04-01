@@ -39,7 +39,7 @@ int main(){
 /**************************************************************
     Problem: 1240
     User: SWT01005
-    Language: C++
+    Language: cpp
     Result: Accepted
     Time:3 ms
     Memory:2440 kb

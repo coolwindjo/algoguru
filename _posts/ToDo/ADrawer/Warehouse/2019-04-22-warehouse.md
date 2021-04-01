@@ -2,8 +2,8 @@
 title: Warehouse
 layout: post
 tags:
-- C++
-- Floyd-Warshall
+- cpp
+- floyd-warshall
 ---
 
 ### Source

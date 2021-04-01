@@ -4,8 +4,8 @@
 
 - implementation
 - sort
-- unique and erase vector
+- unique-and-erase-vector
 - std::stack
-- std::priority_queue
+- std-priority-queue
 
 <https://coolwindjo.github.io/algoguru/2019/08/14/atom-decaying.html>

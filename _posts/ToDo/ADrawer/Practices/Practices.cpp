@@ -87,7 +87,7 @@ private:
         // if you ever happen to change the container type.
         
         // Iterators are a generalization of pointers,
-        //   abstracting from their requirements in a way that allows a C++ program
+        //   abstracting from their requirements in a way that allows a cpp program
         //   to work with different data structures in a uniform manner.
         // Iterators act as intermediaries between containers and generic algorithms.
         // Instead of operating on specific data types,

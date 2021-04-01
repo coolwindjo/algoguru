@@ -68,7 +68,7 @@ int main(){
 /**************************************************************
     Problem: 1956
     User: SWT01005
-    Language: C++
+    Language: cpp
     Result: Accepted
     Time:11 ms
     Memory:2084 kb

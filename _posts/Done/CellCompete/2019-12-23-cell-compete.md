@@ -2,7 +2,7 @@
 title: Cell Compete
 layout: post
 tags:
-- C++
+- cpp
 - implementation
 ---
 

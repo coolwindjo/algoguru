@@ -2,9 +2,9 @@
 title: Game 2048
 layout: post
 tags:
-- C++
+- cpp
 - implementation 
-- DFS with backtracking
+- dfs-with-backtracking
 ---
 
 ### Source

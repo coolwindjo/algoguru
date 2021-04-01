@@ -2,7 +2,7 @@
 title: Mario game
 layout: post
 tags:
-- C++
+- cpp
 - implementation
 - logic
 ---

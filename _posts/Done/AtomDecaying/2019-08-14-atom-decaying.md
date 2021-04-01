@@ -2,12 +2,12 @@
 title: Atom Decaying
 layout: post
 tags:
-- C++
+- cpp
 - implementation
 - sort
-- unique and erase vector
-- STL::stack
-- STL::priority_queue
+- unique-and-erase-vector
+- std-stack
+- std-priority-queue
 ---
 
 ### Source

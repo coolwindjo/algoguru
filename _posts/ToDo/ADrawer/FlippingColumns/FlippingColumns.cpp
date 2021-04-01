@@ -60,7 +60,7 @@ void DFS(vector< vector<int> > & A, const size_t N, const size_t M, const size_t
 }
 
 int solution(vector< vector<int> > & A) {
-	// write your code in C++14 (g++ 6.2.0)
+	// write your code in cpp14 (g++ 6.2.0)
 	size_t N = 0;
 	size_t M = 0;
 	size_t maxN = 0;

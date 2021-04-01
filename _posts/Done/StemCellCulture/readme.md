@@ -4,8 +4,8 @@
 
 - implementation
 
-- BFS with generations
+- bfs-with-generations
 
-- std::queue
+- std-queue
 
 <https://coolwindjo.github.io/algoguru/2019/07/18/StemCellCulture.html>

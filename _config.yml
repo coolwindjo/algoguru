@@ -3,7 +3,7 @@ baseurl: "/algoguru"
 url: "https://coolwindjo.github.io"
 
 # THEME-SPECIFIC CONFIGURATION
-title: Cool wind on prob_solv # blog's title
+title: Cool Wind on prob_solv # blog's title
 description: "Blog posts and pages with cool wind" # used by search engines
 avatar: assets/img/cls.png
 favicon: assets/img/cls.png 
@@ -16,7 +16,7 @@ footer_text: >
   © 2019 coolwind@hotmail.co.kr All rights reserved. Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
 
 # Blog
-excerpt: false                                           # Or "truncate" (first 250 characters), "false" to disable
+excerpt: truncate                                           # Or "truncate" (first 250 characters), "false" to disable
 post_navigation: true
 color_image: /assets/img/lineart.png                    # A bit transparent for color posts.
 

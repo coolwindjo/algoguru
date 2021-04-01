@@ -4,8 +4,8 @@
 
 - implementation
 
-- std::queue
+- std-queue
 
-- DFS with backtracking
+- dfs-with-backtracking
 
 <https://coolwindjo.github.io/algoguru/2019/07/17/Game-Two-Zero-Four-Eight.html>

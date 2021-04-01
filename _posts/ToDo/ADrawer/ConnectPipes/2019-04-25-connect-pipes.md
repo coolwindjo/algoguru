@@ -2,9 +2,9 @@
 title: Connect Pipes
 layout: post
 tags:
-- C++
-- DFS
-- BFS
+- cpp
+- dfs
+- bfs
 - STL
 - queue
 ---

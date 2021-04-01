@@ -2,17 +2,17 @@
 
 <https://www.acmicpc.net/problem/5390>
 
-- dynamic programing
+- dynamic-programming
 - mathematics
 - implementation
 Greedy
-- DFS with backtracking
-- BFS with line input
-- BFS with generations
-- Floyd-Warshall
-- Dijkstra
+- dfs-with-backtracking
+- bfs with line input
+- bfs-with-generations
+- floyd-warshall
+- dijkstra
 Linked list
 Hash table
 - sort
-- string manipulation
-- edit distance
+- string-manipulation
+- edit-distance

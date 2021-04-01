@@ -53,7 +53,7 @@ int main(){
 /**************************************************************
     Problem: 1231
     User: SWT01005
-    Language: C++
+    Language: cpp
     Result: Accepted
     Time:87 ms
     Memory:3256 kb

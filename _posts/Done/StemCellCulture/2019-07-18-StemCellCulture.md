@@ -2,10 +2,10 @@
 title: Stem Cell Culture
 layout: post
 tags:
-- C++
+- cpp
 - implementation
-- BFS with generations
-- STL::queue
+- bfs-with-generations
+- std-queue
 ---
 
 ### Source

@@ -1,8 +1,8 @@
-// C++ includes used for precompiling -*- C++ -*-
+// cpp includes used for precompiling -*- cpp -*-
 
 // Copyright (C) 2003-2017 Free Software Foundation, Inc.
 //
-// This file is part of the GNU ISO C++ Library.  This library is free
+// This file is part of the GNU ISO cpp Library.  This library is free
 // software; you can redistribute it and/or modify it under the
 // terms of the GNU General Public License as published by the
 // Free Software Foundation; either version 3, or (at your option)
@@ -61,7 +61,7 @@
 #include <cwctype>
 #endif
 
-// C++
+// cpp
 #include <algorithm>
 #include <bitset>
 #include <complex>

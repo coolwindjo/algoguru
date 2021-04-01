@@ -4,12 +4,12 @@
 
 - mathematics
 - implementation
-- DFS
-- DFS with backtracking
+- dfs
+- dfs-with-backtracking
 - sort
-- string manipulation
-- unique and erase vector
-- split string
-- std::unordered_set
+- string-manipulation
+- unique-and-erase-vector
+- split-string
+- std-unordered-set
 
 <https://coolwindjo.github.io/algoguru/2019/07/16/Naming-Daughter.html>

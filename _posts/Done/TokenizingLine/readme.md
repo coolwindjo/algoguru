@@ -1,5 +1,5 @@
 # Problem information
 
-- std::stringstream
+- std-stringstream
 
-- std::list
+- std-list

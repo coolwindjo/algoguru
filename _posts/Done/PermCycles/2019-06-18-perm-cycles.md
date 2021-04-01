@@ -2,8 +2,8 @@
 title: Permutation Cycles
 layout: post
 tags:
-- C++
-- unordered_set
+- cpp
+- unordered-set
 - STL
 ---
 

@@ -2,7 +2,7 @@
 title: String Editor
 layout: post
 tags:
-- C++
+- cpp
 - STL
 - list
 ---

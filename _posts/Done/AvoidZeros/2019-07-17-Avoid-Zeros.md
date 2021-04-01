@@ -2,11 +2,11 @@
 title: Avoid Zeros
 layout: post
 tags:
-- C++
-- dynamic programing
+- cpp
+- dynamic-programming
 - mathematics
-- big number
-- DFS pitfall
+- big-number
+- dfs-pitfall
 ---
 
 ### Source

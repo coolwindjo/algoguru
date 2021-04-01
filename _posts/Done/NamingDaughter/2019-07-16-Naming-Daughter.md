@@ -2,9 +2,9 @@
 title: Naming Daughter
 layout: post
 tags:
-- C++
-- BFS with generations
-- unique and erase vector
+- cpp
+- bfs-with-generations
+- unique-and-erase-vector
 ---
 
 ### Source

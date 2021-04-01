@@ -2,8 +2,8 @@
 title: Hiking Trail
 layout: post
 tags:
-- C++
-- DFS with backtracking
+- cpp
+- dfs-with-backtracking
 ---
 
 ### Source

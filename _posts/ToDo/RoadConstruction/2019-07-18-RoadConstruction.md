@@ -2,9 +2,9 @@
 title: Road Construction
 layout: post
 tags:
-- C++
-- Dijkstra
-- STL::priority_queue
+- cpp
+- dijkstra
+- std-priority-queue
 - 
 ---
 

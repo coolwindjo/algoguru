@@ -2,12 +2,12 @@
 title: Best Album
 layout: post
 tags:
-- C++
-- string manipulation
-- unique and erase vector
-- split string
+- cpp
+- string-manipulation
+- unique-and-erase-vector
+- split-string
 - sort
-- std::unordered_map
+- std-unordered-map
 
 ---
 
