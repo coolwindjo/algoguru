@@ -1,18 +1,11 @@
 #if 1
 #define TEST
 #endif // 1
-#if 1
+#if 0
 #define SPLIT_DEBUG
 #endif // 1
 
 #include "../../ProbSolvStart.h"
-
-#if 0   // 19dd
-constexpr char ALPHA[] = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-int c2d(char c){
-	if (c <= '9') return c - '0';
-	return c - 'A' + 10;
-}
 
 typedef enum {
 	eR=0, eD,
@@ -24,56 +17,44 @@ constexpr int DIR[eDIR_LEN][2] = {
     {0,-1}, {-1,0}
 };
 constexpr int N_DIR[eDIR_LEN] = {eL, eU, eR, eD};
-#endif // 0
 
 class ProbSolv
 {
+    int m_M;
+    int m_N;
+    vvi m_vviMap;
+    vii m_viiPuddles;
+
 public:
     ProbSolv()
     {
-#if 0   // 43dd
-        int numLines = 0;
-        cin >> numLines;
-
-        vstr lines;
-        FOR(i, numLines){
-            string line;
+        string line;
+        FOR(i, 10){
             std::getline(std::cin, line);
-            if(line.length() == 0){
-                i--;
-                continue;
+            if(line.length() > 2){
+                break;
             }
-            lines.push_back(line);
         }
-#endif
 
-#if 0   // 27dd
-        int rows = 0;
-        int columns = 0;
-        cin >> rows;
-        cin >> columns;
+        vstr vstrInputs = _SplitString(line, string("\t[], "));
 
-        vvi grid;
-        FOR(i, rows){
-            vi rowG;
-            FOR(j, columns){
-                int val;
-                cin >> val;
-                rowG.push_back(val);
-            }
-            grid.push_back(rowG);
+        m_M = stoi(vstrInputs[0]);
+        m_N = stoi(vstrInputs[1]);
+
+        for (int idx=2; idx<vstrInputs.size(); idx+=2){
+            ii pud(stoi(vstrInputs[idx]), stoi(vstrInputs[idx+1]));
+            m_viiPuddles.push_back(pud);
         }
+
 #ifdef TEST
-        cout <<endl;
-        FOR(i, rows){
-            FOR(j, columns){
-                cout << grid[i][j] << " ";
-            }
-            cout <<endl;
+        cout << m_M << ", " << m_N;
+        cout << " pud : ";
+        for (auto pud : m_viiPuddles){
+            cout << "(" << pud.first << ", " << pud.second << ") ";
         }
-#endif
-#endif
-        
+        cout <<endl;
+#endif // TEST
+
         _Solve();
     }
     ~ProbSolv(){}
@@ -83,7 +64,7 @@ private:
 
     } // _Solve()
 
-#if 0 // 48dd
+#if 1 // 48dd
     vstr _SplitString(string line, const string &delims) {
 #ifdef SPLIT_DEBUG
         cout << "\n1) line: " << line <<endl;
