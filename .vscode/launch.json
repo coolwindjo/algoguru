@@ -4,36 +4,45 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-        {
-            "name": "(gdb) Launch",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "${workspaceFolder}/${relativeFileDirname}/${fileBasenameNoExtension}.exe",
-            "args": [
+       	{
+			"name": "g++ - Build and debug active file",
+			"type": "cppdbg",
+			"request": "launch",
+			"program": "${fileDirname}/${fileBasenameNoExtension}.out",
+			// "program": "${workspaceFolder}/${relativeFileDirname}/${fileBasenameNoExtension}.exe",
+			"args": [
                 "<",
                 "input.txt",
                 ">",
                 "output.txt",
-            ],
-            "stopAtEntry": false,
-            "cwd": "${workspaceFolder}/${relativeFileDirname}",
-            "environment": [],
-            "externalConsole": false,
-            "MIMode": "gdb",
-            "setupCommands": [
-                {
-                    "description": "Enable pretty-printing for gdb",
-                    "text": "python import sys;sys.path.insert(0, '/usr/share/gcc-10/python');from libstdcxx.v6.printers import register_libstdcxx_printers;register_libstdcxx_printers(None)",
-                    "ignoreFailures": false
-                },
-                {
-                    "description": "Enable pretty-printing for gdb",
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-                }
-            ],
-            "preLaunchTask": "build C++"
-        },
+				/*/
+				"-std=c++1z",
+				//
+				"-std=c++2a"
+				//*/
+				// "| c++filt -t",
+			],
+			"stopAtEntry": false,
+			"cwd": "${fileDirname}",
+			// "cwd": "${workspaceFolder}/${relativeFileDirname}",
+			"environment": [],
+			"externalConsole": false,
+			"MIMode": "gdb",
+			"setupCommands": [
+				{
+					"description": "Enable pretty-printing for gdb",
+					"text": "python import sys;sys.path.insert(0, '/usr/share/gcc-10/python');from libstdcxx.v6.printers import register_libstdcxx_printers;register_libstdcxx_printers(None)",
+					"ignoreFailures": false
+				},
+				{
+					"description": "Enable pretty-printing for gdb",
+					"text": "-enable-pretty-printing",
+					"ignoreFailures": true
+				}
+			],
+			"preLaunchTask": "C/C++: g++ build active file",
+			"miDebuggerPath": "/usr/bin/gdb"
+		},
         {
             "name": "(gdb) Pipe Launch",
             "type": "cppdbg",
