@@ -7,6 +7,8 @@ tags:
 - difference-from-model
 ---
 
+<http://codepro.lge.com/apply/exam/ZXhfaUhjUkhfMTQ5NTQ5NjY4ODY3NQ==/quiz/cV91QXRuY18xNTM4NDY2MjA3OTE2>
+
 ### Source
 
 {% highlight cpp %}
@@ -56,6 +58,6 @@ int FindMaxLengthWithFlip(const vector<vii> &vviiCandLists)
 
 ### GitHub
 
-[LED_OnOffPattern](https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/LED_OnOffPattern "LED_OnOffPattern")
+- [LED_OnOffPattern](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/LED_OnOffPattern>){:target="_blank"}LED_OnOffPattern
 
 ![LED_OnOffPattern]({{ "/assets/img/posting/led_onoffpattern.png" | relative_url }})

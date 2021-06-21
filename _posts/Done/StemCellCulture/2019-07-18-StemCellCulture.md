@@ -8,6 +8,8 @@ tags:
 - std-queue
 ---
 
+<https://www.swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWXRJ8EKe48DFAUo>
+
 ### Source
 
 {% highlight cpp %}
@@ -206,6 +208,6 @@ int main() {
 
 ### GitHub
 
-[StemCellCulture](https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/StemCellCulture "StemCellCulture")
+- [StemCellCulture](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/StemCellCulture>){:target="_blank"}StemCellCulture
 
 ![StemCellCulture]({{ "/assets/img/posting/stem_cell_culture.png" | relative_url }})

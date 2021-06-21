@@ -10,6 +10,8 @@ tags:
 - std-priority-queue
 ---
 
+<https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWXRFInKex8DFAUo>
+
 ### Source
 
 ```cpp
@@ -180,6 +182,6 @@ tags:
 
 ### GitHub
 
-[AtomDecaying](https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/AtomDecaying "AtomDecaying")
+- [AtomDecaying](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/AtomDecaying>){:target="_blank"}AtomDecaying
 
 ![AtomDecaying]({{ "/assets/img/posting/atom_decaying.png" | relative_url }})

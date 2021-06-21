@@ -9,6 +9,8 @@ tags:
 - queue
 ---
 
+<http://codepro.lge.com/apply/exam/ZXhfaUhjUkhfMTQ5NTQ5NjY4ODY3NQ==/quiz/cV9pb05sYl8xNTIwODUyOTU2ODc1>
+
 ### Source
 
 {% highlight cpp %}
@@ -78,6 +80,6 @@ void BFS(const ii start){
 
 ### GitHub
 
-[ConnectPipes](https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/ConnectPipes "ConnectPipes")
+- [ConnectPipes](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/ConnectPipes>){:target="_blank"}ConnectPipes
 
 ![ConnectPipes]({{ "/assets/img/posting/connect_pipes.png" | relative_url }})

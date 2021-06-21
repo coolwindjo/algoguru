@@ -7,6 +7,8 @@ tags:
 - logic
 ---
 
+<http://codepro.lge.com/apply/exam/ZXhfaUhjUkhfMTQ5NTQ5NjY4ODY3NQ==/quiz/cV9oUmVJa18xNTQ5ODUxNTIxMDEy>
+
 ### Source
 
 {% highlight cpp %}
@@ -37,6 +39,6 @@ const int FindMaxH(const int N, const int (&P)[MAX_N])
 
 ### GitHub
 
-[MarioGame](https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/MarioGame "MarioGame")
+- [MarioGame](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/MarioGame>){:target="_blank"}MarioGame
 
 ![MarioGame]({{ "/assets/img/posting/mario.png" | relative_url }})

@@ -7,6 +7,8 @@ tags:
 - unique-and-erase-vector
 ---
 
+<https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWm8hNu6llcDFASj&categoryId=AWm8hNu6llcDFASj&categoryType=CODE>
+
 ### Source
 
 {% highlight cpp %}
@@ -62,6 +64,6 @@ tags:
 
 ### GitHub
 
-[NamingDaughter](https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/NamingDaughter "NamingDaughter")
+- [NamingDaughter](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/NamingDaughter>){:target="_blank"}NamingDaughter
 
 ![NamingDaughter]({{ "/assets/img/posting/naming_daughter.png" | relative_url }})

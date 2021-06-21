@@ -11,6 +11,8 @@ tags:
 
 ---
 
+<https://programmers.co.kr/learn/courses/30/lessons/42579>
+
 ### Source
 
 ```cpp
@@ -146,6 +148,6 @@ tags:
 
 ### GitHub
 
-[BestAlbum](https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/BestAlbum "BestAlbum")
+- [BestAlbum](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/BestAlbum>){:target="_blank"}BestAlbum
 
 ![BestAlbum]({{ "/assets/img/posting/best_album.png" | relative_url }})

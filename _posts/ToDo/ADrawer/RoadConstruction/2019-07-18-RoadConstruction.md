@@ -8,6 +8,8 @@ tags:
 - 
 ---
 
+<https://codepro.lge.com/exam/18/국내-기출-연습문제/quiz/36>
+
 ### Source
 
 {% highlight cpp %}
@@ -73,6 +75,6 @@ tags:
 
 ### GitHub
 
-[RoadConstruction](https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/RoadConstruction "RoadConstruction")
+- [RoadConstruction](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/RoadConstruction>){:target="_blank"}RoadConstruction
 
 ![RoadConstruction]({{ "/assets/img/posting/road_construction.png" | relative_url }})

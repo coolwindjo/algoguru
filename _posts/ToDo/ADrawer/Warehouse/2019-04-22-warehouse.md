@@ -6,6 +6,8 @@ tags:
 - floyd-warshall
 ---
 
+<http://codepro.lge.com/apply/exam/ZXhfaUhjUkhfMTQ5NTQ5NjY4ODY3NQ==/quiz/cV9RRUxqRl8xNTU0Nzg1OTIzMzg0>
+
 ### Source
 
 {% highlight cpp %}
@@ -55,6 +57,6 @@ ans = minWorst;
 
 ### GitHub
 
-[Warehouse](https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/Warehouse "Warehouse")
+- [Warehouse](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/Warehouse>){:target="_blank"}Warehouse
 
 ![Warehouse]({{ "/assets/img/posting/warehouse.png" | relative_url }})

@@ -8,6 +8,8 @@ tags:
 - advance
 ---
 
+<http://codepro.lge.com/apply/exam/ZXhfaUhjUkhfMTQ5NTQ5NjY4ODY3NQ==/quiz/cV9XWmVFZV8xNTU0Nzg1OTIzNDE0>
+
 ### Source
 
 {% highlight cpp %}
@@ -37,6 +39,6 @@ FOR(i, N){
 
 ### GitHub
 
-[CircleListOrder](https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/CircleListOrder "CircleListOrder")
+- [CircleListOrder](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/CircleListOrder>){:target="_blank"}CircleListOrder
 
 ![CircleListOrder]({{ "/assets/img/posting/circlelist_order.png" | relative_url }})

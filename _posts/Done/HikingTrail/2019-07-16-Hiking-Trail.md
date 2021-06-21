@@ -6,6 +6,8 @@ tags:
 - dfs-with-backtracking
 ---
 
+<https://www.swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5PoOKKAPIDFAUq>
+
 ### Source
 
 {% highlight cpp %}
@@ -71,6 +73,6 @@ tags:
 
 ### GitHub
 
-[HikingTrail](https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/HikingTrail "HikingTrail")
+- [HikingTrail](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/HikingTrail>){:target="_blank"}HikingTrail
 
 ![HikingTrail]({{ "/assets/img/posting/hiking_trail.png" | relative_url }})

@@ -7,6 +7,8 @@ tags:
 - STL
 ---
 
+<https://www.acmicpc.net/problem/10451>
+
 ### Source
 
 {% highlight cpp %}
@@ -42,6 +44,6 @@ tags:
 
 ### GitHub
 
-[PermCycles](https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/PermCycles "PermCycles")
+- [PermCycles](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/PermCycles>){:target="_blank"}PermCycles
 
 ![PermCycles]({{ "/assets/img/posting/perm_cycles.png" | relative_url }})

@@ -30,6 +30,8 @@ tags:
 
 ---
 
+<https://www.acmicpc.net/problem/1406>
+
 ### Source
 
 ```cpp
@@ -40,6 +42,6 @@ tags:
 
 ### GitHub
 
-[TitleName](https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/TitleName "TitleName")
+- [TitleName](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/TitleName>){:target="_blank"}TitleName
 
 ![TitleName]({{ "/assets/img/posting/title_name.png" | relative_url }})

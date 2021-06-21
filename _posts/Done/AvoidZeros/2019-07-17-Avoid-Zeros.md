@@ -9,6 +9,8 @@ tags:
 - dfs-pitfall
 ---
 
+<https://www.swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWqPrpnKSCQDFAT_&categoryId=AWqPrpnKSCQDFAT_&categoryType=CODE>
+
 ### Source
 
 {% highlight cpp %}
@@ -80,6 +82,6 @@ tags:
 
 ### GitHub
 
-[AvoidZeros](https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/AvoidZeros "AvoidZeros")
+- [AvoidZeros](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/AvoidZeros>){:target="_blank"}AvoidZeros
 
 ![AvoidZeros]({{ "/assets/img/posting/avoid_zeros.png" | relative_url }})
