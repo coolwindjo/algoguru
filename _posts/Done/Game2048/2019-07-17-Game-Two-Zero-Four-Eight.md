@@ -370,6 +370,6 @@ tags:
 
 ### GitHub
 
-- [Game2048](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/Game2048>){:target="_blank"}Game2048
+- [Game2048](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/Game2048>){:target="_blank"}
 
 ![Game2048]({{ "/assets/img/posting/game_2048.png" | relative_url }})

@@ -82,6 +82,6 @@ tags:
 
 ### GitHub
 
-- [AvoidZeros](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/AvoidZeros>){:target="_blank"}AvoidZeros
+- [AvoidZeros](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/AvoidZeros>){:target="_blank"}
 
 ![AvoidZeros]({{ "/assets/img/posting/avoid_zeros.png" | relative_url }})

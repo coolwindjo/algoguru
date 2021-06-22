@@ -64,6 +64,6 @@ tags:
 
 ### GitHub
 
-- [NamingDaughter](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/NamingDaughter>){:target="_blank"}NamingDaughter
+- [NamingDaughter](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/NamingDaughter>){:target="_blank"}
 
 ![NamingDaughter]({{ "/assets/img/posting/naming_daughter.png" | relative_url }})

@@ -39,6 +39,6 @@ FOR(i, N){
 
 ### GitHub
 
-- [CircleListOrder](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/CircleListOrder>){:target="_blank"}CircleListOrder
+- [CircleListOrder](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/CircleListOrder>){:target="_blank"}
 
 ![CircleListOrder]({{ "/assets/img/posting/circlelist_order.png" | relative_url }})

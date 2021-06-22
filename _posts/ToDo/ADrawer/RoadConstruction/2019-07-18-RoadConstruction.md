@@ -75,6 +75,6 @@ tags:
 
 ### GitHub
 
-- [RoadConstruction](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/RoadConstruction>){:target="_blank"}RoadConstruction
+- [RoadConstruction](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/RoadConstruction>){:target="_blank"}
 
 ![RoadConstruction]({{ "/assets/img/posting/road_construction.png" | relative_url }})

@@ -67,6 +67,6 @@ void EditStr(const int numCmds){
 
 ### GitHub
 
-- [StringEditor](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/StringEditor>){:target="_blank"}StringEditor
+- [StringEditor](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/StringEditor>){:target="_blank"}
 
 ![StringEditor]({{ "/assets/img/posting/string_editor.png" | relative_url }})

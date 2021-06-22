@@ -57,6 +57,6 @@ ans = minWorst;
 
 ### GitHub
 
-- [Warehouse](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/Warehouse>){:target="_blank"}Warehouse
+- [Warehouse](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/Warehouse>){:target="_blank"}
 
 ![Warehouse]({{ "/assets/img/posting/warehouse.png" | relative_url }})

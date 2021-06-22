@@ -32,6 +32,7 @@ assets/package-lock.json
 
 # JoSH added
 *.exe
+*.out
 *.suo
 *.tlog
 *.ipch

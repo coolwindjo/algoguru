@@ -58,6 +58,6 @@ tags:
 
 ### GitHub
 
-- [CellCompete](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/CellCompete>){:target="_blank"}CellCompete
+- [CellCompete](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/CellCompete>){:target="_blank"}
 
 ![CellCompete]({{ "/assets/img/posting/cell_compete.png" | relative_url }})

@@ -182,6 +182,6 @@ tags:
 
 ### GitHub
 
-- [AtomDecaying](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/AtomDecaying>){:target="_blank"}AtomDecaying
+- [AtomDecaying](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/AtomDecaying>){:target="_blank"}
 
 ![AtomDecaying]({{ "/assets/img/posting/atom_decaying.png" | relative_url }})

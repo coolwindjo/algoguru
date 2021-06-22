@@ -39,6 +39,6 @@ const int FindMaxH(const int N, const int (&P)[MAX_N])
 
 ### GitHub
 
-- [MarioGame](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/MarioGame>){:target="_blank"}MarioGame
+- [MarioGame](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/MarioGame>){:target="_blank"}
 
 ![MarioGame]({{ "/assets/img/posting/mario.png" | relative_url }})

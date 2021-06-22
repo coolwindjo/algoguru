@@ -42,6 +42,6 @@ tags:
 
 ### GitHub
 
-- [TitleName](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/TitleName>){:target="_blank"}TitleName
+- [TitleName](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/TitleName>){:target="_blank"}
 
 ![TitleName]({{ "/assets/img/posting/title_name.png" | relative_url }})
