@@ -39,21 +39,10 @@ private:
     } // _Solve()
 
     vector<int> shuffle(vector<int>& nums, int n) {
-        vi viX, viY;
+        vi viAns(nums.size());
         FOR(i, n){
-            viX.push_back(nums[i]);
-            viY.push_back(nums[n+i]);
-        }
-        vi viAns;
-        int cnt = 0;
-        FOR(i, nums.size()){
-            if (i%2 == 1){
-                viAns.push_back(viY[cnt]);
-                cnt++;
-            }
-            else{
-                viAns.push_back(viX[cnt]);
-            }
+            viAns[2*i] = (nums[i]);
+            viAns[2*i+1] = (nums[n+i]);
         }
         return viAns;
     }

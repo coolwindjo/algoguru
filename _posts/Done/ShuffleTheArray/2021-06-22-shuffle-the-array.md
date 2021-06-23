@@ -35,6 +35,20 @@ tags:
 
 ```
 
+```cpp
+
+        // Shorter (better) solution
+    vector<int> shuffle(vector<int>& nums, int n) {
+        vi viAns(nums.size());
+        FOR(i, n){
+            viAns[2*i] = (nums[i]);
+            viAns[2*i+1] = (nums[n+i]);
+        }
+        return viAns;
+    }
+
+```
+
 ### GitHub
 
 - [ShuffleTheArray](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/ShuffleTheArray>){:target="_blank"}
