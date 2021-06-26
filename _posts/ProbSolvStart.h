@@ -71,7 +71,6 @@ private:
     size_t m_fn_name_size;
 } Timer;
 
-#pragma GCC optimize("O2") 
 #define FOR_INC(i, from, to) for(int (i)=(from); (i)<(to); ++(i))
 #define FOR_DEC(i, from, to) for(int (i)=(to)-1; (i)>=(from); --(i))
 #define FOR(i, to) FOR_INC((i), 0, (to))
@@ -127,7 +126,11 @@ constexpr int DIR[eDIR_LEN][2] = {
 };
 constexpr int N_DIR[eDIR_LEN] = {eL, eU, eR, eD};
 
-// 119yy
+// 141yy
+#if 0
+#pragma GCC optimize("O2") 
+#endif 
+
 class ProbSolv
 {
 public:
@@ -187,7 +190,7 @@ private:
 #define SPLIT_DEBUG
 #endif // 1
 
-    vstr _SplitString(string line, const string &delims) {
+    vstr _SplitString(string line, const string& delims, const string& separator = "") {
 #ifdef SPLIT_DEBUG
         cout << "\n1) line: " << line <<endl;
 #endif
@@ -214,9 +217,31 @@ private:
 
         size_t prev = 0;
         size_t pos;
-        while ((pos = line.find_first_of(delims, prev)) != string::npos) {
-            if (pos > prev) {
-                vstrSplits.push_back(line.substr(prev, pos-prev));
+        while (prev < line.length()) {
+            if ((pos = line.find_first_of(delims, prev)) == string::npos) {
+                pos = line.length();
+            }
+            const int wlen = pos - prev;
+            if (wlen > 0) {
+                size_t sub_prev = 0;
+                size_t sub_pos;
+                const string sub_str = line.substr(prev, wlen);
+                while ((sub_pos = sub_str.find_first_of(separator, sub_prev)) != string::npos) {
+                    const int sub_wlen = sub_pos - sub_prev;
+                    if (sub_wlen > 0) {
+                        vstrSplits.push_back(sub_str.substr(sub_prev, sub_wlen));
+                        vstrSplits.push_back(sub_str.substr((sub_prev+sub_wlen), 1));
+                    }
+                    else {
+                        vstrSplits.push_back(sub_str.substr(sub_prev, 1));
+                    }
+                    sub_prev = sub_pos + 1;
+                }
+                prev += sub_prev;
+                const int rem_wlen = wlen - sub_prev;
+                if (rem_wlen > 0) {
+                    vstrSplits.push_back(line.substr(prev, rem_wlen));
+                }
             }
 #ifdef SPLIT_DEBUG
             for(string str : vstrSplits) {
@@ -225,10 +250,6 @@ private:
             cout <<endl;
 #endif
             prev = pos + 1;
-        }
-
-        if (prev < line.length()) {
-            vstrSplits.push_back(line.substr(prev, min(pos, line.length()) - prev + 1));
         }
 
         return vstrSplits;

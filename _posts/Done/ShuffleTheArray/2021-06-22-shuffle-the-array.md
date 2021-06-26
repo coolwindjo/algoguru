@@ -37,7 +37,7 @@ tags:
 
 ```cpp
 
-        // Shorter (better) solution
+    // Shorter (better) solution
     vector<int> shuffle(vector<int>& nums, int n) {
         vi viAns(nums.size());
         FOR(i, n){
