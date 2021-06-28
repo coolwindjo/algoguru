@@ -4,7 +4,7 @@
 
 #include "../../ProbSolvStart.h"
 
-#if 0
+#if 1
 #pragma GCC optimize("O2") 
 #endif 
 
@@ -81,25 +81,46 @@ public:
 
 private:
     void _Solve(){
-
+        SubrectangleQueries sq(m_vviRect);
+        cout << "[";
+        cout << "null" << ",";
+        cout << sq.getValue(m_vviArgs[0][0], m_vviArgs[0][1]) << ",";
+        sq.updateSubrectangle(m_vviArgs[1][0], m_vviArgs[1][1], m_vviArgs[1][2], m_vviArgs[1][3], m_vviArgs[1][4]);
+        cout << "null" << ",";
+        cout << sq.getValue(m_vviArgs[2][0], m_vviArgs[2][1]) << ",";
+        cout << sq.getValue(m_vviArgs[3][0], m_vviArgs[3][1]) << ",";
+        sq.updateSubrectangle(m_vviArgs[4][0], m_vviArgs[4][1], m_vviArgs[4][2], m_vviArgs[4][3], m_vviArgs[4][4]);
+        cout << "null" << ",";
+        cout << sq.getValue(m_vviArgs[5][0], m_vviArgs[5][1]);
+        if (m_vstrC.size() >= 8) {
+            cout << "," << sq.getValue(m_vviArgs[6][0], m_vviArgs[6][1]) << "]";
+        }
+        else {
+            cout << "]";
+        }
     } // _Solve()
 
     class SubrectangleQueries {
+        vvi m_rect;
     public:
         SubrectangleQueries(vector<vector<int>>& rectangle) {
-            
+            m_rect = rectangle;
         }
         
         void updateSubrectangle(int row1, int col1, int row2, int col2, int newValue) {
-            
+            FOR_INC (row, row1, row2+1) {
+                FOR_INC (col, col1, col2+1) {
+                    m_rect[row][col] = newValue;
+                }
+            }
         }
         
         int getValue(int row, int col) {
-            
+            return m_rect[row][col];
         }
     };
 
-#if 1   // 62yy
+#if 0   // 62yy
 #define SPLIT_DEBUG
 #endif // 1
 
