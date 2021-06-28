@@ -4,8 +4,6 @@ layout: post
 tags:
 - cpp
 - string-manipulation
-- unique-and-erase-vector
-- split-string
 - sort
 - std-unordered-map
 

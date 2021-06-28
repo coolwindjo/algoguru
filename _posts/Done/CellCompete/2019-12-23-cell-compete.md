@@ -4,13 +4,14 @@ layout: post
 tags:
 - cpp
 - implementation
+
 ---
 
-<AMZ Prob>
+AMZ Prob
 
 ### Source
 
-{% highlight cpp %}
+```cpp
 
     vector<int> cellCompete(int* states, int days){
         
@@ -53,8 +54,7 @@ tags:
     }
 };
 
-
-{% endhighlight %}
+```
 
 ### GitHub
 
