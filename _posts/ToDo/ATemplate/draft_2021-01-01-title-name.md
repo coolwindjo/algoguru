@@ -3,10 +3,13 @@ title: Title
 layout: post
 tags:
 - cpp
+- implementation
 - dynamic-programming
 - mathematics
+- combination
+- permutation
+- std-next_permutation
 - big-number
-- implementation
 - greedy-alogrithm
 - dfs
 - dfs-pitfall
@@ -18,13 +21,19 @@ tags:
 - edit-distance
 - sort
 - string-manipulation
+- string-find_first_of
+- string-substr
 - unique-and-erase-vector
 - split-string
 - std-cin-ignore
 - std-cin-get
 - std-stringstream
+- std-unordered-map
+- std-map
 - std-unordered-set
+- std-set
 - std-list
+- std-stack
 - std-queue
 - std-priority-queue
 
