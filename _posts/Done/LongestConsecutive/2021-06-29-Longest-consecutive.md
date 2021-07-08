@@ -8,7 +8,7 @@ tags:
 
 ---
 
-<https://leetcode.com/problems/longest-consecutive-sequence>
+<https://leetcode.com/problems/longest-consecutive-sequence>{:target="_blank"}
 
 ### Source
 

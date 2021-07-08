@@ -9,7 +9,7 @@ tags:
 - dfs-pitfall
 ---
 
-<https://www.swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWqPrpnKSCQDFAT_&categoryId=AWqPrpnKSCQDFAT_&categoryType=CODE>
+<https://www.swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWqPrpnKSCQDFAT_&categoryId=AWqPrpnKSCQDFAT_&categoryType=CODE>{:target="_blank"}
 
 ### Source
 

@@ -8,7 +8,7 @@ tags:
 - 
 ---
 
-<https://codepro.lge.com/exam/18/국내-기출-연습문제/quiz/36>
+<https://codepro.lge.com/exam/18/국내-기출-연습문제/quiz/36>{:target="_blank"}
 
 ### Source
 

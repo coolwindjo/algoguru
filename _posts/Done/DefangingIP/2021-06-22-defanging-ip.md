@@ -11,7 +11,7 @@ tags:
 
 ---
 
-<https://leetcode.com/problems/defanging-an-ip-address>
+<https://leetcode.com/problems/defanging-an-ip-address>{:target="_blank"}
 
 ### Source
 

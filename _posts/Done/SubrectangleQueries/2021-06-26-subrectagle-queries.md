@@ -7,7 +7,7 @@ tags:
 
 ---
 
-<https://leetcode.com/problems/subrectangle-queries/>
+<https://leetcode.com/problems/subrectangle-queries/>{:target="_blank"}
 
 ### Source
 

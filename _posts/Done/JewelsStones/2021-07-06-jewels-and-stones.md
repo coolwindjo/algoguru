@@ -9,7 +9,7 @@ tags:
 
 ---
 
-<https://leetcode.com/problems/jewels-and-stones/>
+<https://leetcode.com/problems/jewels-and-stones/>{:target="_blank"}
 
 ### Source
 

@@ -7,7 +7,7 @@ tags:
 - unique-and-erase-vector
 ---
 
-<https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWm8hNu6llcDFASj&categoryId=AWm8hNu6llcDFASj&categoryType=CODE>
+<https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWm8hNu6llcDFASj&categoryId=AWm8hNu6llcDFASj&categoryType=CODE>{:target="_blank"}
 
 ### Source
 

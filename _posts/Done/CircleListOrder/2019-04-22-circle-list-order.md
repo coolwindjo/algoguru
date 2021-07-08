@@ -8,7 +8,7 @@ tags:
 - advance
 ---
 
-<http://codepro.lge.com/apply/exam/ZXhfaUhjUkhfMTQ5NTQ5NjY4ODY3NQ==/quiz/cV9XWmVFZV8xNTU0Nzg1OTIzNDE0>
+<http://codepro.lge.com/apply/exam/ZXhfaUhjUkhfMTQ5NTQ5NjY4ODY3NQ==/quiz/cV9XWmVFZV8xNTU0Nzg1OTIzNDE0>{:target="_blank"}
 
 ### Source
 

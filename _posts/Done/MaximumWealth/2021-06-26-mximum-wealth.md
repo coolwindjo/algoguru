@@ -7,7 +7,7 @@ tags:
 
 ---
 
-<https://leetcode.com/problems/richest-customer-wealth/>
+<https://leetcode.com/problems/richest-customer-wealth/>{:target="_blank"}
 
 ### Source
 

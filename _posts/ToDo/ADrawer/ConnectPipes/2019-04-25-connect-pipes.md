@@ -9,7 +9,7 @@ tags:
 - queue
 ---
 
-<http://codepro.lge.com/apply/exam/ZXhfaUhjUkhfMTQ5NTQ5NjY4ODY3NQ==/quiz/cV9pb05sYl8xNTIwODUyOTU2ODc1>
+<http://codepro.lge.com/apply/exam/ZXhfaUhjUkhfMTQ5NTQ5NjY4ODY3NQ==/quiz/cV9pb05sYl8xNTIwODUyOTU2ODc1>{:target="_blank"}
 
 ### Source
 

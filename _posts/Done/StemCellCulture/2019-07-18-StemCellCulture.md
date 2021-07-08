@@ -8,7 +8,7 @@ tags:
 - std-queue
 ---
 
-<https://www.swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWXRJ8EKe48DFAUo>
+<https://www.swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWXRJ8EKe48DFAUo>{:target="_blank"}
 
 ### Source
 

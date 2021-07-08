@@ -6,6 +6,7 @@ tags:
 - implementation
 - dynamic-programming
 - mathematics
+- iomanip-setw
 - combination
 - permutation
 - std-next_permutation
@@ -39,7 +40,7 @@ tags:
 
 ---
 
-<https://www.acmicpc.net/problem/1406>
+<https://www.acmicpc.net/problem/1406>{:target="_blank"}
 
 ### Source
 

@@ -10,7 +10,7 @@ tags:
 - std-priority-queue
 ---
 
-<https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWXRFInKex8DFAUo>
+<https://swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWXRFInKex8DFAUo>{:target="_blank"}
 
 ### Source
 

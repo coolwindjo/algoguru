@@ -7,7 +7,7 @@ tags:
 - list
 ---
 
-<https://www.acmicpc.net/problem/1406>
+<https://www.acmicpc.net/problem/1406>{:target="_blank"}
 
 ### Source
 

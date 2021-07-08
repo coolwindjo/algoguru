@@ -7,7 +7,7 @@ tags:
 
 ---
 
-<https://www.codingame.com/ide/puzzle/temperatures>
+<https://www.codingame.com/ide/puzzle/temperatures>{:target="_blank"}
 
 ### Source
 

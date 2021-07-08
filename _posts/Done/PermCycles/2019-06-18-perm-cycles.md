@@ -7,7 +7,7 @@ tags:
 - STL
 ---
 
-<https://www.acmicpc.net/problem/10451>
+<https://www.acmicpc.net/problem/10451>{:target="_blank"}
 
 ### Source
 

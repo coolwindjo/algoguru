@@ -7,7 +7,7 @@ tags:
 - dfs-with-backtracking
 ---
 
-<https://www.acmicpc.net/problem/12100>
+<https://www.acmicpc.net/problem/12100>{:target="_blank"}
 
 ### Source
 

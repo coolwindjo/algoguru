@@ -6,7 +6,7 @@ tags:
 - dfs-with-backtracking
 ---
 
-<https://www.swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5PoOKKAPIDFAUq>
+<https://www.swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AV5PoOKKAPIDFAUq>{:target="_blank"}
 
 ### Source
 
