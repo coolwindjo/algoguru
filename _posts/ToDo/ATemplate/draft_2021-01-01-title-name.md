@@ -37,10 +37,11 @@ tags:
 - std-stack
 - std-queue
 - std-priority-queue
+- avoid-nested-loop
 
 ---
 
-<https://www.acmicpc.net/problem/1406>{:target="_blank"}
+<https>{:target="_blank"}
 
 ### Source
 
