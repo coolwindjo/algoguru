@@ -4,23 +4,15 @@ using namespace std;
 class CoolTimer {
 public:
     CoolTimer()
-        : m_fn_name(nullptr)
-        , m_fn_name_size(0)
+        : m_fn_name_size(0)
     {
     }
     ~CoolTimer() {
-        if (m_fn_name != nullptr) {
-            delete[] m_fn_name;
-            m_fn_name = nullptr;
-        }
     }
 
     void On(const char* str) {
         // Get the name of the function.
         m_fn_name_size = strlen(str) + 1;
-        if (m_fn_name == nullptr) {
-            m_fn_name = new char[m_fn_name_size];
-        }
         memcpy(m_fn_name, str, sizeof(char)*m_fn_name_size);
 
         // Start.
@@ -40,10 +32,6 @@ public:
         ostringstream os;
         os << m_fn_name << "() takes [" << elapsed << "] seconds.\n"; 
         cout << os.str();
-        if (m_fn_name != nullptr) {
-            delete[] m_fn_name;
-            m_fn_name = nullptr;
-        }
     }
 private:
     /* These functions are written to match the win32
@@ -67,7 +55,7 @@ private:
 
     timespec m_begin;
     timespec m_end;
-    char* m_fn_name;
+    char m_fn_name[256];
     size_t m_fn_name_size;
 } Timer;
 
