@@ -1,0 +1,4 @@
+3
+s = "iiii", k = 1
+s = "leetcode", k = 2
+s = "zbax", k = 2

@@ -116,7 +116,7 @@ constexpr int N_DIR[eDIR_LEN] = {eL, eU, eR, eD};
 
 // 141yy
 #if 0
-#pragma GCC optimize("O2") 
+#pragma GCC optimize("O1") 
 #endif 
 
 class ProbSolv
