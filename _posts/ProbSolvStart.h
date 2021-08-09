@@ -59,6 +59,71 @@ private:
     size_t m_fn_name_size;
 } Timer;
 
+// Definition for a binary tree node.
+struct TreeNode {
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode() : val(0), left(nullptr), right(nullptr) {}
+    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+    TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+};
+
+TreeNode* BFSBuildBST(const vector<string> vstrVal) {
+    const int n = vstrVal.size();
+    if (n == 0) return nullptr;
+    int cnt = 0;
+    if ("null" == vstrVal[cnt]) {
+        return nullptr;
+    }
+    queue<TreeNode*> qTN;
+    TreeNode* root = new TreeNode(stoi(vstrVal[cnt++]));
+    qTN.emplace(root);
+    while ((!qTN.empty() && (cnt < n))) {
+        TreeNode* tn = qTN.front(); qTN.pop();
+        string strVal = vstrVal[cnt++];
+        if ("null" != strVal) {
+            tn->left = new TreeNode(stoi(strVal));
+        }
+        qTN.emplace(tn->left);
+        if (cnt == n) break;
+
+        strVal = vstrVal[cnt++];
+        if ("null" != strVal) {
+            tn->right = new TreeNode(stoi(strVal));
+        }
+        qTN.emplace(tn->right);
+        if (cnt == n) break;
+    }
+
+    return root;
+}
+
+void BFSPrint(TreeNode* root, int& cnt) {
+    if (cnt == 0) return;
+
+    queue<TreeNode*> qTN;
+    qTN.emplace(root);
+    while ((!qTN.empty()) && (cnt)) {
+        TreeNode* tn = qTN.front(); qTN.pop();
+        if (nullptr == tn) {
+            cout << "null, ";
+        }
+        else {
+            cout << tn->val << ", ";
+            cnt--;
+            qTN.emplace(tn->left);
+            qTN.emplace(tn->right);
+        }
+    }
+}
+
+void PrintBST(TreeNode* root, int cnt) {
+    cout << "[";
+    BFSPrint(root, cnt);
+    cout << "], ";
+}
+
 #define FOR_INC(i, from, to) for(int (i)=(from); (i)<(to); ++(i))
 #define FOR_DEC(i, from, to) for(int (i)=(to)-1; (i)>=(from); --(i))
 #define FOR(i, to) FOR_INC((i), 0, (to))
@@ -74,7 +139,7 @@ static const int WarnIfNot(const int condFlag, const char* condition){
 #define P_IFNOT(cond, var) if (!W_IFNOT(cond)) cout << "= " << var <<endl;
 
 typedef long long ll;
-constexpr int INF = 987654321;
+constexpr int INF = 987654321;  // INF < 1e9 < 2e30 < INT_MAX
 
 typedef vector<string> vstr;
 typedef vector<vstr> vvstr;
@@ -96,7 +161,7 @@ typedef queue<ii> qii;
 typedef queue<int> qi;
 typedef priority_queue<i_ii> pqi_ii;    // for Dijkstra
 
-#if 0   // 137yy
+#if 0 // 27yy
 constexpr char ALPHA[] = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 int c2d(char c){
 	if (c <= '9') return c - '0';
@@ -124,7 +189,7 @@ class ProbSolv
 public:
     ProbSolv()
     {
-        // /*/  13yy
+        // /*/ 40yy  13dd
         int numLines = 0;
         cin >> numLines;
 
@@ -248,7 +313,7 @@ private:
 int main(){
     ios_base::sync_with_stdio(false); cin.tie(nullptr);
     int numTCs = 0;
-    cin >> numTCs;
+    cin >> numTCs; cin.ignore();
     FOR (tc, numTCs) {
         cout << "#" << tc+1 <<" ";
         ProbSolv ps;
