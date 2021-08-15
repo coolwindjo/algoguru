@@ -162,7 +162,7 @@ typedef queue<int> qi;
 typedef priority_queue<i_ii> pqi_ii;    // for Dijkstra
 
 #if 0 // 27yy
-constexpr char ALPHA[] = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+constexpr char TO_CHAR[] = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 int c2d(char c){
 	if (c <= '9') return c - '0';
 	return c - 'A' + 10;
@@ -239,7 +239,8 @@ private:
 
     } // _Solve()
 
-#if 1   // 70yy
+// 70yy
+#if 1
 #define SPLIT_DEBUG
 #endif // 1
 

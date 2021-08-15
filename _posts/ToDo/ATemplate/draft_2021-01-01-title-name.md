@@ -39,6 +39,7 @@ tags:
 - std-priority-queue
 - avoid-nested-loop
 - binary-search-tree
+- back_inserter
 
 ---
 
