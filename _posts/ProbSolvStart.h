@@ -59,6 +59,15 @@ private:
     size_t m_fn_name_size;
 } Timer;
 
+// Definition for singly-linked list.
+struct ListNode {
+    int val;
+    ListNode *next;
+    ListNode() : val(0), next(nullptr) {}
+    ListNode(int x) : val(x), next(nullptr) {}
+    ListNode(int x, ListNode *next) : val(x), next(next) {}
+};
+
 // Definition for a binary tree node.
 struct TreeNode {
     int val;
@@ -179,7 +188,7 @@ constexpr int DIR[eDIR_LEN][2] = {
 };
 constexpr int N_DIR[eDIR_LEN] = {eL, eU, eR, eD};
 
-// 141yy
+// 142yy
 #if 0
 #pragma GCC optimize("O1") 
 #endif 

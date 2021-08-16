@@ -26,6 +26,7 @@ tags:
 - string-substr
 - unique-and-erase-vector
 - split-string
+- linked-list
 - std-cin-ignore
 - std-cin-get
 - std-stringstream
