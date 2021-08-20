@@ -16,6 +16,8 @@ tags:
 
 ```cpp
 
+typedef vector<TreeNode*> vTN;
+    vTN m_vTN;
     vector<TreeNode*> allPossibleFBT(int n) {
         m_vTN = BST(n);
         return m_vTN;

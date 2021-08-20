@@ -21,8 +21,7 @@ public:
     ~ProbSolv(){
         for (int i=0; i<m_vTN.size(); ++i) {
             if (nullptr == m_vTN[i]) {
-                delete m_vTN[i];
-                m_vTN[i] = nullptr;
+                DFSDelete(&m_vTN[i]);
             }
         }
     }
@@ -61,9 +60,7 @@ private:
             vTN vTN_right = BST((n-1)-i);       // 1    3   1   5   3   1
             for (auto l : vTN_left) {
                 for (auto r : vTN_right) {
-                    TreeNode* root = new TreeNode(0);
-                    root->left = l;
-                    root->right = r;
+                    TreeNode* root = new TreeNode(0, l, r);
                     vTNs.push_back(root);
                 }
             }

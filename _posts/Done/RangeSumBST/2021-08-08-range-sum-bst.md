@@ -23,11 +23,13 @@ tags:
             sum += val;
         }
         
-        if (nullptr != root->left) {
+        // if (nullptr != root->left) {
+        if (val > low) {
             sum += rangeSumBST(root->left, low, high);
         }
         
-        if (nullptr != root->right) {
+        // if (nullptr != root->right) {
+        if (val < high) {
             sum += rangeSumBST(root->right, low, high);
         }
         

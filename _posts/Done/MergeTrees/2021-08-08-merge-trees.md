@@ -15,6 +15,27 @@ tags:
 ```cpp
 
     TreeNode* mergeTrees(TreeNode* root1, TreeNode* root2) {
+        if ((nullptr == root1) && (nullptr == root2)) return nullptr;
+        
+        if (nullptr == root1) {
+            return root2;
+        }
+        if (nullptr == root2) {
+            return root1;
+        }
+        
+        TreeNode* newRoot = new TreeNode(root1->val + root2->val,
+                                         mergeTrees(root1->left, root2->left),
+                                         mergeTrees(root1->right, root2->right));
+        return newRoot;
+    }
+
+```
+
+- No more new (dynamic allocations)!
+```cpp
+
+    TreeNode* mergeTrees(TreeNode* root1, TreeNode* root2) {
         TreeNode* ans = PickNoneNull(root1, root2);
         if (nullptr == ans) return nullptr;
         
@@ -23,18 +44,19 @@ tags:
         return ans;
     }
     
+    
     TreeNode* PickNoneNull(TreeNode* root1, TreeNode* root2) {
-        TreeNode* ans;
-        if (nullptr != root1) {
-            ans = root1;
+        if ((nullptr == root1) && (nullptr == root2)) return nullptr;
+        
+        if (nullptr == root1) {
+            return root2;
         }
-        else if (nullptr != root2) {
-            ans = root2;
+        else if (nullptr == root2) {
+            return root1;
         }
         else {
-            ans = nullptr;
+            return root1;
         }
-        return ans;
     }
     
     void PreorderMerge(TreeNode* ans, TreeNode* root1, TreeNode* root2) {
@@ -49,6 +71,7 @@ tags:
             PreorderMerge(ans->left, root1->left, root2->left);
         }
         else {
+            // if null, check the other tree!
             ans->left = PickNoneNull(root1->left, root2->left);
         }
 
@@ -57,6 +80,7 @@ tags:
             PreorderMerge(ans->right, root1->right, root2->right);
         }
         else {
+            // if null, check the other tree!
             ans->right = PickNoneNull(root1->right, root2->right);
         }
     }

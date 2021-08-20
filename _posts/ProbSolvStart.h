@@ -109,6 +109,7 @@ TreeNode* BFSBuildBST(const vector<string> vstrVal) {
 }
 
 void BFSPrint(TreeNode* root, int& cnt) {
+    if (nullptr == root) return;
     if (cnt == 0) return;
 
     queue<TreeNode*> qTN;
@@ -131,6 +132,20 @@ void PrintBST(TreeNode* root, int cnt) {
     cout << "[";
     BFSPrint(root, cnt);
     cout << "], ";
+}
+
+void DFSDelete(TreeNode** pRoot) {
+    if (nullptr == *pRoot) return;
+
+    if (nullptr != (*pRoot)->left) {
+        DFSDelete(&(*pRoot)->left);
+    }
+    if (nullptr != (*pRoot)->right) {
+        DFSDelete(&(*pRoot)->right);
+    }
+
+    delete *pRoot;
+    *pRoot = nullptr;
 }
 
 #define FOR_INC(i, from, to) for(int (i)=(from); (i)<(to); ++(i))
