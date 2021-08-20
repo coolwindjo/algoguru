@@ -1,0 +1,4 @@
+3
+amount = 5, coins = [1,2,5]
+amount = 3, coins = [2]
+amount = 10, coins = [10]

@@ -2,7 +2,7 @@
 #define TEST
 #endif // 1
 
-#include "../../ProbSolvStart.h"
+#include "../../../ProbSolvStart.h"
 
 constexpr int MAX_NUM = 8;
 class ProbSolv
@@ -78,14 +78,26 @@ public:
                 int J = j+1;
                 int K = (i-j);    // I:J:K = i+1:j+1:i-j, 2:1:1
                                   //                    , 3:1:2, 3:2:1
-                for(auto itJ = hashM[J].begin();
-                itJ!=hashM[J].end(); ++itJ){
-                    for(auto itK = hashM[K].begin();
-                    itK!=hashM[K].end(); ++itK){
-                        hashM[I].insert(*itJ + *itK);
-                        hashM[I].insert(*itJ - *itK);
-                        hashM[I].insert(*itJ * *itK);
-                        if (*itK != 0) hashM[I].insert(*itJ / *itK);
+                for(auto itJ = hashM[J].begin(); itJ!=hashM[J].end(); ++itJ){
+                    for(auto itK = hashM[K].begin(); itK!=hashM[K].end(); ++itK){
+                        int plus = *itJ + *itK;
+                        int minus = *itJ - *itK;
+                        int mult = *itJ * *itK;
+                        if (hashM[I].find(plus)==hashM[I].end()){
+                            hashM[I].insert(plus);
+                        }
+                        if (hashM[I].find(minus)==hashM[I].end()){
+                            hashM[I].insert(minus);
+                        }
+                        if (hashM[I].find(mult)==hashM[I].end()){
+                            hashM[I].insert(mult);
+                        }
+                        if (*itK != 0) {
+                            int div = *itJ / *itK;
+                            if (hashM[I].find(div)==hashM[I].end()){
+                                hashM[I].insert(div);
+                            }
+                        }
                     }
                 }
             }
@@ -100,8 +112,23 @@ public:
 private:
     void _Solve(){
         minNumNs = MAX_NUM+1;
+        // /*/
+#ifdef TEST
+        CoolTimer t("DFS");
+#endif
         DFS(0, 0);
-        // minNumNs = DP();
+#ifdef TEST
+        t.Off();
+#endif
+        // /*/
+#ifdef TEST
+        CoolTimer t2("DP");
+#endif
+        minNumNs = DP();
+#ifdef TEST
+        t2.Off();
+#endif
+        //*/
         if (minNumNs == MAX_NUM+1) {
             minNumNs = -1;
         }

@@ -1,5 +1,5 @@
 ---
-title: 
+title: Coin Change 2
 layout: post
 tags:
 - cpp
@@ -44,7 +44,7 @@ tags:
 
 ---
 
-<https>{:target="_blank"}
+<https://leetcode.com/problems/coin-change-2/>{:target="_blank"}
 
 ### Source
 
@@ -56,6 +56,6 @@ tags:
 
 ### GitHub
 
-- [TitleName](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/TitleName>){:target="_blank"}
+- [CoinChange](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/CoinChange>){:target="_blank"}
 
-![TitleName]({{ "/assets/img/posting/title_name.png" | relative_url }})
+![CoinChange]({{ "/assets/img/posting/title_name.png" | relative_url }})

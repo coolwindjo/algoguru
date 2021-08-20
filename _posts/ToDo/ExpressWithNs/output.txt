@@ -1,0 +1,24 @@
+#1 DFS() takes [1.2262] ms.
+DP() takes [0.3192] ms.
+4
+#2 DFS() takes [0.7246] ms.
+DP() takes [0.0578] ms.
+3
+#3 DFS() takes [9.0307] ms.
+DP() takes [60.2666] ms.
+-1
+#4 DFS() takes [3.657] ms.
+DP() takes [25.9538] ms.
+8
+#5 DFS() takes [3.7456] ms.
+DP() takes [28.895] ms.
+8
+#6 DFS() takes [3.9664] ms.
+DP() takes [25.6506] ms.
+8
+#7 DFS() takes [4.0775] ms.
+DP() takes [27.719] ms.
+-1
+#8 DFS() takes [0.2189] ms.
+DP() takes [0.0516] ms.
+3

@@ -7,6 +7,11 @@ public:
         : m_fn_name_size(0)
     {
     }
+    CoolTimer(const char* str)
+        : m_fn_name_size(0)
+    {
+        On(str);
+    }
     ~CoolTimer() {
     }
 
@@ -26,11 +31,11 @@ public:
         // Calculate the time.
         long seconds = m_end.tv_sec - m_begin.tv_sec;
         long nanoseconds = m_end.tv_nsec - m_begin.tv_nsec;
-        double elapsed = seconds + nanoseconds*1e-9;
+        double elapsed = seconds*1e3 + nanoseconds*1e-6;
 
         // Print the message.
         ostringstream os;
-        os << m_fn_name << "() takes [" << elapsed << "] seconds.\n"; 
+        os << m_fn_name << "() takes [" << elapsed << "] ms.\n"; 
         cout << os.str();
     }
 private:

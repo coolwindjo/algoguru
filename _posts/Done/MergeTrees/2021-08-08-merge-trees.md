@@ -33,6 +33,7 @@ tags:
 ```
 
 - No more new (dynamic allocations)!
+
 ```cpp
 
     TreeNode* mergeTrees(TreeNode* root1, TreeNode* root2) {
