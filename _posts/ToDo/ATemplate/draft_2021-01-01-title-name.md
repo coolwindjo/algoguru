@@ -17,11 +17,13 @@ tags:
 - dfs-with-backtracking
 - bfs
 - bfs-with-generations
+- flood-fill
 - floyd-warshall
 - dijkstra
 - edit-distance
 - sort
 - string-manipulation
+- string-find_if
 - string-find_first_of
 - string-substr
 - unique-and-erase-vector

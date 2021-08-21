@@ -171,26 +171,14 @@ typedef long long ll;
 constexpr int INF = 987654321;  // INF < 1e9 < 2e30 < INT_MAX
 
 typedef vector<string> vstr;
-typedef vector<vstr> vvstr;
-typedef pair<int, string> i_str;
-typedef vector<i_str> vistr;
-typedef pair<string, int> str_i;
-typedef vector<str_i> vstri;
-typedef vector<char> vc;
-typedef vector<vc> vvc;
-
 typedef pair<int, int> ii;
 typedef vector<ii> vii;
 typedef vector<vii> vvii;
 typedef vector<int> vi;
 typedef vector<ll> vll;
 typedef vector<vi> vvi;
-typedef pair<int, ii> i_ii;
-typedef queue<ii> qii;
-typedef queue<int> qi;
-typedef priority_queue<i_ii> pqi_ii;    // for Dijkstra
 
-#if 0 // 27yy
+#if 0 // 16yy
 constexpr char TO_CHAR[] = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 int c2d(char c){
 	if (c <= '9') return c - '0';
@@ -218,7 +206,7 @@ class ProbSolv
 public:
     ProbSolv()
     {
-        // /*/ 40yy  13dd
+        // /*/ 40yy  15dd
         int numLines = 0;
         cin >> numLines;
 
@@ -250,9 +238,9 @@ public:
         }
 #ifdef TEST
         cout <<endl;
-        FOR(i, rows){
-            FOR(j, columns){
-                cout << grid[i][j] << " ";
+        FOR(r, rows){
+            FOR(c, columns){
+                cout << grid[r][c] << " ";
             }
             cout <<endl;
         }
