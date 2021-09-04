@@ -1,4 +1,4 @@
-#if 1
+#if 0
 #define TEST
 #endif // 1
 #define TEST1
@@ -9,8 +9,11 @@
 #pragma GCC optimize("O1") 
 #endif 
 
+typedef pair<int, int> ii;
+typedef pair<int, ii> i_ii;
 class ProbSolv
 {
+    vi m_viP;
 public:
     ProbSolv()
     {
@@ -18,8 +21,12 @@ public:
         FOR (i, 10) {
             getline(cin, line);
             if (line.length() > 2) {
-                
+                break;
             }
+        }
+        vstr vstrSplits = _SplitString(line, "[], \n");
+        for (string s : vstrSplits) {
+            m_viP.push_back(stoi(s));
         }
         
         _Solve();
@@ -27,41 +34,104 @@ public:
     ~ProbSolv(){}
 
 private:
-typedef list<char> lc;
-    void _Solve(vector<string> a){
-
-
+    void _Solve(){
+        cout << maxProfit(m_viP);
     } // _Solve()
-bool isValid(const string& strA) {
-    lc lcS;
-    FOR (i, strA.length()) {
-        lcS.push_back(strA[i]);
-    }
-    const auto itA = find(begin(lcS), end(lcS), 'a');
-    if ((itA == begin(lcS)) || (next(itA) == end(lcS))) {
-        lcS.erase(itA);
-    }
-    string str;
-    for (auto s : lcS)  {
-        str += s;
-    }
-    cout << str <<endl;
-}
 
-#include <stdio.h>
-#include <stdbool.h>
-#include <stdlib.h>
+    int maxProfit(vector<int>& prices) {
+		vi viNMS;
+		int ud = -1;	// start with going down
+		int pos = -1;
+		FOR (i, prices.size()-1) {
+			if (prices[i] < prices[i+1]) {
+				if (ud < 0) {
+					// go up
+					pos = prices[i];
+#ifdef TEST
+					cout << "pos:" << pos << endl;
+#endif
+				}
+				ud = 1;
+			}
+			else if (prices[i] > prices[i+1]) {
+				if (ud > 0) {
+					// go down
+					if (pos >= 0) {
+						viNMS.push_back(prices[i] - pos);
+#ifdef TEST
+						for (auto p : viNMS) {cout << p << ", ";}
+						cout <<endl;
+                        cout << "sell on " << prices[i] << " profit:" << prices[i] - pos << endl;
+#endif
+						pos = -1;
+					}
+				}
+				ud = -1;
+			}
+			else {
+                // ud = 0;  // No need!
+			}
+		}
 
-// p_rows는 2차원 배열 p의 행 길이, p_cols는 2차원 배열 p의 열 길이입니다.
-// q_rows는 2차원 배열 q의 행 길이, q_cols는 2차원 배열 q의 열 길이입니다.
-bool* solution(int** p, size_t p_rows, size_t p_cols, int** q, size_t q_rows, size_t q_cols) {
-    // return 값은 malloc 등 동적 할당을 사용해주세요. 할당 길이는 상황에 맞게 변경해주세요.
-    bool* answer = (bool*)NULL;
-    return answer;
-}
+		if (pos >= 0) {
+			const int lastP = prices[prices.size()-1] - pos;
+			if (lastP > 0) {
+				viNMS.push_back(lastP);
+#ifdef TEST
+				for (auto p : viNMS) {cout << p << ", ";}
+				cout <<endl;
+				cout << "sell on " << lastP + pos << " profit:" << lastP << endl;
+#endif
+			}
+		}
+			
+		int profit = 0;
+		sort(begin(viNMS), end(viNMS), [](const int a, const int b){return a>b;});
+		FOR (i, 2) {
+			if (i >= viNMS.size()) break;
+			profit += viNMS[i];
+		}
+		
+		return profit;
+    }
+
+    int maxProfitDP(vector<int>& prices) {
+		const size_t n = prices.size();
+		i_ii max;
+		FOR(i, n) {
+			FOR_INC(j, i+1, n) {
+				const int p = prices[j] - prices[i];
+				if (max.first < p) {
+					max.first= p;
+					max.second.first = i;
+					max.second.second= j;
+				}
+			}
+		}
+		
+		i_ii nextToMax;
+		FOR(i, n) {
+			FOR_INC(j, i+1, n) {
+				const int p = prices[j] - prices[i];
+				if (nextToMax.first < p) {
+					if (max.second.first == i) continue;
+					if (max.second.second == j) continue;
+					nextToMax.first= p;
+					nextToMax.second.first = i;
+					nextToMax.second.second= j;
+				}
+			}
+		}
+#ifdef TEST
+		cout << max.first << ":" << max.second.first << "," << max.second.second <<endl;
+		cout << nextToMax.first << ":" << nextToMax.second.first << "," << nextToMax.second.second <<endl;
+#endif
+		
+		return max.first + nextToMax.first;
+    }
 
 // 70yy
-#if 1
+#if 0
 #define SPLIT_DEBUG
 #endif // 1
 

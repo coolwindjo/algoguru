@@ -1,7 +1,6 @@
 #if 1
 #define TEST
 #endif // 1
-#define TEST1
 
 #include "../../ProbSolvStart.h"
 
@@ -11,57 +10,76 @@
 
 class ProbSolv
 {
+    int m_Amnt;
+    vi m_viC;
 public:
     ProbSolv()
     {
         string line;
-        FOR (i, 10) {
+        FOR(i, 10) {
             getline(cin, line);
             if (line.length() > 2) {
-                
+                break;
             }
         }
-        
+        vstr vstrSplits = _SplitString(line, "[], ", "=");
+
+        m_Amnt = -1;
+        bool isTarget = false;   
+        for (string s : vstrSplits) {
+            if ("=" == s) {
+                isTarget = true;
+                continue;
+            }
+
+            if (isTarget) {
+                if (m_Amnt < 0) {
+                    m_Amnt = stoi(s);
+                    isTarget = false;
+                }
+                else {
+                    m_viC.push_back(stoi(s));
+                }
+            }
+        }
+
         _Solve();
     }
     ~ProbSolv(){}
 
 private:
-typedef list<char> lc;
-    void _Solve(vector<string> a){
-
-
+    void _Solve(){
+        cout << change(m_Amnt, m_viC);
     } // _Solve()
-bool isValid(const string& strA) {
-    lc lcS;
-    FOR (i, strA.length()) {
-        lcS.push_back(strA[i]);
-    }
-    const auto itA = find(begin(lcS), end(lcS), 'a');
-    if ((itA == begin(lcS)) || (next(itA) == end(lcS))) {
-        lcS.erase(itA);
-    }
-    string str;
-    for (auto s : lcS)  {
-        str += s;
-    }
-    cout << str <<endl;
-}
 
-#include <stdio.h>
-#include <stdbool.h>
-#include <stdlib.h>
+    int change(int amount, vector<int>& coins) {
+    }
 
-// p_rows는 2차원 배열 p의 행 길이, p_cols는 2차원 배열 p의 열 길이입니다.
-// q_rows는 2차원 배열 q의 행 길이, q_cols는 2차원 배열 q의 열 길이입니다.
-bool* solution(int** p, size_t p_rows, size_t p_cols, int** q, size_t q_rows, size_t q_cols) {
-    // return 값은 malloc 등 동적 할당을 사용해주세요. 할당 길이는 상황에 맞게 변경해주세요.
-    bool* answer = (bool*)NULL;
-    return answer;
-}
+#ifdef TEST
+    void PrintDP(const vvi& dp){
+        cout << endl;
+        cout << "\t";
+        FOR (j, dp[0].size()) {
+            cout << setw(3) << j << ", ";
+        }
+        cout << endl;
+        FOR (i, dp.size()) {
+            if (i == 0) {
+                cout << i << "\t";
+            }
+            else {
+                cout << m_viC[i-1] << "\t";
+            }
+            FOR (j, dp[0].size()) {
+                cout << setw(3) << dp[i][j] << ", ";
+            }
+            cout <<endl;
+        }
+    }
+#endif
 
 // 70yy
-#if 1
+#if 0
 #define SPLIT_DEBUG
 #endif // 1
 

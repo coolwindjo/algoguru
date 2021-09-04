@@ -1,4 +1,4 @@
-#if 1
+#if 0
 #define TEST
 #endif // 1
 #define TEST1
@@ -11,6 +11,7 @@
 
 class ProbSolv
 {
+    vi m_viP;
 public:
     ProbSolv()
     {
@@ -18,8 +19,12 @@ public:
         FOR (i, 10) {
             getline(cin, line);
             if (line.length() > 2) {
-                
+                break;
             }
+        }
+        vstr vstrSplits = _SplitString(line, "[], \n");
+        for (string s : vstrSplits) {
+            m_viP.push_back(stoi(s));
         }
         
         _Solve();
@@ -27,41 +32,125 @@ public:
     ~ProbSolv(){}
 
 private:
-typedef list<char> lc;
-    void _Solve(vector<string> a){
-
-
+    void _Solve(){
+#ifdef TEST1
+        CoolTimer timer("maxProfit");
+#endif
+        cout << maxProfit(m_viP) <<endl;
+#ifdef TEST1
+        timer.Off();
+        CoolTimer timerIF("maxProfitIF");
+#endif
+        cout << maxProfitIF(m_viP) <<endl;
+#ifdef TEST1
+        timerIF.Off();
+        CoolTimer timerDP("maxProfitDP");
+#endif
+        cout << maxProfitDP(m_viP) <<endl;
+#ifdef TEST1
+        timerDP.Off();
+#endif
     } // _Solve()
-bool isValid(const string& strA) {
-    lc lcS;
-    FOR (i, strA.length()) {
-        lcS.push_back(strA[i]);
-    }
-    const auto itA = find(begin(lcS), end(lcS), 'a');
-    if ((itA == begin(lcS)) || (next(itA) == end(lcS))) {
-        lcS.erase(itA);
-    }
-    string str;
-    for (auto s : lcS)  {
-        str += s;
-    }
-    cout << str <<endl;
-}
 
-#include <stdio.h>
-#include <stdbool.h>
-#include <stdlib.h>
+    int maxProfit(vector<int>& prices) {
+		int profit = 0;
+		FOR (i, prices.size()-1) {
+			const int p = prices[i+1] - prices[i];
+			if (p > 0) {
+				profit += p;
+			}
+		}
+		return profit;
+    }
 
-// p_rows는 2차원 배열 p의 행 길이, p_cols는 2차원 배열 p의 열 길이입니다.
-// q_rows는 2차원 배열 q의 행 길이, q_cols는 2차원 배열 q의 열 길이입니다.
-bool* solution(int** p, size_t p_rows, size_t p_cols, int** q, size_t q_rows, size_t q_cols) {
-    // return 값은 malloc 등 동적 할당을 사용해주세요. 할당 길이는 상황에 맞게 변경해주세요.
-    bool* answer = (bool*)NULL;
-    return answer;
-}
+    int maxProfitIF(vector<int>& prices) {
+		int profit = 0;
+		int ud = -1;	// start with going down
+		int pos = -1;
+		FOR (i, prices.size()-1) {
+			if (prices[i] < prices[i+1]) {
+				if (ud < 0) {
+					// go up
+					pos = prices[i];
+#ifdef TEST
+					cout << "pos:" << pos << endl;
+#endif
+				}
+				ud = 1;
+			}
+			else if (prices[i] > prices[i+1]) {
+				if (ud > 0) {
+					// go down
+					if (pos >= 0) {
+						profit += (prices[i] - pos);
+#ifdef TEST
+                        cout << "sell on " << prices[i] << " profit:" << prices[i] - pos << endl;
+#endif
+						pos = -1;
+					}
+				}
+				ud = -1;
+			}
+			else {
+                // ud = 0;  // No need!
+			}
+		}
 
+		if (pos == -1) return profit;
+		
+		const int lastP = prices[prices.size()-1] - pos;
+		if (lastP > 0) {
+			profit += lastP;
+		}
+		
+		return profit;
+    }
+
+    int maxProfitDP(vector<int>& prices) {
+		const size_t n = prices.size();
+        vvi dp(n, vi(n, 0));
+		
+		FOR(i, n) {
+			if (i > 0) {
+				if (dp[i][i] < dp[i-1][i-1]) {
+					dp[i][i] = dp[i-1][i-1];
+				}
+			}
+			FOR_INC(j, i+1, n) {
+				const int p = prices[j] - prices[i];
+				if (p > 0) {
+					dp[i][j] = p;
+					if (dp[j][j] < p + dp[i][i]) {
+						dp[j][j] = p + dp[i][i];
+					}
+				}
+			}
+		}
+		
+#ifdef TEST
+		PrintDP(dp);
+#endif
+		
+		return dp[n-1][n-1];
+    }
+#ifdef TEST
+	void PrintDP(const vvi& dp) {
+		cout << "\t";
+		FOR (j, dp[0].size()) {
+			cout << setw(3) << j << ", ";
+		}
+		cout <<endl;
+		FOR (i, dp.size()) {
+			cout << i << "\t";
+			FOR (j, dp[0].size()) {
+				cout << setw(3) << dp[i][j] << ", ";
+			}
+			cout <<endl;
+		}
+	}
+#endif
 // 70yy
-#if 1
+#if 0
 #define SPLIT_DEBUG
 #endif // 1
 

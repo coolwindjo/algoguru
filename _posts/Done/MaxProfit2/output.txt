@@ -1,0 +1,35 @@
+#1 7
+maxProfit() takes [0.0339] ms.
+7
+maxProfitIF() takes [0.0053] ms.
+7
+maxProfitDP() takes [0.0072] ms.
+
+#2 4
+maxProfit() takes [0.0058] ms.
+4
+maxProfitIF() takes [0.0028] ms.
+4
+maxProfitDP() takes [0.0053] ms.
+
+#3 0
+maxProfit() takes [0.0029] ms.
+0
+maxProfitIF() takes [0.0028] ms.
+0
+maxProfitDP() takes [0.0049] ms.
+
+#4 8
+maxProfit() takes [0.0028] ms.
+8
+maxProfitIF() takes [0.0029] ms.
+8
+maxProfitDP() takes [0.0067] ms.
+
+#5 4
+maxProfit() takes [0.251] ms.
+4
+maxProfitIF() takes [0.3542] ms.
+4
+maxProfitDP() takes [6281.83] ms.
+
