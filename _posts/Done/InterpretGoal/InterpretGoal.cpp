@@ -1,4 +1,4 @@
-#if 0
+#if 1
 #define TEST
 #endif // 1
 #define TEST1
@@ -9,11 +9,9 @@
 #pragma GCC optimize("O1") 
 #endif 
 
-typedef pair<int, int> ii;
-typedef pair<int, ii> i_ii;
 class ProbSolv
 {
-    vi m_viP;
+    string m_C;
 public:
     ProbSolv()
     {
@@ -24,10 +22,9 @@ public:
                 break;
             }
         }
-        vstr vstrSplits = _SplitString(line, "[], \n");
-        for (string s : vstrSplits) {
-            m_viP.push_back(stoi(s));
-        }
+
+        vstr vstrSplits = _SplitString(line, "=\", ");
+        m_C = vstrSplits[1];
         
         _Solve();
     }
@@ -35,99 +32,26 @@ public:
 
 private:
     void _Solve(){
-        cout << maxProfit(m_viP);
+        cout << interpret(m_C);
     } // _Solve()
 
-    int maxProfit(vector<int>& prices) {
-		vi viNMS;
-		int ud = -1;	// start with going down
-		int pos = -1;
-		FOR (i, prices.size()-1) {
-			if (prices[i] < prices[i+1]) {
-				if (ud < 0) {
-					// go up
-					pos = prices[i];
-#ifdef TEST
-					cout << "pos:" << pos << endl;
-#endif
-				}
-				ud = 1;
-			}
-			else if (prices[i] > prices[i+1]) {
-				if (ud > 0) {
-					// go down
-					if (pos >= 0) {
-						viNMS.push_back(prices[i] - pos);
-#ifdef TEST
-						for (auto p : viNMS) {cout << p << ", ";}
-						cout <<endl;
-                        cout << "sell on " << prices[i] << " profit:" << prices[i] - pos << endl;
-#endif
-						pos = -1;
-					}
-				}
-				ud = -1;
-			}
-			else {
-                // ud = 0;  // No need!
+    string interpret(string command) {
+        unordered_map<string, string> lut {
+			{"G", "G"},
+			{"()", "o"},
+			{"(al)", "al"}
+		};
+		string ans = "";
+		string tmp = "";
+		for (auto c : command) {
+			tmp += c;
+			auto it = lut.find(tmp);
+			if (it != end(lut)) {
+				ans += lut[tmp];
+				tmp = "";
 			}
 		}
-
-		if (pos >= 0) {
-			const int lastP = prices[prices.size()-1] - pos;
-			if (lastP > 0) {
-				viNMS.push_back(lastP);
-#ifdef TEST
-				for (auto p : viNMS) {cout << p << ", ";}
-				cout <<endl;
-				cout << "sell on " << lastP + pos << " profit:" << lastP << endl;
-#endif
-			}
-		}
-			
-		int profit = 0;
-		sort(begin(viNMS), end(viNMS), [](const int a, const int b){return a>b;});
-		FOR (i, 2) {
-			if (i >= viNMS.size()) break;
-			profit += viNMS[i];
-		}
-		
-		return profit;
-    }
-
-    int maxProfitDP(vector<int>& prices) {
-		const size_t n = prices.size();
-		i_ii max;
-		FOR(i, n) {
-			FOR_INC(j, i+1, n) {
-				const int p = prices[j] - prices[i];
-				if (max.first < p) {
-					max.first= p;
-					max.second.first = i;
-					max.second.second= j;
-				}
-			}
-		}
-		
-		i_ii nextToMax;
-		FOR(i, n) {
-			FOR_INC(j, i+1, n) {
-				const int p = prices[j] - prices[i];
-				if (nextToMax.first < p) {
-					if (max.second.first == i) continue;
-					if (max.second.second == j) continue;
-					nextToMax.first= p;
-					nextToMax.second.first = i;
-					nextToMax.second.second= j;
-				}
-			}
-		}
-#ifdef TEST
-		cout << max.first << ":" << max.second.first << "," << max.second.second <<endl;
-		cout << nextToMax.first << ":" << nextToMax.second.first << "," << nextToMax.second.second <<endl;
-#endif
-		
-		return max.first + nextToMax.first;
+		return ans;
     }
 
 // 70yy

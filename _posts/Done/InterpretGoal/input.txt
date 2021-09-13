@@ -1,0 +1,4 @@
+3
+command = "G()(al)"
+command = "G()()()()(al)"
+command = "(al)G(al)()()G"
