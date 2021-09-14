@@ -25,6 +25,8 @@ tags:
 - string-manipulation
 - string-find_if
 - string-find_first_of
+- string-replace
+- string-find
 - string-substr
 - unique-and-erase-vector
 - split-string

@@ -37,21 +37,17 @@ private:
 
     string interpret(string command) {
         unordered_map<string, string> lut {
-			{"G", "G"},
 			{"()", "o"},
 			{"(al)", "al"}
 		};
-		string ans = "";
-		string tmp = "";
-		for (auto c : command) {
-			tmp += c;
-			auto it = lut.find(tmp);
-			if (it != end(lut)) {
-				ans += lut[tmp];
-				tmp = "";
-			}
-		}
-		return ans;
+        for (auto it=begin(lut); it!=end(lut); ++it) {
+            auto itC = command.find(it->first);
+            while (itC != std::string::npos) {
+                command.replace(itC, it->first.length(), it->second);
+                itC = command.find(it->first);
+            }
+        }
+		return command;
     }
 
 // 70yy
