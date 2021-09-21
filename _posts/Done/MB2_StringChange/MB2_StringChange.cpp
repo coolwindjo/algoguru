@@ -25,108 +25,50 @@ public:
 
         vstr a = _SplitString(line, "[],\" ");
         
-        _Solve(a);
+        _Solve(a[0]);
     }
     ~ProbSolv(){}
 
 private:
-typedef list<char> lc;
-    void _Solve(vector<string> a){
-        vector<bool> ans = solution(a);
-        for (auto b : ans) {
-            cout << boolalpha << b << ",";
-        }
+    void _Solve(const string& a){
+        cout << boolalpha << isValid(a) << ",";
     } // _Solve()
-vector<bool> solution(vector<string> a) {
-    vector<bool> answer;
-    isValid(a[0]);
-    return answer;
-}
-bool isValid(const string& strA) {
-    string str = strA;
-    const int half = l*0.5+1;
 
-    int l = str.length();
-    int f = 0;
-    int b = l-1 - 0;
-    while(f!=b) {
-        if (str[f] == 'a'){
-            str=str.substr(1,l-1);
-            l = str.length();
-            f=0;
-            b=l-1 - 0;
-        }
-        else {
-            if (str[f] == 'b'){
+    bool isValid(const string& a) {
+        string subA = a;
+        while (subA.length() > 0) {
+            if (subA[0] == 'a') {
+                subA = subA.substr(1, subA.length()-1);
+            }
+            else if ((subA[0] == 'b') && (subA[(subA.length()-1)] == 'b')) {
+                int cnt = 0;
+                while (subA.length() > 0) {
+                    if ((subA[0] != 'b') || (subA[(subA.length()-1)] != 'b')) {
+                        break;
+                    }
+                    subA = subA.substr(1, subA.length()-2);
+                    cnt++;
+                }
+                FOR (i, cnt) {
+                    string tmp = subA;
+                    auto it = tmp.find("a");
+                    if (it != string::npos) {
+                        tmp.replace(it, 1, "");
+                    }
+                    else {
+                        return false;
+                    }
+                }
+            }
+            else if (subA[(subA.length()-1)] == 'a') {
+                subA = subA.substr(0, subA.length()-1);
             }
             else {
-                f++;
+                return false;
             }
         }
-        if (str[b] == 'a'){
-            str=str.substr(0,l-1);
-            l = str.length();
-            b=l-1 - 0;
-        }
-        else {
-            b--;
-        }
+        return true;
     }
-    const auto itA = find(begin(strA), end(strA), 'a');
-
-
-    lc lcS = convToLC(strA);
-    const auto itA = find(begin(lcS), end(lcS), 'a');
-    if ((itA == begin(lcS)) || (next(itA) == end(lcS))) {
-        lcS.erase(itA);
-    }
-    string str = convToStr(lcS);
-    const int lastIdx = str.length();
-    string lastStr = str.substr(lastIdx-1, 1);
-        }
-        if (str[f] == 'b'){
-        }
-        if (str[b] == 'b'){
-
-        }
-    }
-    const auto itA = find(begin(strA), end(strA), 'a');
-
-
-    lc lcS = convToLC(strA);
-    const auto itA = find(begin(lcS), end(lcS), 'a');
-    if ((itA == begin(lcS)) || (next(itA) == end(lcS))) {
-        lcS.erase(itA);
-    }
-    string str = convToStr(lcS);
-    const int lastIdx = str.length();
-    string lastStr = str.substr(lastIdx-1, 1);
-    if (lastStr == str.substr(0, 1)) {
-        if (lastStr == "b") {
-            str = str.substr(1, lastIdx-2);
-        }
-    }
-
-#ifdef TEST
-    cout << str <<endl;
-#endif
-}
-
-lc convToLC(const string& strA) {
-    lc lcS;
-    FOR (i, strA.length()) {
-        lcS.push_back(strA[i]);
-    }
-    return lcS;
-}
-
-string convToStr(const lc& lcS) {
-    string str;
-    for (auto s : lcS)  {
-        str += s;
-    }
-    return str;
-}
 
 // 70yy
 #if 0

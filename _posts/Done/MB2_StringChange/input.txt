@@ -1,0 +1,5 @@
+4
+"abab"
+"bbaa"
+"bababa"
+"bbbabababbbaa"
