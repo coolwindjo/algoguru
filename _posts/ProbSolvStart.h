@@ -196,19 +196,9 @@ constexpr int DIR[eDIR_LEN][2] = {
 };
 constexpr int N_DIR[eDIR_LEN] = {eL, eU, eR, eD};
 
-// 142yy
-#if 0
-#pragma GCC optimize("O1") 
-#endif 
-
-class ProbSolv
-{
-public:
-    ProbSolv()
-    {
         // /*/ 40yy  15dd
         int numLines = 0;
-        cin >> numLines;
+        cin >> numLines; cin.ignore();
 
         vstr lines;
         FOR(i, numLines){
@@ -220,7 +210,7 @@ public:
             }
             lines.push_back(line);
         }
-        /*/ 26yy
+        
         int rows = 0;
         int columns = 0;
         cin >> rows;
@@ -245,18 +235,8 @@ public:
             cout <<endl;
         }
 #endif
-        //*/
-        
-        _Solve();
-    }
-    ~ProbSolv(){}
 
-private:
-    void _Solve(){
-
-    } // _Solve()
-
-// 70yy
+// 60yy
 #if 1
 #define SPLIT_DEBUG
 #endif // 1
@@ -280,12 +260,8 @@ private:
         while (line[line.length() - 1] == ' ') {
             line.pop_back();
         }
-#ifdef SPLIT_DEBUG
-        cout << "4) line: " << line <<endl;
-#endif
 
         vstr vstrSplits;
-
         size_t prev = 0;
         size_t pos;
         while (prev < line.length()) {
@@ -314,29 +290,10 @@ private:
                     vstrSplits.push_back(line.substr(prev, rem_wlen));
                 }
             }
-#ifdef SPLIT_DEBUG
-            for(string str : vstrSplits) {
-                cout << str << " ";
-            }
-            cout <<endl;
-#endif
             prev = pos + 1;
         }
 
         return vstrSplits;
     }
 
-};
-
-int main(){
-    ios_base::sync_with_stdio(false); cin.tie(nullptr);
-    int numTCs = 0;
-    cin >> numTCs; cin.ignore();
-    FOR (tc, numTCs) {
-        cout << "#" << tc+1 <<" ";
-        ProbSolv ps;
-        cout << endl;
-    }
-    return 0;
-}
 #endif // 0
