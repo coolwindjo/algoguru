@@ -196,7 +196,7 @@ constexpr int DIR[eDIR_LEN][2] = {
 };
 constexpr int N_DIR[eDIR_LEN] = {eL, eU, eR, eD};
 
-        // /*/ 40yy  15dd
+        // 40yy  15dd
         int numLines = 0;
         cin >> numLines; cin.ignore();
 
@@ -236,7 +236,7 @@ constexpr int N_DIR[eDIR_LEN] = {eL, eU, eR, eD};
         }
 #endif
 
-// 60yy
+// 58yy
 #if 1
 #define SPLIT_DEBUG
 #endif // 1

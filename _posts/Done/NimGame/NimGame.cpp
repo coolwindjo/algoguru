@@ -5,25 +5,29 @@
 
 #include "../../ProbSolvStart.h"
 
-#if 0
+#if 1
 #pragma GCC optimize("O1") 
 #endif 
 
 class ProbSolv
 {
+    int m_N;
 public:
     ProbSolv()
     {
-        
+        cin >> m_N; cin.ignore();
         _Solve();
     }
     ~ProbSolv(){}
 
 private:
     void _Solve(){
-
+        cout << boolalpha << canWinNim(m_N);
     } // _Solve()
 
+    bool canWinNim(int n) {
+        return n%4 == 0 ? false : true;
+    }
 };
 
 int main(){
