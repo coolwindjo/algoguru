@@ -3,7 +3,7 @@ title: Jewels and Stones
 layout: post
 tags:
 - cpp
-- implementation
+- easy
 - string-manipulation
 - std-find_first_of
 

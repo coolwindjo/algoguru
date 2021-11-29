@@ -3,7 +3,7 @@ title: Merge Two Sorted Lists
 layout: post
 tags:
 - cpp
-- implementation
+- easy
 
 ---
 

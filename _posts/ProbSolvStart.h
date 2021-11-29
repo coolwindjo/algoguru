@@ -95,6 +95,7 @@ TreeNode* BFSBuildBST(const vector<string> vstrVal) {
     qTN.emplace(root);
     while ((!qTN.empty() && (cnt < n))) {
         TreeNode* tn = qTN.front(); qTN.pop();
+        if (nullptr == tn) continue;
         string strVal = vstrVal[cnt++];
         if ("null" != strVal) {
             tn->left = new TreeNode(stoi(strVal));

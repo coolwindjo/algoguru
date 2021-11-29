@@ -4,6 +4,7 @@ layout: post
 tags:
 - cpp
 - implementation
+- medium
 - linked-list
 
 ---
@@ -17,14 +18,14 @@ tags:
     ListNode* reverseBetween(ListNode* head, int left, int right) {
         if (nullptr == head) return nullptr;
         if (nullptr == head->next) return head;
-        
+
         ListNode* itLeftPrev = nullptr;
         ListNode* itLeft = findNode(head, left, &itLeftPrev);
         if (nullptr == itLeft) return nullptr;
-        
+
         ListNode* itRight = findNode(head, right, nullptr);
         if (nullptr == itRight) return nullptr;
-        
+
         ListNode* itNewLeft = reverse(itLeft, itRight);
         W_IFNOT(itRight->val == itNewLeft->val);
         if (nullptr != itLeftPrev) {
@@ -35,7 +36,7 @@ tags:
         }
         return head;
     }
-    
+
     ListNode* findNode(ListNode* begin, int pos, ListNode** ppPrev) {
         if (nullptr == begin) return nullptr;
         ListNode* curr = begin;
@@ -52,7 +53,7 @@ tags:
         }
         return curr;
     }
-    
+
     ListNode* reverse(ListNode* head, ListNode* tail) {
         if (head == tail) return head;
         ListNode* curr = head;

@@ -3,7 +3,7 @@ title: Temperatures
 layout: post
 tags:
 - cpp
-- implementation
+- easy
 
 ---
 

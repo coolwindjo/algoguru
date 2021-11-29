@@ -3,7 +3,7 @@ title: Running Sum of 1d Array
 layout: post
 tags:
 - cpp
-- implementation
+- easy
 
 ---
 

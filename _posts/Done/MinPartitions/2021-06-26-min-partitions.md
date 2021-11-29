@@ -4,6 +4,7 @@ layout: post
 tags:
 - cpp
 - implementation
+- medium
 
 ---
 

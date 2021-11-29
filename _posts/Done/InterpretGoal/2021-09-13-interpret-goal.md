@@ -3,7 +3,7 @@ title: Goal Parser Interpretation
 layout: post
 tags:
 - cpp
-- implementation
+- easy
 - string-manipulation
 - std-unordered-map
 - string-replace

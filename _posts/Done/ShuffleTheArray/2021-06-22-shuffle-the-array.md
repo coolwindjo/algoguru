@@ -3,7 +3,7 @@ title: Shuffle the Array
 layout: post
 tags:
 - cpp
-- implementation
+- easy
 
 ---
 

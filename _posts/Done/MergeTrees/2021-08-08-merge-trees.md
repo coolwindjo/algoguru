@@ -3,7 +3,7 @@ title: Merge Two Binary Trees
 layout: post
 tags:
 - cpp
-- implementation
+- easy
 - binary-search-tree
 
 ---
@@ -16,14 +16,14 @@ tags:
 
     TreeNode* mergeTrees(TreeNode* root1, TreeNode* root2) {
         if ((nullptr == root1) && (nullptr == root2)) return nullptr;
-        
+
         if (nullptr == root1) {
             return root2;
         }
         if (nullptr == root2) {
             return root1;
         }
-        
+
         TreeNode* newRoot = new TreeNode(root1->val + root2->val,
                                          mergeTrees(root1->left, root2->left),
                                          mergeTrees(root1->right, root2->right));
@@ -39,16 +39,16 @@ tags:
     TreeNode* mergeTrees(TreeNode* root1, TreeNode* root2) {
         TreeNode* ans = PickNoneNull(root1, root2);
         if (nullptr == ans) return nullptr;
-        
+
         PreorderMerge(ans, root1, root2);
-        
+
         return ans;
     }
-    
-    
+
+
     TreeNode* PickNoneNull(TreeNode* root1, TreeNode* root2) {
         if ((nullptr == root1) && (nullptr == root2)) return nullptr;
-        
+
         if (nullptr == root1) {
             return root2;
         }
@@ -59,15 +59,15 @@ tags:
             return root1;
         }
     }
-    
+
     void PreorderMerge(TreeNode* ans, TreeNode* root1, TreeNode* root2) {
         if (nullptr == ans) return;
         if ((nullptr == root1) || (nullptr == root2)) return;
-        
-        // Visit Root
-        ans->val = root1->val + root2->val; 
 
-        // Visit left 
+        // Visit Root
+        ans->val = root1->val + root2->val;
+
+        // Visit left
         if (nullptr != ans->left) {
             PreorderMerge(ans->left, root1->left, root2->left);
         }
@@ -76,7 +76,7 @@ tags:
             ans->left = PickNoneNull(root1->left, root2->left);
         }
 
-        // Visit right 
+        // Visit right
         if (nullptr != ans->right) {
             PreorderMerge(ans->right, root1->right, root2->right);
         }

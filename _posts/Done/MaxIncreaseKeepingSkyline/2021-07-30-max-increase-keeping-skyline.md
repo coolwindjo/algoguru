@@ -4,6 +4,7 @@ layout: post
 tags:
 - cpp
 - implementation
+- medium
 
 ---
 
@@ -28,7 +29,7 @@ tags:
                 }
             }
         }
-        
+
         int sum = 0;
         FOR (r, n) {
             FOR (c, n) {

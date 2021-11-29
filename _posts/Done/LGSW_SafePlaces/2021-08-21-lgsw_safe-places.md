@@ -5,6 +5,7 @@ tags:
 - cpp
 - bfs
 - std-unordered-set
+- std-queue
 - flood-fill
 
 ---

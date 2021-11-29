@@ -2,7 +2,7 @@
 #define TEST
 #endif // 1
 
-#include "../../../ProbSolvStart.h"
+#include "../../ProbSolvStart.h"
 
 constexpr int MAX_NUM = 8;
 class ProbSolv
@@ -83,6 +83,16 @@ public:
                         int plus = *itJ + *itK;
                         int minus = *itJ - *itK;
                         int mult = *itJ * *itK;
+                        // /*/
+                        hashM[I] = plus;
+                        hashM[I] = minus;
+                        hashM[I] = mult;
+                        if (*itK != 0) {
+                            int div = *itJ / *itK;
+                            hashM[I] = div;
+                        }
+                        //*/
+                        /*/
                         if (hashM[I].find(plus)==hashM[I].end()){
                             hashM[I].insert(plus);
                         }
@@ -98,6 +108,7 @@ public:
                                 hashM[I].insert(div);
                             }
                         }
+                        //*/
                     }
                 }
             }

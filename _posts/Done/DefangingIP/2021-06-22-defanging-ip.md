@@ -3,7 +3,7 @@ title: Defanging an IP Address
 layout: post
 tags:
 - cpp
-- implementation
+- easy
 - string-manipulation
 - split-string
 - string-find_first_of

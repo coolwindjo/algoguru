@@ -3,7 +3,7 @@ title: Kids With the Greatest Number of Candies
 layout: post
 tags:
 - cpp
-- implementation
+- easy
 
 ---
 

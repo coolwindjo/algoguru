@@ -3,7 +3,7 @@ title: Sum of Digits of String After Convert
 layout: post
 tags:
 - cpp
-- implementation
+- easy
 
 ---
 
@@ -28,7 +28,7 @@ tags:
             ans = sum;
             strNums = to_string(ans);
         }
-        
+
         return ans;
     }
 

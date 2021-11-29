@@ -4,6 +4,7 @@ layout: post
 tags:
 - cpp
 - implementation
+- medium
 - mathematics
 
 ---
@@ -22,13 +23,13 @@ tags:
         vviPts.push_back(p4);
         int maxLen = 1;
         maxLen = calMaxDistSq(vviPts, maxLen);
-        
+
         vvi vviEndPts = getEndPts(vviPts, maxLen);
-        
+
         if (vviEndPts.size() < 4) {
             return false;
         }
-        
+
         const int prod = product(vviEndPts);
         if (prod == 0) {
             return true;
@@ -37,16 +38,16 @@ tags:
             return false;
         }
     }
-    
+
     int product(const vvi& vviEndPts) {
         vi viPtA, viPtB;
-        
+
         viPtA.push_back(vviEndPts[0][0] - vviEndPts[1][0]);
         viPtA.push_back(vviEndPts[0][1] - vviEndPts[1][1]);
-        
+
         viPtB.push_back(vviEndPts[2][0] - vviEndPts[3][0]);
         viPtB.push_back(vviEndPts[2][1] - vviEndPts[3][1]);
-        
+
         return viPtA[0]*viPtB[0] + viPtA[1]*viPtB[1];
     }
 
@@ -64,14 +65,14 @@ tags:
         }
         return maxLen;
     }
-    
+
     int distSq(vi pt1, vi pt2) {
         const int deltaX = (pt1[0]-pt2[0]);
         const int deltaY = (pt1[1]-pt2[1]);
         const int len = deltaX*deltaX + deltaY*deltaY;
         return len;
     }
-    
+
     vvi getEndPts(const vvi& vviPts, const int maxDistSq) {
         vvi vviEndPts;
         for (int i=0; i<3; ++i) {
@@ -87,7 +88,7 @@ tags:
         }
         return vviEndPts;
     }
-    
+
 ```
 
 ### GitHub

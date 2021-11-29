@@ -3,7 +3,7 @@ title: Richest Customer Wealth
 layout: post
 tags:
 - cpp
-- implementation
+- easy
 
 ---
 

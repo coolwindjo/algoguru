@@ -17,7 +17,8 @@ int ComputeNumGroups(const int numWalkers, const int timeStep, const int (&speed
 					 const int (&position)[MAX_NUM]){
 	int numGroups = 0;
 
-	long long nextPosLastWkr = position[numWalkers-1] + (long long)speed[numWalkers-1]*timeStep;
+	long long nextPosLastWkr = position[numWalkers-1] 
+	+ (long long)speed[numWalkers-1]*timeStep;
 	if (numWalkers > 1){
 		++numGroups;
 		for (int i=(numWalkers-2); i>=0; --i){

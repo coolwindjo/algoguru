@@ -3,7 +3,7 @@ title: How Many Numbers Are Smaller Than the Current Number
 layout: post
 tags:
 - cpp
-- implementation
+- easy
 - sort
 - avoid-nested-loop
 
@@ -21,9 +21,9 @@ tags:
         FOR (j, numNums) {
             viiNumIdx[j] = ii(nums[j], j);
         }
-        
+
         sort(begin(viiNumIdx), end(viiNumIdx));
-        
+
         vi viAns(numNums);
         int prev = -1;
         int numEquals = 0;

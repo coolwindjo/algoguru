@@ -4,6 +4,7 @@ layout: post
 tags:
 - cpp
 - implementation
+- medium
 - dfs
 
 ---
@@ -24,7 +25,7 @@ tags:
 		sum += sumEvenGrandparent(root->right);
 		return sum;
     }
-	
+
 	int sumGrands(TreeNode* root) {
 		if (nullptr == root) return 0;
 		int sum = 0;

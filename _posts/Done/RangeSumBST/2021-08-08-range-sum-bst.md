@@ -3,7 +3,7 @@ title: Range Sum of BST
 layout: post
 tags:
 - cpp
-- implementation
+- easy
 - binary-search-tree
 
 ---
@@ -16,23 +16,23 @@ tags:
 
     int rangeSumBST(TreeNode* root, int low, int high) {
         if (nullptr == root) return 0;
-        
+
         int sum = 0;
         const int val = root->val;
         if ((val >= low) && (val <=high)) {
             sum += val;
         }
-        
+
         // if (nullptr != root->left) {
         if (val > low) {
             sum += rangeSumBST(root->left, low, high);
         }
-        
+
         // if (nullptr != root->right) {
         if (val < high) {
             sum += rangeSumBST(root->right, low, high);
         }
-        
+
         return sum;
     }
 

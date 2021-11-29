@@ -3,7 +3,7 @@ title: Valid Parentheses
 layout: post
 tags:
 - cpp
-- implementation
+- easy
 
 ---
 
@@ -18,11 +18,11 @@ tags:
             || (c1 == '{' && c2 == '}')
             || (c1 == '[' && c2 == ']');
     }
-    
+
     bool isOpening(const char c) {
         return (c == '(') || (c == '{') || (c == '[');
     }
-    
+
     bool isValid(string s) {
         FOR(i, s.length()) {
             const char c = s[i];

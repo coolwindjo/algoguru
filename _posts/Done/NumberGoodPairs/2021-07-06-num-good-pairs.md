@@ -3,7 +3,7 @@ title: Number of Good Pairs
 layout: post
 tags:
 - cpp
-- implementation
+- easy
 - combination
 
 ---
