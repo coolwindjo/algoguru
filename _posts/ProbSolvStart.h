@@ -24,7 +24,7 @@ public:
         _QueryPerformanceCounter(&m_begin);
     }
 
-    void Off() {	
+    void Off() {
         // End.
         _QueryPerformanceCounter(&m_end);
 
@@ -35,7 +35,7 @@ public:
 
         // Print the message.
         ostringstream os;
-        os << m_fn_name << "() takes [" << elapsed << "] ms.\n"; 
+        os << m_fn_name << "() takes [" << elapsed << "] ms.\n";
         cout << os.str();
     }
 private:
@@ -211,7 +211,7 @@ constexpr int N_DIR[eDIR_LEN] = {eL, eU, eR, eD};
             }
             lines.push_back(line);
         }
-        
+
         int rows = 0;
         int columns = 0;
         cin >> rows;
