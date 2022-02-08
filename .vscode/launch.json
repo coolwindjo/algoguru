@@ -45,6 +45,13 @@
 			"miDebuggerPath": "/usr/bin/gdb"
 		},
         {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        },
+        {
             "name": "(gdb) Pipe Launch",
             "type": "cppdbg",
             "request": "launch",
@@ -86,13 +93,6 @@
                 }
             ],
             "preLaunchTask": "build C++"
-        },
-        {
-            "name": "Python: Current File",
-            "type": "python",
-            "request": "launch",
-            "program": "${file}",
-            "console": "integratedTerminal"
         },
     ]
 }
