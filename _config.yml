@@ -6,12 +6,13 @@ url: "https://coolwindjo.github.io"
 title: Cool Wind on prob_solv # blog's title
 description: "Blog posts and pages with cool wind" # used by search engines
 avatar: assets/img/cls.png
-favicon: assets/img/cls.png 
+favicon: assets/img/cls.png
 gravatar: # Email MD5 hash
 
 # Header and footer text
 header_text: Cool wind on studying algorithm <code>prob_solv</code>
 header_feature_image: assets/img/pexels/cls63amg_running.jpeg
+header_feature_image_responsive: true
 footer_text: >
   © 2019 coolwind@hotmail.co.kr All rights reserved. Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
 
@@ -21,12 +22,21 @@ post_navigation: true
 color_image: /assets/img/lineart.png                    # A bit transparent for color posts.
 
 # Features
-# More in the _data folder for social icons, share buttons, author and language
+# More in the _data folder for share buttons, author and language
 # For layout customization, go to the "_sass > base" folder, and check "_variables.scss"
 katex: true                                             # Enable if using math markup
+mermaid: true                                           # Enable mermaid-js for sequence and diagrams
 google_analytics:                                       # Tracking ID, e.g. "UA-000000-01"
 cookie_consent: false                                   # To respect the usage of cookies
-disqus_shortname:                                       # Your discus shortname for comments
+color_theme: auto                                       # auto, dark or light
+
+# Comments
+comments:
+  disqus_shortname:                                     # Your discus shortname for comments
+  cusdis_app_id:                                        # Your cusdis data-app-id
+  utterances:                                           # Enable by filling below information. For more info, go to https://utteranc.es
+    repo:                                               # your public comments repository (e.g. owner/repo)
+    issue-term:                                         # Issue term (e.g. "comment" consider issues with this word in the title as comments)
 
 # PAGINATION
 paginate: 5
@@ -39,8 +49,10 @@ collections:
     permalink: /:collection/:name
 
 # BUILD SETTINGS
+sass:
+  style: compressed
 plugins: [jekyll-paginate, jekyll-seo-tag, jekyll-feed]
-exclude: [".jekyll-cache", ".idea", "vendor/*", "assets/node_modules"]
+exclude: [".jekyll-cache", ".idea", "vendor/*", "assets/node_modules/*"]
 
 # theme: type-on-strap                                  # if using the theme as a jekyll theme gem
 remote_theme: sylhare/Type-on-Strap                     # If using as a remote_theme in github

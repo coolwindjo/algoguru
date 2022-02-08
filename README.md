@@ -1,41 +1,36 @@
 # Type on Strap 🎨
 
-[![Build Status](https://travis-ci.org/sylhare/Type-on-Strap.svg?branch=master)](https://travis-ci.org/sylhare/Type-on-Strap)
+[![Build](https://github.com/sylhare/Type-on-Strap/actions/workflows/jekyll-build.yml/badge.svg)](https://github.com/sylhare/Type-on-Strap/actions/workflows/jekyll-build.yml)
 [![Gem Version](https://badge.fury.io/rb/type-on-strap.svg)](https://badge.fury.io/rb/type-on-strap)
 [![Docker Pulls](https://img.shields.io/docker/pulls/sylhare/type-on-strap)](https://hub.docker.com/r/sylhare/type-on-strap)
 
-[![Default Type on Strap blog](https://github.com/Sylhare/Type-on-Strap/blob/master/screenshot.png?raw=true)](https://sylhare.github.io/Type-on-Strap/)
+[![Default Type on Strap blog](https://github.com/Sylhare/Type-on-Strap/blob/master/assets/img/screenshot.png?raw=true)](https://sylhare.github.io/Type-on-Strap/)
 
-A free and open-source [Jekyll](https://jekyllrb.com) theme. Based on Rohan Chandra [type-theme](https://github.com/rohanchandra/type-theme) packed with extra features and easily cusomizable:
+A free and open-source [Jekyll](https://jekyllrb.com) theme. Based on Rohan Chandra [type-theme](https://github.com/rohanchandra/type-theme) packed with extra features and easily customizable:
 
 * Responsive design on all devices (🖥, 💻, 📱, ...)
 * Portfolio 🗂, Gallery 🖼 pages for your projects
+* Multi comments 💬 options  
 * Tags compatibility 🏷
-* Handle Bootstrap'ed pages: [Get Bootstrap](http://getbootstrap.com/)
+* Handle _Bootstrap_'ed pages: [Get Bootstrap](http://getbootstrap.com/)
 * 🔎 Search feature: [Simple-Jekyll-Search](https://github.com/christian-fei/Simple-Jekyll-Search)
 * Math Rendering : [KateX](https://github.com/Khan/KaTeX)
+* Diagram Rendering: [Mermaid-js](https://github.com/mermaid-js/mermaid)
 * 🖋 Nice fonts: [Font Awesome](https://fontawesome.com/), [Source Sans Pro](https://fonts.google.com/specimen/Source+Sans+Pro), [Pacifico](https://fonts.google.com/specimen/Pacifico?selection.family=Pacifico) 
 * Seo Tags: [Jekyll-seo-tag](https://github.com/jekyll/jekyll-seo-tag)
 * 🛠 Syntax Highlighting: Easily customisable [Base16](https://github.com/chriskempson/base16)
-* Free of rights images from [pexels](https://www.pexels.com/)
+* 💡 Light and dark theme supported
+* Find free of rights images on [pexels](https://www.pexels.com/)
 
-> [Demo Site](https://sylhare.github.io/Type-on-Strap/)
-
-## Table of Contents
-
-  - [Usage](#usage)
-  - [Structure](#structure)
-  - [Configure Type on Strap](#configure-type-on-strap)
-  - [Other Layouts](#other-layouts)
-  - [Feature pages](#feature-pages)
-  - [Advanced](#advanced)
-  - [License](#license)
+> [Demo Site](https://sylhare.github.io/Type-on-Strap/) 
 
 ## Usage
 
 ### As a ruby gem 💎
 
-Check out this tutorial: [Use as Ruby Gem](https://github.com/Sylhare/Type-on-Strap#use-as-ruby-gem)
+Check out this tutorial: [Use as Ruby Gem](#use-as-ruby-gem-)
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#/https://github.com/sylhare/Type-On-Strap)
 
 ### As a github page 📋
 
@@ -43,23 +38,23 @@ Check out this tutorial: [Use as Ruby Gem](https://github.com/Sylhare/Type-on-St
 2. Install [Jekyll](https://jekyllrb.com/docs/installation/): `gem install jekyll`, check [#1](https://github.com/Sylhare/Type-on-Strap/issues/1) if you have a problem.
 3. Install the theme's dependencies: `bundle install`
 4. Customize the theme
-	- Github Page: [update `_config.yml`](https://github.com/Sylhare/Type-on-Strap#site-configuration)
+	- GitHub Page: [update `_config.yml`](#site-configuration)
 5. Run the Jekyll server: `bundle exec jekyll serve`
 
 ## Structure
 
 Here are the main files of the template
 
-```bash
+```shell
 Type-on-Strap
-├── _includes	               # theme includes
-├── _layouts                   # theme layouts (see below for details)
-├── _portfolio	               # collection of article to be populated in the portfolio page
+├── _includes	               # Theme includes
+├── _layouts                   # Theme layouts (see below for details)
+├── _portfolio	               # Collection of articles for the portfolio page
 ├── _posts                     # Blog posts
-├── _sass                      # Sass partials 
+├── _sass                      # Sass partials (compiled into css at runtime)
 ├── assets
-|  ├── js	               # theme javascript, Katex, jquery, bootstrap, jekyll search, 
-|  ├── css                     # isolated Bootstrap, font-awesome, katex and main css
+|  ├── js	               # JS compiled for distribution + raw sources
+|  ├── css                     # CSS compiled for distribution
 |  ├── fonts		       # Font-Awesome, and other fonts
 |  └── img		       # Images used for the template
 ├── pages
@@ -67,13 +62,15 @@ Type-on-Strap
 |   ├── about.md               # About example page
 |   ├── gallery.md             # Gallery page for your photos
 |   ├── portfolio.md	       # Portfolio page for your projects
-|   ├── search.html	       # Search page
+|   ├── search.md	       # Search page
 |   └── tags.md                # The tag page
 ├── _config.yml                # sample configuration
 ├── _data.yml
 |  ├── authors.yml             # Update the post authors configurations 
 |  ├── language.yml            # Localization configuration
-|  └── social.yml              # Social configurations (RSS, Twitter, ...)
+|  ├── biblio.yml              # To create a reference bibliography
+|  ├── social.yml              # Social configurations to share posts (RSS, shares, ...)
+|  └── icons.yml               # Footer icons (Twitter, Github, Stackoverflow, ...)
 └── index.html                 # sample home page (blog page paginated)
 ```
 	
@@ -83,12 +80,13 @@ Open `_config.yml` in a text editor to change most of the blog's settings.
 
 If a variable in this document is marked as "optional", disable the feature by removing all text from the variable. 
 
-
 ### Site configuration
 
-Configure Jekyll as your own blog or with a "baseurl" in in `_config.yml`:
+#### Base url
 
-Jekyll website *without* a "baseurl" (such as a GitHub Pages website for a given username):
+Configure Jekyll as your own blog or with a "baseurl" in `_config.yml`:
+
+Jekyll website *without* a "baseurl" (such as a **GitHub Pages website** with your username as the repository name):
 
 ```yml
 baseurl: ""
@@ -99,26 +97,41 @@ Jekyll website *with* "baseurl" (like the Type on Strap [demo](https://sylhare.g
 
 ```yml
 baseurl: "/sub-directory"
-url: "https://username.github.io/"
+url: "https://username.github.io"
 ```
 
-Please configure this  before using the theme.
+#### Jekyll blog configuration 
 
-### Meta and Branding
+And here is the basic information you will need in your `_config.yml` for it to work properly:
+
+```yaml
+# BLOG CONFIGURATION
+post_navigation: true
+paginate: 10
+paginate_path: "blog/page:num"
+plugins: [jekyll-paginate, jekyll-seo-tag, jekyll-feed]
+```
+
+To configure the blog part and default plugins. Those plugins are validated by GitHub page.
+
+#### Meta and Branding
 
 Meta variables hold basic information about your Jekyll site which will be used throughout the site 
-and as meta properties for search engines, browsers, and the site's RSS feed.
+and as meta properties that are used for search engines, browsers, and the site's RSS feed.
 
 Change these variables in `_config.yml`:
 
 ```yml
 title: My Jekyll Blog                 # Name of website
-avatar: assets/img/triangle.png       # Path of avatar image, to be displayed in the theme's header
+avatar: assets/img/avatar.png         # Path of avatar image, to be displayed in the theme's header
 description: My blog posts            # Short description, primarily used by search engines
 favicon: assets/favicon.ico           # Icon displayed in the tab
+color_theme: auto                     # color theme auto, dark or light
 ```
 
 You can also customize the seo tags default option following the jekyll-seo-tag plugin [documentation](http://jekyll.github.io/jekyll-seo-tag/advanced-usage/).
+The color theme can be set to dark or light (customize it in _variables.scss_). 
+Using _auto_ you'll have a tiny icon in the navbar allowing the use to manually switch from dark to light theme.
 
 ### Theme customization 🎨
 
@@ -128,18 +141,30 @@ Customize your site header/footer with these variables in `_config.yml`:
 
 ```yml
 header_text: Welcome to my Jekyll blog
-header_feature_image: assets/img/sample3.png
 footer_text: Copyright 2017
 ```
 
 If you don't want anything, replace the value by `" "`.
+
+#### Header's image
+
+The header's image (tested with 2480x1280) can be set as one image with `header_feature_image`
+but can also be responsive:
+
+```yml
+header_feature_image: assets/img/header/my-header-image.png
+header_feature_image_responsive: true
+```
+
+By setting `header_feature_image_responsive` to true, it will look for images 
+with suffix `-small` (620x320) and `-medium` (1240x640) to display on smaller screen.
 
 #### Localisation string
 
 Localization string is a way to quickly change the template language for text like *Next Post* or *Follow on*, ...
 You can find all the properties in `_data/language.yml`.
 
-By default it is in english, but you can easily add your own language.
+By default, it is in english, but you can easily add your own language.
 
 ### Google Analytics
 
@@ -150,24 +175,55 @@ to `_config.yml` like so:
 google_analytics: UA-NNNNNNNN-N
 ```
 
-### Comments (via Disqus)
+### Comments 💬
 
-Optionally, if you have a [Disqus](https://disqus.com/) account, you can show a 
-comments section below each post.
+#### Disqus
+
+If you have a [Disqus](https://disqus.com/) account, you can show a comments section below each post.
 
 To enable Disqus comments, add your [Disqus shortname](https://help.disqus.com/customer/portal/articles/466208) 
 to your project's `_config.yml` file:
 
 ```yml
-disqus_shortname: my_disqus_shortname
+comments:
+  disqus_shortname: my_disqus_shortname
 ```
 
-### Math typesetting
+#### Cusdis
+
+[Cusdis](https://cusdis.com/) is an open source alternative to Disqus.
+You can read more about it in the [documentation](https://cusdis.com/doc#/)
+
+To enable it, set your cusdis name in `_config.yml`:
+
+```yaml
+comments:
+  cusdis_app_id: my_data-app-id                                     
+```
+
+#### Utterances
+
+[Utterances](https://utteranc.es) is another open source alternative linked to one's GitHub account.
+It stores the comments as GitHub issues on a repository for each page.
+
+Install the utterance [app](https://github.com/apps/utterances) to your repo.
+After installing, add your info in the `_config.yml`:
+
+```yaml
+comments:
+  utterances:              # Enable by filling below information. For more info, go to https://utteranc.es
+    repo:                  # your public comments repository (e.g. owner/repo)
+    issue-term:            # Issue term (e.g. "comment" consider issues with this word in the title as comments)
+    theme:                 # OPTIONAL: Take the `color_theme` by default, or set a custom one like github-dark-orange
+    label:                 # OPTIONAL: Adds an issue label in the issue
+```
+
+### Math typesetting with KateX
 
 When KateX is set in `_config.yml`:
 
 ```yml
-katex: true # to Enable it
+katex: true # to enable it
 ```
 
 You can then wrap math expressions with `$$` signs in your posts and make sure you have set the `katex` variable 
@@ -187,15 +243,42 @@ $$
 $$
 ```
 
+You can find a cheat sheet of the compatible LaTex symbols [online](https://artofproblemsolving.com/wiki/index.php/LaTeX:Symbols).
+
+### Diagrams with Mermaid
+
+Enable the [mermaid-js](https://github.com/mermaid-js/mermaid) diagram rendering by setting mermaid to true in the `_config.yml`.
+This will load and init the [mermaid.min.js](https://mermaid-js.github.io/mermaid/getting-started/n00b-gettingStarted.html#4-calling-mermaid-from-a-relative-link).
+
+```yml
+mermaid: true # to Enable it
+```
+
+Find all the help you need on the official [mermaid documentation](https://mermaid-js.github.io/mermaid/).
+You can create with ease diagrams. Add your mermaid script inside two mermaid divs (default Kramdown does not yet support mermaid).
+With the `class="mermaid"` inside the `<div>`:
+
+```html
+<div class="mermaid">
+sequenceDiagram
+    Alice->>John: Hello John, how are you?
+    John-->>Alice: Great!
+</div>
+```
+
 ### Social icons
 
-In `_data/social.yml` you can customize the social icons from other wbesite you wish to display in the blog.
+In `_data/social.yml` you can customize the social icons that will be displayed in the post to share your post.
+You can also enable RSS.
 The site icons come from [Font Awesome](https://fontawesome.com/).
+
+In `_data/icons.yml` you can set the footer icon that will appear at the bottom of the page.
+They will redirect the user on your profile on the other platform like Twitter, GitHub and so many more!
 
 ### Cookie consent
 
 You can add a cookie consent with a disclaimer if you use Google Analytics while respecting the [GDPR](https://en.wikipedia.org/wiki/General_Data_Protection_Regulation).
-Set to true, there will be a banner at the bottom of the page with the disclaimer and a approve button.
+Set to true, there will be a banner at the bottom of the page with the disclaimer, and an _approve_ button.
 Once the user clicks on "Approve" the cookies will be created for Google Analytics.
 
 #### Share in article
@@ -205,20 +288,11 @@ to share the article on those platform.
 
 #### Footer
 
-Display in the footer. 
-All icon variables should be your username enclosed in quotes (e.g. "username") in `_data/social.yml`, 
-except for the following variables:
-
-```yml
-rss: true                                                   
-email_address: type@example.com
-linkedin: https://www.linkedin.com/in/FirstLast
-stack_exchange: https://stackexchangecom/users/0000/first-last
-stack_overflow: https://stackoverflow.com/users/0000/first-last
-youtube: UCqECaJ8Gagnn7YCbPEzWH6g  # Youtube token of your channel in the url 
-```
+Display icons in the footer. 
+All icon variables should be your username enclosed in quotes (e.g. "username") in `_data/icons.yml`.
 
 You can update the RSS settings in `_data/social` to change the default feed path (generated by [jekyll-feel](https://github.com/jekyll/jekyll-feed)).
+To enable the share icons at the bottom of each article set to true the one you'd like under `share` in the `_data/social.yml` file.
 
 ### Personalize your Blog Posts 📝
 
@@ -230,7 +304,7 @@ Please refer to the [Jekyll docs for writing posts](https://jekyllrb.com/docs/po
 
 #### Layout: Post
 
-This are the basic features you can use with the  `post` layout.
+These are the basic features you can use with the `post` layout.
 
 ```yml
 
@@ -239,7 +313,7 @@ layout: post
 title: Hello World                                # Title of the page
 hide_title: true                                  # Hide the title when displaying the post, but shown in lists of posts
 feature-img: "assets/img/sample.png"              # Add a feature-image to the post
-thumbnail: "assets/thumbnails/sample-th.png"      # Add a thumbnail image on blog view
+thumbnail: "assets/img/thumbnails/sample-th.png"  # Add a thumbnail image on blog view
 color: rgb(80,140,22)                             # Add the specified color as feature image, and change link colors in post
 bootstrap: true                                   # Add bootstrap to the page
 tags: [sample, markdown, html]
@@ -281,7 +355,7 @@ some text in the excerpt
 ... rest of the text not shown in the excerpt ...
 ```
 
-The html is stripped out of the excerpt so it only display text.
+The html is stripped out of the excerpt, so it only displays text.
 
 #### Image aligner
 
@@ -291,8 +365,8 @@ To easily add align images side by side in your article using the `aligner.html`
 {% include aligner.html images="path/to/img1.png,path/to/img2.png,path/to/img3.png" column=3 %}
 ```
 
-Use it in any markdown file. There are two fields in the include you need to look into:
-  - _images_: Takes a string separated with `,` of all the images path. 
+Use it in any markdown file. There are two fields in the _include_ you need to look into:
+  - _images_: Takes a string separated with `,` of all the images' path. 
     - It by default look into `assets/img/` so give the path from there.
   - _column_: (OPTIONAL) Set the number of column you want your imaged displayed in.
     - default is 2 columns
@@ -301,7 +375,7 @@ Use it in any markdown file. There are two fields in the include you need to loo
 
 #### Code highlight
 
-Like all CSS variables in the theme, you can edit the color of the code highlight in _sass > base > _variables.scss.
+Like all CSS variables in the theme, you can edit the color of the code highlight in `_sass > base > _variables.scss`.
 The code highlighting works with [base16](https://github.com/chriskempson/base16-html-previews/tree/master/css) you can find existing example 
 of your favourite highlight color scheme on this format.
 
@@ -317,7 +391,7 @@ Non-standard features are documented below.
 ### Layout: Default
 
 This layout includes the head, navigation bar and footer around your content. 
-Unless you're making a custom layout you won't need it.
+Unless you are making a custom layout you won't need it.
 
 ### Layout: Home 🏡
 
@@ -340,7 +414,7 @@ layout: page
 title: "About" 
 subtitle: "This is a subtitle"   
 feature-img: "assets/img/sample.png" 
-permalink: /about.html               # Set a permalink your your page
+permalink: /about/                   # Set a permalink your your page
 hide: true                           # Prevent the page title to appear in the navbar
 icon: "fa-search"                    # Will Display only the fontawesome icon (here: fa-search) and not the title
 tags: [sample, markdown, html]
@@ -362,7 +436,7 @@ layout: page
 title : Portfolio 
 ---
 
-{% include portfolio.html %}
+{% include default/portfolio.html %}
 ```
 
 #### Portfolio posts
@@ -394,14 +468,14 @@ collections:
     permalink: /:collection/:name
 ```    
 
-This creates the collection for Jekyll so it can find and display your portfolio posts.
+This creates the collection for Jekyll, so it can find and display your portfolio posts.
 
 ### Feature: Gallery 🖼
 
 You can create a gallery using [Masonry JS](https://masonry.desandro.com/) which will placing the pictures in optimal position 
 based on available vertical space. 
 You need to specify the `gallery_path` which will be used to find the pictures to render. 
-It will take all of the picture under that directory. Then use the `include` to add it in your page. 
+It will take all the pictures under that directory. Then use the `include` to add it in your page. 
 
 ```yml
 
@@ -411,16 +485,15 @@ title: Gallery
 gallery: "assets/img/pexels"
 ---
 
-{% include gallery.html gallery_path=page.gallery %}
+{% include default/gallery.html gallery_path=page.gallery %}
 ```
-
 
 ### Feature: Search 🔍
 
 The search feature is based on [Simple-Jekyll-search](https://github.com/christian-fei/Simple-Jekyll-Search) 
-there is a `search.json` file that will create a list of all of the site posts, pages and portfolios. 
+there is a `search.liquid` file that will create a list of all the site posts, pages and portfolios. 
 
-Then there's a `search.js` displaying the formatted results entered in the `search.html` page.
+Then there's a `search.js` displaying the formatted results in the "search page".
 
 The search page can be hidden with the `hide` option. You can remove the icon by removing `icon`:
 
@@ -449,9 +522,9 @@ tags: [sample, markdown, html]
 ---
 ```
 
-> Tags are case sensitive `Tag_nAme` ≠ `tag_name`
+> Tags are case-sensitive `Tag_nAme` ≠ `tag_name`
 
-All the tags will be listed in `tags.html` with a link toward the pages or posts.
+All the tags will be listed the tags page with a link toward the pages or posts.
 The Tag page can be hidden with the `hide` option. You can remove the icon by removing `icon` (like for the search page).
 
 ## Advanced
@@ -467,7 +540,9 @@ Jekyll works with [liquid](https://shopify.github.io/liquid/) tags usually repre
 These are useful to render your jekyll files. 
 You can learn more about them on [shopify's doc](https://help.shopify.com/themes/liquid/basics)
 
-### Minimizing and optimizing: css, js and images
+### Gulp toolbox
+
+#### Requirements
 
 Before you need to have *node* and `npm` installed:
 
@@ -483,24 +558,39 @@ sudo npm install gulp-cli -g
 npm install
 ```
 
+#### Minimizing and optimizing: css, js and images
+
 You can run the default task that will compress the js, css and images and create the thumbnails for the supported image
 formats:
 
 ```bash
 cd assets/
 gulp default
-gulp thumbnails # to create all of the images thumbnails
+gulp thumbnails-all # to create all of the images thumbnails
+gulp thumbnails     # to create thumbnails for the feature-img/ only
 # tip: run a git status to see the changes
 git status
 ```
 
-You can find more about the gulp tasks in the [gulpfile.js](assets/gulpfile.js)
+You can find more about the gulp tasks in the [gulpfile.js](assets/gulpfile.js).
+
+#### Create a post
+
+To create a `.md` file in the *_posts/* section with the jekyll format of today's date.
+Use this command with the title you'd like to create the very basic post.
+
+```bash
+gulp post -n 'title of the post'
+```
+
+A file will be created following the format `yyyy-mm-dd-title-of-the-post.md` with default post attributes inside.
+Nothing will happen if the file exists already.
 
 ### Use as Ruby Gem 💎
 
 You can use Type-on-strap as a [gem](https://rubygems.org/gems/type-on-strap). 
 
-Ruby Gem Method
+Using the [Ruby Gem Method](https://sylhare.github.io/2021/03/25/Run-type-on-strap-jekyll-theme-locally.html).
 Add this line to your Jekyll site's Gemfile (or create one):
 
 ```ruby
@@ -526,7 +616,7 @@ Then you can start adding content like:
 
 ### Remote Theme
 
-Now you can use any theme gem with github pages with [29/11/2017 Github Pages Broadcast](https://github.com/blog/2464-use-any-theme-with-github-pages).
+Now you can use any theme gem with GitHub pages with [29/11/2017 Github Pages Broadcast](https://github.com/blog/2464-use-any-theme-with-github-pages).
 For that remove all `theme:` attributes from `_config.yml` and add instead:
 
 ```yml
@@ -535,7 +625,7 @@ remote_theme: sylhare/Type-on-Strap
 
 ## License
 
-This theme is licensed under the [The MIT License (MIT)](https://raw.githubusercontent.com/Sylhare/Type-on-Strap/master/LICENSE)
+This theme is licensed under the [The MIT License (MIT)](/LICENSE)
 
 - Pictures from [Pexels](https://www.pexels.com/) are under Creative Commons Zero (CC0) license
 - Fonts are licensed under the [SIL Open Font License (OFL)](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL) 
