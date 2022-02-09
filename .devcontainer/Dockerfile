@@ -5,10 +5,9 @@ ARG VARIANT="ubuntu-20.04"
 FROM mcr.microsoft.com/vscode/devcontainers/cpp:0-${VARIANT}
 
 # [Optional] Uncomment this section to install additional packages.
-RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install --no-install-recommends build-essential gdb clang lldb g++-10
-
-    # --no-install-recommends \
-RUN apt-get update && apt-get install -q -y \
-    python3 \
-    && apt-get clean && rm -rf /var/lib/apt/lists/*
+	# --no-install-recommends \
+	# x11-utils \
+RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && apt-get install -q -y \
+	build-essential gdb clang lldb g++-10 \
+	python3 \
+	&& apt-get clean && rm -rf /var/lib/apt/lists/*
