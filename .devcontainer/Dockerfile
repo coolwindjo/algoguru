@@ -6,8 +6,9 @@ FROM mcr.microsoft.com/vscode/devcontainers/cpp:0-${VARIANT}
 
 # [Optional] Uncomment this section to install additional packages.
 	# --no-install-recommends \
-	# x11-utils \
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && apt-get install -q -y \
-	build-essential gdb clang lldb g++-10 \
+	build-essential \
+	gdb g++-10 \
+	clang lldb \
 	python3 \
 	&& apt-get clean && rm -rf /var/lib/apt/lists/*

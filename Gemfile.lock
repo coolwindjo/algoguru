@@ -310,7 +310,6 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
-  bundler (~> 2.2.24)
   coolwindjo!
   github-pages
   jekyll-admin
