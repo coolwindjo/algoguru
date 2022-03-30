@@ -3,7 +3,7 @@ title: LED On Off Pattern
 layout: post
 tags:
 - cpp
-- implementation
+- simple-implementation
 - difference-from-model
 ---
 

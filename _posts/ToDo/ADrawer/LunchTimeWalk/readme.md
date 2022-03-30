@@ -1,3 +1,3 @@
 # Problem information
 
-- implementation
+- simple-implementation

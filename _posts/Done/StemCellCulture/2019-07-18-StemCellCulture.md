@@ -3,7 +3,7 @@ title: Stem Cell Culture
 layout: post
 tags:
 - cpp
-- implementation
+- simple-implementation
 - bfs-with-generations
 - std-queue
 ---
@@ -159,7 +159,7 @@ int main() {
         for (i = 0; i < N; ++i) for (j = 0; j < M; ++j) {
             nx = i + BASE; ny = j + BASE;
             cin >> tt;
-            if (tt) 
+            if (tt)
                 q[tt][0][idx[tt][0]++] = { 2 * tt, nx, ny };
             map[nx][ny] = tt;
         }
@@ -192,7 +192,7 @@ int main() {
                             q[j][ni][idx[j][ni]++] = { 2 * j,nx,ny };
                         }
                     }
-                    else if (j > x.r && x.r) 
+                    else if (j > x.r && x.r)
                         q[j][ni][idx[j][ni]++] = { x.r - 1,x.x,x.y };
                     else
                         ans--;

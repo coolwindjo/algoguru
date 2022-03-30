@@ -3,7 +3,7 @@ title: Atom Decaying
 layout: post
 tags:
 - cpp
-- implementation
+- simple-implementation
 - sort
 - unique-and-erase-vector
 - std-stack
@@ -102,7 +102,7 @@ tags:
 				const Atom_t &at2 = m_vAtoms[atJ];
 				const int xVector = at1.x - at2.x;
 				if (xVector != 0) continue;
-		
+
 				const int yVector = at1.y - at2.y;
 				if (yVector > 0) {
 					const int dbldTime = yVector;

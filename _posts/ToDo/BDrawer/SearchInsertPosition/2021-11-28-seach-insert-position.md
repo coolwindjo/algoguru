@@ -2,7 +2,7 @@
 layout: post
 tags:
 - cpp
-- implementation
+- simple-implementation
 - binary-search-tree
 
 ---

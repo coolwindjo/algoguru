@@ -3,7 +3,7 @@ title: Mario game
 layout: post
 tags:
 - cpp
-- implementation
+- simple-implementation
 ---
 
 <http://codepro.lge.com/apply/exam/ZXhfaUhjUkhfMTQ5NTQ5NjY4ODY3NQ==/quiz/cV9oUmVJa18xNTQ5ODUxNTIxMDEy>{:target="_blank"}
@@ -14,7 +14,7 @@ tags:
 const int FindMaxH(const int N, const int (&P)[MAX_N])
 {
 	int h = 0;
-	int ud = 1;	
+	int ud = 1;
 	for (int i=0; i<N; i++){
 		if(ud == 1){
 			if(P[i] > P[i+1]){
@@ -29,9 +29,9 @@ const int FindMaxH(const int N, const int (&P)[MAX_N])
 				h -= P[i];
 				ud = 1;
 			}
-		}	
+		}
 	}
-	
+
 	return h;
 }
 {% endhighlight %}

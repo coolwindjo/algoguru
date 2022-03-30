@@ -3,7 +3,7 @@ title: Reversed Look-And-Say
 layout: post
 tags:
 - cpp
-- implementation
+- simple-implementation
 - string-manipulation
 - std-cin-ignore
 

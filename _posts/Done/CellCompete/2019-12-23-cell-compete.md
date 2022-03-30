@@ -3,7 +3,7 @@ title: Cell Compete
 layout: post
 tags:
 - cpp
-- implementation
+- simple-implementation
 
 ---
 
@@ -14,7 +14,7 @@ AMZ Prob
 ```cpp
 
     vector<int> cellCompete(int* states, int days){
-        
+
          FOR(i, NUM_HOUSES){
             m_dualStates[0][i] = states[i];
         }

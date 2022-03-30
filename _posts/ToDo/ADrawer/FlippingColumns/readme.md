@@ -4,7 +4,7 @@
 
 - dynamic-programming
 - mathematics
-- implementation
+- simple-implementation
 Greedy
 - dfs-with-backtracking
 - bfs with line input

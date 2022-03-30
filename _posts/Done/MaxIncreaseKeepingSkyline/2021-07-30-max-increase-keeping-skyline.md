@@ -3,7 +3,7 @@ title: Max Increase to Keep City Skyline
 layout: post
 tags:
 - cpp
-- implementation
+- simple-implementation
 - medium
 
 ---

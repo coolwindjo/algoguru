@@ -3,7 +3,7 @@ title: LGSW Coupon
 layout: post
 tags:
 - cpp
-- implementation
+- simple-implementation
 - sort
 
 ---

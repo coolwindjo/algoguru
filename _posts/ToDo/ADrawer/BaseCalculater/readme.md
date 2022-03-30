@@ -4,6 +4,6 @@
 
 - mathematics
 - big-number
-- implementation
+- simple-implementation
 
 <https://coolwindjo.github.io/algoguru/2019/07/16/Naming-Daughter.html>

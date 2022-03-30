@@ -3,7 +3,7 @@ title: Sum of Nodes with Even-Valued Grandparent
 layout: post
 tags:
 - cpp
-- implementation
+- simple-implementation
 - medium
 - dfs
 
@@ -57,4 +57,3 @@ tags:
 ### GitHub
 
 - [SumEvenGrandParent](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/SumEvenGrandParent>){:target="_blank"}
-

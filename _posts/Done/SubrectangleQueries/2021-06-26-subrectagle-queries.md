@@ -3,7 +3,7 @@ title: Subrectangle Queries
 layout: post
 tags:
 - cpp
-- implementation
+- simple-implementation
 - medium
 
 ---

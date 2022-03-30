@@ -5,7 +5,7 @@
 - dynamic-programming
 - mathematics
 - big-number
-- implementation
+- simple-implementation
 - greedy-alogrithm
 - dfs
 - dfs-pitfall

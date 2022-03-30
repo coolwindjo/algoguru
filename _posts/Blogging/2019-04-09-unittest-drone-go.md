@@ -3,7 +3,7 @@ title: 'UnitTest: Drone Go'
 layout: post
 tags:
 - cpp
-- implementation
+- simple-implementation
 - unittest
 ---
 
@@ -43,12 +43,12 @@ class DroneController
 {
 	POS currentDrone1_ = { 0,0 };
 	POS currentDrone2_ = { 10,10 };
-	
+
 	FireSensor* sensor_;
 	...
 public:
 	DroneController(FireSensor* sensor) : sensor_(sensor) { ... }
-	
+
 	/**
 	 * 화재가 발생한 위치를 얻어와서 현재 드론과의 위치를 계산하여 가장 가까운 드론을 선택하는 함수 (테스트 대상)
 	 * 다음 위치 계산을 위해 선택된 드론의 위치를 저장해둔다. (선택된 드론이 해당 좌표로 이동함을 가정)
@@ -88,7 +88,7 @@ make Stub Class
 class StubSensor: public FireSensor
 {
 public:
-	POS m_testPos;	
+	POS m_testPos;
 	POS getSensorPosition(){
 		return m_testPos;
 	}
@@ -96,7 +96,7 @@ public:
 
 void test_3_1()
 {
-	// TODO: 항목 3-1. 
+	// TODO: 항목 3-1.
 	// 화재 위치가 센서 1, 7, 2, 3, 5 순으로 감지되는 상황을 재현하는 테스트 코드
 	StubSensor sensor;
 	DroneController dc((FireSensor*)&sensor);

@@ -3,7 +3,7 @@
 <https://programmers.co.kr/learn/courses/30/lessons/42839>
 
 - mathematics
-- implementation
+- simple-implementation
 - dfs
 - dfs-with-backtracking
 - sort

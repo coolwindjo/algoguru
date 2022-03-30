@@ -3,7 +3,7 @@ title: Longest Consecutive Sequence
 layout: post
 tags:
 - cpp
-- implementation
+- simple-implementation
 - medium
 - sort
 

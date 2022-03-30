@@ -3,7 +3,7 @@ title: LGSW Compiler
 layout: post
 tags:
 - cpp
-- implementation
+- simple-implementation
 - string-manipulation
 - string-find_if
 - string-substr

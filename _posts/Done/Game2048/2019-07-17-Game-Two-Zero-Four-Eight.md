@@ -3,7 +3,7 @@ title: Game 2048
 layout: post
 tags:
 - cpp
-- implementation 
+- simple-implementation
 - dfs-with-backtracking
 ---
 

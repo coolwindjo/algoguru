@@ -5,7 +5,7 @@
 dynamic programing
 mathematics
 big number
-implementation
+simple-implementation
 greedy alogrithm
 DFS
 DFS pitfall

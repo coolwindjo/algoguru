@@ -3,7 +3,7 @@ title: Reverse Linked List II
 layout: post
 tags:
 - cpp
-- implementation
+- simple-implementation
 - medium
 - linked-list
 
@@ -77,4 +77,3 @@ tags:
 ### GitHub
 
 - [ReverseBetween](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/ReverseBetween>){:target="_blank"}
-

@@ -3,7 +3,7 @@ title: Partitioning Into Minimum Number Of Deci-Binary Numbers
 layout: post
 tags:
 - cpp
-- implementation
+- simple-implementation
 - medium
 
 ---

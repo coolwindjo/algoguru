@@ -3,7 +3,7 @@ title: Valid Square
 layout: post
 tags:
 - cpp
-- implementation
+- simple-implementation
 - medium
 - mathematics
 
