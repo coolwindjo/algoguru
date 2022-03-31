@@ -44,6 +44,7 @@ tags:
 - std-priority-queue
 - avoid-nested-loop
 - binary-search-tree
+- binary-search
 - radix-conversion
 - back_inserter
 

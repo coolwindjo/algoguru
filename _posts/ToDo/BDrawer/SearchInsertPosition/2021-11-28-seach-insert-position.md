@@ -3,7 +3,7 @@ layout: post
 tags:
 - cpp
 - simple-implementation
-- binary-search-tree
+- binary-search
 
 ---
 

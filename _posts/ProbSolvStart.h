@@ -179,65 +179,7 @@ typedef vector<int> vi;
 typedef vector<ll> vll;
 typedef vector<vi> vvi;
 
-#if 0 // 16yy
-constexpr char TO_CHAR[] = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-int c2d(char c){
-	if (c <= '9') return c - '0';
-	return c - 'A' + 10;
-}
-
-typedef enum {
-	eR=0, eD,
-    eL, eU,
-    eDIR_LEN
-} Dir_e;
-constexpr int DIR[eDIR_LEN][2] = {
-    {0,1}, {1,0},
-    {0,-1}, {-1,0}
-};
-constexpr int N_DIR[eDIR_LEN] = {eL, eU, eR, eD};
-
-// 40yy  15dd
-        int numLines = 0;
-        cin >> numLines; cin.ignore();
-
-        vstr lines;
-        FOR(i, numLines){
-            string line;
-            std::getline(std::cin, line);
-            if(line.length() == 0){
-                i--;
-                continue;
-            }
-            lines.push_back(line);
-        }
-
-        int rows = 0;
-        int columns = 0;
-        cin >> rows;
-        cin >> columns;
-
-        vvi grid;
-        FOR(i, rows){
-            vi rowG;
-            FOR(j, columns){
-                int val;
-                cin >> val;
-                rowG.push_back(val);
-            }
-            grid.push_back(rowG);
-        }
-#ifdef TEST
-        cout <<endl;
-        FOR(r, rows){
-            FOR(c, columns){
-                cout << grid[r][c] << " ";
-            }
-            cout <<endl;
-        }
-#endif
-
-
+#if 0
 // 59yy
 #if 1
 #define SPLIT_DEBUG
@@ -297,5 +239,64 @@ constexpr int N_DIR[eDIR_LEN] = {eL, eU, eR, eD};
 
         return vstrSplits;
     }
+
+
+// 16yy
+constexpr char TO_CHAR[] = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+int c2d(char c){
+	if (c <= '9') return c - '0';
+	return c - 'A' + 10;
+}
+
+typedef enum {
+	eR=0, eD,
+    eL, eU,
+    eDIR_LEN
+} Dir_e;
+constexpr int DIR[eDIR_LEN][2] = {
+    {0,1}, {1,0},
+    {0,-1}, {-1,0}
+};
+constexpr int N_DIR[eDIR_LEN] = {eL, eU, eR, eD};
+
+// 40yy  15dd
+        int numLines = 0;
+        cin >> numLines; cin.ignore();
+
+        vstr lines;
+        FOR(i, numLines){
+            string line;
+            std::getline(std::cin, line);
+            if(line.length() == 0){
+                i--;
+                continue;
+            }
+            lines.push_back(line);
+        }
+
+        int rows = 0;
+        int columns = 0;
+        cin >> rows;
+        cin >> columns;
+
+        vvi grid;
+        FOR(i, rows){
+            vi rowG;
+            FOR(j, columns){
+                int val;
+                cin >> val;
+                rowG.push_back(val);
+            }
+            grid.push_back(rowG);
+        }
+#ifdef TEST
+        cout <<endl;
+        FOR(r, rows){
+            FOR(c, columns){
+                cout << grid[r][c] << " ";
+            }
+            cout <<endl;
+        }
+#endif
 
 #endif // 0

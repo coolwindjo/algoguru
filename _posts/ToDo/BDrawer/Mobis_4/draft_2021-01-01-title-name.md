@@ -1,5 +1,5 @@
 ---
-title: 
+title:
 layout: post
 tags:
 - cpp
@@ -42,6 +42,7 @@ tags:
 - std-priority-queue
 - avoid-nested-loop
 - binary-search-tree
+- binary-search
 - back_inserter
 
 ---
