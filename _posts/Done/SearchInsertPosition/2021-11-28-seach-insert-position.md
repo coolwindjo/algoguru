@@ -13,19 +13,20 @@ tags:
 
 ```cpp
 
-   int searchInsert(vector<int>& nums, int target) {
-        constexpr int MAX_LOOP = 15;
+    int searchInsert(vector<int>& nums, int target) {
+        const int MAX_L = log2(nums.size())+3;
+        int ans = -1;
         int hi=nums.size()-1, lo=0;
         int mid = 0;
-        int ans = -1;
-        for (int i=0; (i<MAX_LOOP) && (hi>=lo); ++i) {
+        for (int i=0; (i<MAX_L) && (hi>=lo); ++i) {
             mid = (lo+hi) >> 1;
             if (nums[mid] >= target) {
-                hi = mid;
-                ans = hi;
+                ans = mid;
+                if (hi == mid) hi = mid-1;
+                else hi = mid;
             }
             else {
-                if (mid == lo) lo = mid+1;
+                if (lo == mid) lo = mid+1;
                 else lo = mid;
             }
         }
@@ -33,7 +34,6 @@ tags:
 
         return ans;
     }
-
 ```
 
 ### GitHub
