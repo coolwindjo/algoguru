@@ -299,4 +299,18 @@ constexpr int N_DIR[eDIR_LEN] = {eL, eU, eR, eD};
         }
 #endif
 
+// 11yy
+    template <typename T>
+    pair<T, bool> getNthElem(set<T>& searchSet, int n) {
+        pair<T, bool> result;
+        if (searchSet.size() > n) {
+            result.first = *(next(begin(searchSet), n));
+            result.second = true;
+        }
+        else {
+            result.second = false;
+        }
+        return result;
+    }
+
 #endif // 0

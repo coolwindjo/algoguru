@@ -20,20 +20,11 @@ tags:
         const int numDays = rains.size();
         vi viAns(numDays);
         unordered_map<int, int> hashLake_RainDay;
-#ifdef BINARY_SEARCH
-        array<int, 98765> arrDryDays;
-        int numDryDays = 0;
-#else
         set<int> setDryDays;
-#endif
         FOR (day, numDays) {
             if (rains[day] == 0) {
                 viAns[day] = 1; // default value
-#ifdef BINARY_SEARCH
-                arrDryDays[numDryDays++] = day;
-#else
                 setDryDays.emplace(day);
-#endif
                 continue;
             }
 
@@ -47,33 +38,31 @@ tags:
             }
 
             // second rain
-#ifdef BINARY_SEARCH
-            if (numDryDays == 0) {
-#else
             if (setDryDays.empty()) {
-#endif
                 // inevitable flood
                 return vi();
             }
 
             const int prevRainDay = itLake_RainDay->second;
-#ifdef BINARY_SEARCH
             int dryDay = -1;
-            int idx = 0;
-            if (arrDryDays[0] > prevRainDay) {
-                // invalid dry day (too early)
-                dryDay = arrDryDays[0];
-                idx = 0;
+            auto itDryDay=begin(setDryDays);
+#ifdef BINARY_SEARCH
+            if (*itDryDay > prevRainDay) {
+                // pick the first dry day
+                dryDay = *itDryDay;
             }
             else {
+                const int numDryDays = setDryDays.size();
                 const int MAX_L = log2(numDryDays)+3;
                 int hi = numDryDays-1;
                 int lo = 0;
                 for (int i=0; (hi>=lo) && i<MAX_L; ++i) {
                     const int mid = (hi+lo) >> 1;
-                    if (arrDryDays[mid] >= prevRainDay) {
-                        dryDay = arrDryDays[mid];
-                        idx = mid;
+                    // auto midVal = getNthElem(setDryDays, mid);
+                    auto itMid = next(begin(setDryDays), mid);
+                    if (*itMid >= prevRainDay) {
+                        // dryDay = midVal.first;
+                        dryDay = *itMid; itDryDay = itMid;
                         if (hi == mid) hi = mid-1;
                         else hi = mid;
                     }
@@ -82,52 +71,47 @@ tags:
                         else lo = mid;
                     }
                 }
-                if (dryDay < 0)
-                    return vi();
             }
-
-            // dry the lake at the valid dry day
-            viAns[dryDay] = fullOfWaterLake;
-
-            // consume a day to be used to dry a lake **it takes too much time
-            arrDryDays[idx] = INF;
-            sort(begin(arrDryDays), begin(arrDryDays)+numDryDays);
-            numDryDays--;
-
-            // dry a lake
-            hashLake_RainDay.erase(itLake_RainDay);
-
-            // but, it rains again...
-            hashLake_RainDay[fullOfWaterLake] = day;
-
 #else
-            auto itDryDay=begin(setDryDays);
             for (; itDryDay!=end(setDryDays); ++itDryDay) {
-                const int dryDay = *itDryDay;
+                dryDay = *itDryDay;
                 if (dryDay <= prevRainDay) {
                     // invalid dry day (too early)
                     continue;
                 }
-
-                // dry the lake at the valid dry day
-                viAns[dryDay] = fullOfWaterLake;
-                // consume a day to be used to dry a lake
-                setDryDays.erase(itDryDay);
-                // dry a lake
-                hashLake_RainDay.erase(itLake_RainDay);
-
-                // but, it rains again...
-                hashLake_RainDay[fullOfWaterLake] = day;
                 break;
             }
-
             if (end(setDryDays) == itDryDay) {  // not found
                 // inevitable flood
                 return vi();
             }
 #endif
+            if (dryDay < 0) return vi();
+
+            // consume a day to be used to dry a lake
+            setDryDays.erase(itDryDay);
+            // dry the lake at the valid dry day
+            viAns[dryDay] = fullOfWaterLake;
+            // dry a lake
+            hashLake_RainDay.erase(itLake_RainDay);
+
+            // but, it rains again...
+            hashLake_RainDay[fullOfWaterLake] = day;
         }
         return viAns;
+    }
+
+    template <typename T>
+    pair<T, bool> getNthElem(set<T>& searchSet, int n) {
+        pair<T, bool> result;
+        if (searchSet.size() > static_cast<size_t>(n)) {
+            result.first = *(next(begin(searchSet), n));
+            result.second = true;
+        }
+        else {
+            result.second = false;
+        }
+        return result;
     }
 
 ```

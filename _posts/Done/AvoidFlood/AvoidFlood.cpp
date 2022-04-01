@@ -4,6 +4,11 @@
 #if 0
 #define BINARY_SEARCH
 #endif // 1
+#ifdef BINARY_SEARCH
+#if 0
+#define BINARY_SEARCH_
+#endif // 1
+#endif // BINARY_SEARCH
 
 #include "../../ProbSolvStart.h"
 
@@ -48,12 +53,8 @@ private:
         const int numDays = rains.size();
         vi viAns(numDays);
         unordered_map<int, int> hashLake_RainDay;
-#ifdef BINARY_SEARCH
-        /*/
-        vector<int> arrDryDays;
-        /*/
+#ifdef BINARY_SEARCH_
         array<int, 98765> arrDryDays;
-        //*/
         int numDryDays = 0;
 #else
         set<int> setDryDays;
@@ -61,13 +62,8 @@ private:
         FOR (day, numDays) {
             if (rains[day] == 0) {
                 viAns[day] = 1; // default value
-#ifdef BINARY_SEARCH
-                /*/
-                arrDryDays.push_back(day);
-                numDryDays++;
-                /*/
+#ifdef BINARY_SEARCH_
                 arrDryDays[numDryDays++] = day;
-                //*/
 #else
                 setDryDays.emplace(day);
 #endif
@@ -84,7 +80,7 @@ private:
             }
 
             // second rain
-#ifdef BINARY_SEARCH
+#ifdef BINARY_SEARCH_
             if (numDryDays == 0) {
 #else
             if (setDryDays.empty()) {
@@ -94,11 +90,12 @@ private:
             }
 
             const int prevRainDay = itLake_RainDay->second;
-#ifdef BINARY_SEARCH
             int dryDay = -1;
+#ifdef BINARY_SEARCH
+#ifdef BINARY_SEARCH_
             int idx = 0;
             if (arrDryDays[0] > prevRainDay) {
-                // invalid dry day (too early)
+                // pick the first dry day
                 dryDay = arrDryDays[0];
                 idx = 0;
             }
@@ -119,53 +116,73 @@ private:
                         else lo = mid;
                     }
                 }
-                if (dryDay < 0)
-                    return vi();
             }
 
-            // dry the lake at the valid dry day
-            viAns[dryDay] = fullOfWaterLake;
-            
+            if (dryDay < 0) return vi();
+
             // consume a day to be used to dry a lake
             arrDryDays[idx] = INF;
             sort(begin(arrDryDays), begin(arrDryDays)+numDryDays);
-            /*/
-            arrDryDays.pop_back();
-            //*/
             numDryDays--;
+#else
+            auto itDryDay=begin(setDryDays);
+            if (*itDryDay > prevRainDay) {
+                // pick the first dry day
+                dryDay = *itDryDay;
+            }
+            else {
+                const int numDryDays = setDryDays.size();
+                const int MAX_L = log2(numDryDays)+3;
+                int hi = numDryDays-1;
+                int lo = 0;
+                for (int i=0; (hi>=lo) && i<MAX_L; ++i) {
+                    const int mid = (hi+lo) >> 1;
+                    auto itMid = next(begin(setDryDays), mid);
+                    if (*itMid >= prevRainDay) {
+                        dryDay = *itMid;
+                        itDryDay = itMid;
+                        if (hi == mid) hi = mid-1;
+                        else hi = mid;
+                    }
+                    else {
+                        if (lo == mid) lo = mid+1;
+                        else lo = mid;
+                    }
+                }
+            }
 
+            if (dryDay < 0) return vi();
+
+            // consume a day to be used to dry a lake
+            setDryDays.erase(itDryDay);
+#endif
+#else
+            auto itDryDay=begin(setDryDays);
+            for (; itDryDay!=end(setDryDays); ++itDryDay) {
+                dryDay = *itDryDay;
+                if (dryDay <= prevRainDay) {
+                    // invalid dry day (too early)
+                    continue;
+                }
+                break;
+            }
+            if (end(setDryDays) == itDryDay) {  // not found
+                // inevitable flood
+                return vi();
+            }
+
+            if (dryDay < 0) return vi();
+
+            // consume a day to be used to dry a lake
+            setDryDays.erase(itDryDay);
+#endif
+            // dry the lake at the valid dry day
+            viAns[dryDay] = fullOfWaterLake;
             // dry a lake
             hashLake_RainDay.erase(itLake_RainDay);
 
             // but, it rains again...
             hashLake_RainDay[fullOfWaterLake] = day;
-
-#else
-            auto itDryDay=begin(setDryDays);
-            for (; itDryDay!=end(setDryDays); ++itDryDay) {
-                const int dryDay = *itDryDay;
-                if (dryDay <= prevRainDay) {
-                    // invalid dry day (too early)
-                    continue;
-                }
-
-                // dry the lake at the valid dry day
-                viAns[dryDay] = fullOfWaterLake;
-                // consume a day to be used to dry a lake
-                setDryDays.erase(itDryDay);
-                // dry a lake
-                hashLake_RainDay.erase(itLake_RainDay);
-
-                // but, it rains again...
-                hashLake_RainDay[fullOfWaterLake] = day;
-                break;
-            }
-
-            if (end(setDryDays) == itDryDay) {  // not found
-                // inevitable flood
-                return vi();
-            }
-#endif
         }
         return viAns;
     }
