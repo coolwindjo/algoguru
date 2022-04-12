@@ -5,6 +5,8 @@ tags:
 - cpp
 - simple-implementation
 - dynamic-programming
+- two-pointers
+- greedy
 - mathematics
 - iomanip-setw
 - combination
