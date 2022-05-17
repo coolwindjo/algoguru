@@ -1,7 +1,7 @@
 # docker run --rm --volume="$PWD:/srv/jekyll" -p 4000:4000 jekyll/jekyll:stable jekyll serve
 
 version: '3'
-services: 
+services:
     jekyll-serve:
         image: jekyll/jekyll:stable
         volumes:
@@ -9,4 +9,5 @@ services:
         ports:
             - 4000:4000
         # command: 'jekyll serve --force_polling --incremental --no-watch'
+        # command: 'bundle add webrick && jekyll serve --force_polling --incremental'
         command: 'jekyll serve --force_polling --incremental'
