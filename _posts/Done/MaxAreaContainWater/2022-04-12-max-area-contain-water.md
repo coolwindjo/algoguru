@@ -4,7 +4,7 @@ layout: post
 tags:
 - cpp
 - two-pointers
-- gree
+- tree
 ---
 
 <https://leetcode.com/problems/container-with-most-water/>{:target="_blank"}
