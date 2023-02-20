@@ -41,8 +41,8 @@ private:
         }
         int oneside = 0;
         int addOne = 0;
-        FOR(i, hashMap.size()) {
-            const char c = 'a' + i;
+        for (auto it=std::begin(hashMap); std::end(hashMap)!=it; ++it) {
+            const char c = it->first;
             const int num = hashMap[c];
             const int half = static_cast<int>(num/2);
             if (half > 0) oneside += half;
