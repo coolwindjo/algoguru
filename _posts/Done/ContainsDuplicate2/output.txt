@@ -1,0 +1,20 @@
+#1 true
+Out of Time() takes [0.060962] ms.
+true
+Answer() takes [0.006027] ms.
+
+#2 true
+Out of Time() takes [0.001307] ms.
+true
+Answer() takes [0.001714] ms.
+
+#3 false
+Out of Time() takes [0.00087] ms.
+false
+Answer() takes [0.001813] ms.
+
+#4 false
+Out of Time() takes [0.034321] ms.
+false
+Answer() takes [0.003658] ms.
+

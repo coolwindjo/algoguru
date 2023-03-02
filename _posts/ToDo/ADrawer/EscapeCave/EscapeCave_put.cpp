@@ -10,7 +10,7 @@ class CoolTimer {
 public:
     CoolTimer()
         : m_fn_name(nullptr)
-        , m_fn_name_size(0)
+        , fn_name_len_(0)
     {
     }
     ~CoolTimer() {
@@ -22,28 +22,28 @@ public:
 
     void On(const char* str) {
         // Get the name of the function.
-        m_fn_name_size = strlen(str) + 1;
+        fn_name_len_ = strlen(str) + 1;
         if (m_fn_name == nullptr) {
-            m_fn_name = new char[m_fn_name_size];
+            m_fn_name = new char[fn_name_len_];
         }
-        memcpy(m_fn_name, str, sizeof(char)*m_fn_name_size);
+        memcpy(m_fn_name, str, sizeof(char)*fn_name_len_);
 
         // Start.
-        _QueryPerformanceCounter(&m_begin);
+        _QueryPerformanceCounter(&begin_);
     }
 
-    void Off() {	
+    void Off() {
         // End.
-        _QueryPerformanceCounter(&m_end);
+        _QueryPerformanceCounter(&end_);
 
         // Calculate the time.
-        long seconds = m_end.tv_sec - m_begin.tv_sec;
-        long nanoseconds = m_end.tv_nsec - m_begin.tv_nsec;
+        long seconds = end_.tv_sec - begin_.tv_sec;
+        long nanoseconds = end_.tv_nsec - begin_.tv_nsec;
         double elapsed = seconds + nanoseconds*1e-9;
 
         // Print the message.
         ostringstream os;
-        os << m_fn_name << "() takes [" << elapsed << "] seconds.\n"; 
+        os << m_fn_name << "() takes [" << elapsed << "] seconds.\n";
         cout << os.str();
         if (m_fn_name != nullptr) {
             delete[] m_fn_name;
@@ -59,14 +59,14 @@ private:
         return true;
     }
 
-    timespec m_begin;
-    timespec m_end;
+    timespec begin_;
+    timespec end_;
     char* m_fn_name;
-    size_t m_fn_name_size;
+    size_t fn_name_len_;
 } Timer;
 #endif
 
-#pragma GCC optimize("O2") 
+#pragma GCC optimize("O2")
 #define FOR_INC(i, from, to) for(int (i)=(from); (i)<(to); ++(i))
 #define FOR_DEC(i, from, to) for(int (i)=(to)-1; (i)>=(from); --(i))
 #define FOR(i, to) FOR_INC((i), 0, (to))
@@ -127,7 +127,7 @@ public:
     ProbSolv()
     {
 		InputData();
-        
+
 #ifdef TEST_OK
         cout <<endl;
         FOR(i, m_H){
@@ -149,17 +149,17 @@ public:
 	bool Check(const ii &pos, const ii& finish){
 		return ((pos.first == finish.first) && (pos.second == finish.second));
 	}
-	
+
 	void BFS(const ii &start, const ii &finish, const bool onEx){
 		m_qi_ii.push(i_ii(0, start));
-		
+
 		int timeLimit = 0;
 		while (!m_qi_ii.empty()){
 			i_ii t_pos = m_qi_ii.front(); m_qi_ii.pop();
 			int time = t_pos.first;
 			ii pos = t_pos.second;
 			Set(pos, -1);
-			
+
 #ifdef TEST
 			cout << t_pos.first << ": " << t_pos.second.first << "," <<t_pos.second.second <<endl;
 #endif
@@ -178,7 +178,7 @@ public:
 					}
 				}
 			}
-			
+
 			if ((pos.first == finish.first) && (pos.second == finish.second)){
 				if ((pos.first == (m_W-1)) && (pos.second == (m_H-1))){
 					if ((start.first == m_iiEx.first) && (start.second == m_iiEx.second)){
@@ -189,7 +189,7 @@ public:
 #ifdef TEST
 						cout << "Fin arrived" << time << ": " << pos.first << "," <<pos.second <<endl;
 #endif
-						break;	
+						break;
 					}
 					else {
 						// m_minT;
@@ -200,7 +200,7 @@ public:
 						cout << "Fin arrived" << time << ": " << pos.first << "," <<pos.second <<endl;
 #endif
 						break;
-						
+
 					}
 				}
 				if ((pos.first == m_iiEx.first) && (pos.second == m_iiEx.second)){
@@ -211,7 +211,7 @@ public:
 					cout << "Ex arrived" << time << ": " << pos.first << "," <<pos.second <<endl;
 #endif
 					break;
-				}		
+				}
 			}
 			//*/
 			FOR(dir, eDIR_LEN){
@@ -220,7 +220,7 @@ public:
 				if(OOR(npos.second, 0, m_H-1)) continue;
 				if(Get(npos) == -1) continue;
 #ifdef TEST_OK
-				if (Check(npos, m_iiEx)) 
+				if (Check(npos, m_iiEx))
 					cout << "Error!!! " << time << ": " << pos.first << "," <<pos.second <<endl;
 #endif
 				if (onEx == false){
@@ -228,12 +228,12 @@ public:
 				}
 
 				Set(npos, -1);
-				
+
 				m_qi_ii.push(i_ii(time+1, npos));
 			}
 			//*/
 			// if (++timeLimit >= 10) break;
-			
+
 		}
 	}
 
@@ -245,16 +245,16 @@ private:
 		ii start = ii(0,0);
 		ii finish = ii(m_W-1,m_H-1);
 		int answer = -1;
-		
+
 #ifdef TEST
 		Timer.On("BFS");
-#endif 
+#endif
 		BFS(start, finish, false);
 		BFS(start, m_iiEx, false);
 		BFS(m_iiEx, finish, true);
 #ifdef TEST
 		Timer.Off();
-#endif 
+#endif
 		if ((m_minT2Ex + m_minTEx2Goal) < m_minT){
 			m_minT = m_minT2Ex + m_minTEx2Goal;
 		}

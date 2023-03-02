@@ -3,41 +3,42 @@ using namespace std;
 
 class CoolTimer {
 public:
-    CoolTimer()
-        : m_fn_name_size(0)
-    {
-    }
-    CoolTimer(const char* str)
-        : m_fn_name_size(0)
-    {
+    explicit CoolTimer() : fn_name_len_(0) {}
+    explicit CoolTimer(const char* str)
+        : fn_name_len_(0) {
         On(str);
     }
-    ~CoolTimer() {
+    virtual ~CoolTimer() {
+        if (IsOn()) Off();
     }
 
     void On(const char* str) {
         // Get the name of the function.
-        m_fn_name_size = strlen(str) + 1;
-        memcpy(m_fn_name, str, sizeof(char)*m_fn_name_size);
+        fn_name_len_ = strlen(str) + 1;
+        memcpy(fn_name_, str, sizeof(char)*fn_name_len_);
 
         // Start.
-        _QueryPerformanceCounter(&m_begin);
+        _QueryPerformanceCounter(&begin_);
     }
 
     void Off() {
         // End.
-        _QueryPerformanceCounter(&m_end);
+        _QueryPerformanceCounter(&end_);
 
         // Calculate the time.
-        long seconds = m_end.tv_sec - m_begin.tv_sec;
-        long nanoseconds = m_end.tv_nsec - m_begin.tv_nsec;
+        long seconds = end_.tv_sec - begin_.tv_sec;
+        long nanoseconds = end_.tv_nsec - begin_.tv_nsec;
         double elapsed = seconds*1e3 + nanoseconds*1e-6;
 
         // Print the message.
         ostringstream os;
-        os << m_fn_name << "() takes [" << elapsed << "] ms.\n";
+        os << fn_name_ << "() takes [" << elapsed << "] ms.\n";
         cout << os.str();
+        begin_= end_;
     }
+
+    bool IsOn() { return (end_.tv_nsec != begin_.tv_nsec); }
+
 private:
     /* These functions are written to match the win32
     signatures and behavior as closely as possible.
@@ -58,11 +59,11 @@ private:
         return true;
     }
 
-    timespec m_begin;
-    timespec m_end;
-    char m_fn_name[256];
-    size_t m_fn_name_size;
-} Timer;
+    timespec begin_;
+    timespec end_;
+    char fn_name_[256];
+    size_t fn_name_len_;
+};
 
 // Definition for singly-linked list.
 struct ListNode {
@@ -180,50 +181,48 @@ typedef vector<ll> vll;
 typedef vector<vi> vvi;
 
 #if 0
-// 59yy
+// 57yy
 #if 1
 #define SPLIT_DEBUG
 #endif // 1
 
     vstr _SplitString(string line, const string& delims, const string& separator = "") {
 #ifdef SPLIT_DEBUG
+        line += "       !";
         cout << "\n1) line: " << line <<endl;
-#endif
-        string::iterator newEnd = unique(line.begin(), line.end(), [] (const char &x, const char &y) {
-            return x==y and x==' ';
+        string::iterator newEnd = unique(begin(line), end(line), [](const char& x, const char& y) {
+            return x == y and x == ' ';
         });
-#ifdef SPLIT_DEBUG
         cout << "2) line: " << line <<endl;
-#endif
-
-        line.erase(newEnd, line.end());
-#ifdef SPLIT_DEBUG
+        line.erase(newEnd, end(line));
         cout << "3) line: " << line <<endl;
+#else
+        line.erase(unique(begin(line), end(line),
+                          [](const char& x, const char& y) { return x == y and x == ' '; }),
+                   end(line));
 #endif
-
         while (line[line.length() - 1] == ' ') {
             line.pop_back();
         }
 
         vstr vstrSplits;
-        size_t prev = 0;
-        size_t pos;
+        size_t prev = 0U;
+        size_t pos = 0U;
         while (prev < line.length()) {
             if ((pos = line.find_first_of(delims, prev)) == string::npos) {
                 pos = line.length();
             }
             const int wlen = pos - prev;
-            if (wlen > 0) {
-                size_t sub_prev = 0;
-                size_t sub_pos;
+            if (wlen > 0) { // word exists before next delimiter
+                size_t sub_prev = 0U;
+                size_t sub_pos = 0U;
                 const string sub_str = line.substr(prev, wlen);
                 while ((sub_pos = sub_str.find_first_of(separator, sub_prev)) != string::npos) {
                     const int sub_wlen = sub_pos - sub_prev;
-                    if (sub_wlen > 0) {
+                    if (sub_wlen > 0) { // word exists before next separator
                         vstrSplits.push_back(sub_str.substr(sub_prev, sub_wlen));
-                        vstrSplits.push_back(sub_str.substr((sub_prev+sub_wlen), 1));
-                    }
-                    else {
+                        vstrSplits.push_back(sub_str.substr((sub_prev + sub_wlen), 1));
+                    } else {
                         vstrSplits.push_back(sub_str.substr(sub_prev, 1));
                     }
                     sub_prev = sub_pos + 1;
@@ -239,7 +238,6 @@ typedef vector<vi> vvi;
 
         return vstrSplits;
     }
-
 
 // 16yy
 constexpr char TO_CHAR[] = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";

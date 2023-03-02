@@ -10,7 +10,7 @@ class CoolTimer {
 public:
     CoolTimer()
         : m_fn_name(nullptr)
-        , m_fn_name_size(0)
+        , fn_name_len_(0)
     {
     }
     ~CoolTimer() {
@@ -22,28 +22,28 @@ public:
 
     void On(const char* str) {
         // Get the name of the function.
-        m_fn_name_size = strlen(str) + 1;
+        fn_name_len_ = strlen(str) + 1;
         if (m_fn_name == nullptr) {
-            m_fn_name = new char[m_fn_name_size];
+            m_fn_name = new char[fn_name_len_];
         }
-        memcpy(m_fn_name, str, sizeof(char)*m_fn_name_size);
+        memcpy(m_fn_name, str, sizeof(char)*fn_name_len_);
 
         // Start.
-        _QueryPerformanceCounter(&m_begin);
+        _QueryPerformanceCounter(&begin_);
     }
 
-    void Off() {	
+    void Off() {
         // End.
-        _QueryPerformanceCounter(&m_end);
+        _QueryPerformanceCounter(&end_);
 
         // Calculate the time.
-        long seconds = m_end.tv_sec - m_begin.tv_sec;
-        long nanoseconds = m_end.tv_nsec - m_begin.tv_nsec;
+        long seconds = end_.tv_sec - begin_.tv_sec;
+        long nanoseconds = end_.tv_nsec - begin_.tv_nsec;
         double elapsed = seconds + nanoseconds*1e-9;
 
         // Print the message.
         ostringstream os;
-        os << m_fn_name << "() takes [" << elapsed << "] seconds.\n"; 
+        os << m_fn_name << "() takes [" << elapsed << "] seconds.\n";
         cout << os.str();
         if (m_fn_name != nullptr) {
             delete[] m_fn_name;
@@ -59,14 +59,14 @@ private:
         return true;
     }
 
-    timespec m_begin;
-    timespec m_end;
+    timespec begin_;
+    timespec end_;
     char* m_fn_name;
-    size_t m_fn_name_size;
+    size_t fn_name_len_;
 } Timer;
 #endif
 
-#pragma GCC optimize("O2") 
+#pragma GCC optimize("O2")
 #define FOR_INC(i, from, to) for(int (i)=(from); (i)<(to); ++(i))
 #define FOR_DEC(i, from, to) for(int (i)=(to)-1; (i)>=(from); --(i))
 #define FOR(i, to) FOR_INC((i), 0, (to))
@@ -112,7 +112,7 @@ public:
     ProbSolv()
     {
 		InputData();//	입력 함수
-		
+
 #ifdef TEST_OK
 		FOR(i, m_N){
 			cout << m_A[i] << " ";
@@ -121,12 +121,12 @@ public:
         _Solve();
     }
     ~ProbSolv(){}
-	
+
 	bool IsTooShort(const ll time){
 		bool isToolShort = false;
 		int mCnt = 0;
 		int cCnt = 0;
-		
+
 #ifdef TEST
 		cout << "[" << time << "]:" <<endl;
 #endif
@@ -136,7 +136,7 @@ public:
 			cout << m_A[i] << " visited!" <<endl;
 #endif
 			if ((m_A[i] - prev) <= time){
-				
+
 #ifdef TEST_OK
 				cout << m_A[i] << " can group with " << prev <<endl;
 #endif
@@ -161,7 +161,7 @@ public:
 #endif
 			}
 		}
-		
+
 		if (mCnt < m_M) {
 #ifdef TEST_OK
 				cout << mCnt << " is smaller than " << m_M <<endl;
@@ -174,7 +174,7 @@ public:
 				cout << mCnt << " is not smaller than " << m_M <<endl;
 #endif
 		}
-		
+
 		return isToolShort;
 	}
 
@@ -182,7 +182,7 @@ private:
     void _Solve(){
 		ll answer = 0;
 		sort(m_A.begin(), m_A.end());
-		
+
 		const ll EPS = 1;
 		ll hi = m_A.back();
 		ll lo = 0;
@@ -192,7 +192,7 @@ private:
 #ifdef TEST
 			cout << hi <<", " << lo << ", " << mid <<endl;
 #endif
-	
+
 			if (IsTooShort(mid)){
 				lo = mid+1;
 #ifdef TEST
