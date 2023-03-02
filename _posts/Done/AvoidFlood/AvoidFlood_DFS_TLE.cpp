@@ -5,8 +5,8 @@
 #include "../../ProbSolvStart.h"
 
 #if 0
-#pragma GCC optimize("O2") 
-#endif 
+#pragma GCC optimize("O2")
+#endif
 
 class ProbSolv
 {
@@ -49,7 +49,7 @@ private:
         }
         return viAns;
     }
-    
+
     int BT_DFS(vi& viAns, unordered_map<int, int> hashLake, const int dryingLake, const vi& rains, const int day) {
         if (dryingLake > 0) {
             // post deletion
@@ -64,9 +64,9 @@ private:
             // Normal finish
             return 1;
         }
-        
+
         const int rainingLake = rains[day];
-        
+
         if (rainingLake == 0) {
             for (auto it=begin(hashLake); it!=end(hashLake); ++it) {
                 it->second++;
@@ -78,7 +78,7 @@ private:
                     return ret;
                 }
                 // Back-tracking
-                viAns.pop_back(); 
+                viAns.pop_back();
             }
             viAns.push_back(1);
         }
@@ -102,7 +102,7 @@ private:
         viAns.pop_back();
         return 0;
     }
-    
+
     int isFlooding(unordered_map<int, int>& hashLake, const int rainingLake) {
         auto it = hashLake.find(rainingLake);
         if (end(hashLake) != it) {

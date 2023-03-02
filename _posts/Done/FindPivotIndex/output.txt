@@ -1,0 +1,15 @@
+#1 3
+pivotIndex() takes [0.03932] ms.
+
+#2 -1
+pivotIndex() takes [0.001114] ms.
+
+#3 0
+pivotIndex() takes [0.000796] ms.
+
+#4 -1
+pivotIndex() takes [0.000886] ms.
+
+#5 2
+pivotIndex() takes [0.000991] ms.
+
