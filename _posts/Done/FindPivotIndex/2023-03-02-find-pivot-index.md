@@ -4,6 +4,7 @@ layout: post
 tags:
 - cpp
 - simple-implementation
+- prefix-sum
 
 ---
 
