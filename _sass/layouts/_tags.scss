@@ -62,19 +62,10 @@
     font-size: 0.8em;
     line-height: normal;
   }
-}
 
-.post-tags {
-  display: inline-block;
-  padding-right: 150px;
-
-  .post-tag {
-    margin: 0 12px 0 0;
-  }
-}
-
-@media screen and (max-width: $sm-break) {
-  .tag-posts .meta {
-    display: none;
+  @media screen and (max-width: $sm-break) {
+    .meta {
+      display: none;
+    }
   }
 }

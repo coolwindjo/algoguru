@@ -7,9 +7,8 @@ thumbnail: "assets/img/thumbnails/feature-img/circuit.jpeg"
 tags: [Mermaid, Highlight, Markdown]
 ---
 
-
+Let's demo some code snippet, with some mermaid diagrams.
 Because if you put some code in your blog, you would at least make it:
-
 1. Searchable
 2. Good-looking
 
@@ -32,6 +31,23 @@ find /etc -type f -exec cat '{}' \; | tr -c '.[:digit:]' '\n' | grep '^[^.][^.]*
 Because you might put code in your blog post, and you want to make sure it will look good in here. Plus that the search
 function will still be working!
 
+### XML
+
+Example from [W3C]
+```xml
+<part number="1976">
+  <name>Windscreen Wiper</name>
+  <description>The Windscreen wiper
+    automatically removes rain
+    from your windscreen, if it
+    should happen to splash there.
+    It has a rubber <ref part="1977">blade</ref>
+    which can be ordered separately
+    if you need to replace it.
+  </description>
+</part>
+```
+
 ### Java
 
 java example
@@ -48,7 +64,7 @@ public class Demo {
    * @param o The object to demonstrate.
    */
   public Demo(Object o) {
-    this.o = o;
+    this.o = o !== null ? o : new Object();
     String s = CONSTANT + "Other example of text";
     int i = 123 - 33 % 11;
   }
@@ -66,6 +82,7 @@ public class Demo {
  * Does a thing
  */
 function helloWorld(param1, param2) {
+    const example = `hello ${param1}`
     var something = {
         key: "value",
         number: 1
@@ -78,14 +95,14 @@ function helloWorld(param1, param2) {
         return null;
     }
 
-    // @TODO comment
+    // TODO comment
 }
 ```
 
 ### JSON
 
 ```json
-  {
+{
   "animals": {
     "tiger": {
       "name": "tiger",
@@ -193,3 +210,5 @@ sequenceDiagram
     Bob-->>John: Jolly good!
 </div>
 </details>
+
+[W3C]: https://www.w3.org/standards/xml/core
