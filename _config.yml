@@ -10,11 +10,11 @@ favicon: assets/img/cls.png
 gravatar: # Email MD5 hash
 
 # Header and footer text
-header_text: Cool wind on studying algorithm <code>prob_solv</code>
+header_text: Cool Wind on studying algorithm <code>prob_solv</code>
 header_feature_image: assets/img/pexels/cls63amg_running.jpeg
 header_feature_image_responsive: true
 footer_text: >
-  © 2019 coolwind@hotmail.co.kr All rights reserved. Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
+  Copyright © 2019-2023 @ <a href="https://github.com/coolwindjo">CoolWind</a>. All rights reserved. Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
 
 # Blog
 excerpt: truncate                                           # Or "truncate" (first 250 characters), "false" to disable
