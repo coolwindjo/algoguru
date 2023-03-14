@@ -1,0 +1,4 @@
+3
+s = "", t = "ahbgdc"
+s = "abc", t = "ahbgdc"
+s = "axc", t = "ahbgdc"

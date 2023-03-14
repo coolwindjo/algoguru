@@ -1,0 +1,5 @@
+4
+s = "badc", t = "baba"
+s = "egg", t = "add"
+s = "foo", t = "bar"
+s = "paper", t = "title"
