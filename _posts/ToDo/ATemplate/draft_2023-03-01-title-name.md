@@ -24,6 +24,8 @@ tags:
 - dijkstra
 - edit-distance
 - sort
+- kmp
+- rolling-hash
 - string-manipulation
 - string-find_if
 - string-find_first_of
