@@ -18,7 +18,7 @@ tags:
         std::string ans;
         int carry = 0;
         auto it1 = std::rbegin(num1), it2 = std::rbegin(num2);
-        for (int i=0; i<10000; ++i) {
+        for (int i=0; i<INF; ++i) {
             bool inc1 = false;
             bool inc2 = false;
             if (it1 != std::rend(num1)) inc1 = true;

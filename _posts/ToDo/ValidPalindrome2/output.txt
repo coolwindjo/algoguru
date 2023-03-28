@@ -1,0 +1,15 @@
+#1 trueDFS() takes [0.00305] ms.
+truesimple() takes [0.000411] ms.
+
+#2 trueDFS() takes [0.000303] ms.
+truesimple() takes [0.000256] ms.
+
+#3 falseDFS() takes [0.000211] ms.
+falsesimple() takes [0.000147] ms.
+
+#4 trueDFS() takes [0.000565] ms.
+truesimple() takes [0.000342] ms.
+
+#5 falseDFS() takes [0.000192] ms.
+falsesimple() takes [0.000226] ms.
+
