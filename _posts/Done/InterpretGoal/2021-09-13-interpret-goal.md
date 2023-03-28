@@ -1,5 +1,5 @@
 ---
-title: Goal Parser Interpretation
+title: 1678. Goal Parser Interpretation
 layout: post
 tags:
 - cpp

@@ -52,7 +52,7 @@ private:
         }
         {
             CoolTimer timer("Rolling Hash");
-            cout << strStr_rabin_karp(target_, pattern_);
+            cout << strStr_Rabin_Karp(target_, pattern_);
         }
         {
             CoolTimer timer("STD");
@@ -166,11 +166,6 @@ private:
                 break;
             }
         }
-        return idx;
-    }
-    int strStr_STD(string haystack, string needle) {
-        int idx = haystack.find(needle);
-        if (idx == std::string::npos) return -1;
         return idx;
     }
 

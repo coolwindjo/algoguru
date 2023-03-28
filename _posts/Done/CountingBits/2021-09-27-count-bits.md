@@ -1,5 +1,5 @@
 ---
-title:
+title: 338. Counting Bits
 layout: post
 tags:
 - cpp
@@ -40,4 +40,3 @@ tags:
 ### GitHub
 
 - [CountBits](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/CountBits>){:target="_blank"}
-

@@ -5,8 +5,8 @@
 #include "../../ProbSolvStart.h"
 
 #if 0
-#pragma GCC optimize("O2") 
-#endif 
+#pragma GCC optimize("O2")
+#endif
 
 class ProbSolv
 {
@@ -20,7 +20,7 @@ public:
                 break;
             }
         }
-        
+
         vstr vstrSplits = _SplitString(line, "[]\n\", ");
 
         _Solve(vstrSplits);
@@ -45,10 +45,23 @@ private:
 
     vector<vector<string>> groupAnagrams(vector<string>& strs) {
         unordered_map<string, vstr> umapKeyAnas;
-        
-        FOR (i, strs.size()) {
+
+        for (int i=0; i<strs.size(); ++i) {
+            /*/
             string strKey = strs[i];
             sort(begin(strKey), end(strKey));
+            /*/
+            map<char, int> code;
+            for (auto c : strs[i]) {
+                code[c]++;
+            }
+            string strKey;
+            for (auto it=begin(code); it!=end(code); ++it) {
+                strKey.push_back(it->first);
+                strKey.push_back(('0'+it->second));
+            }
+            //*/
+
             if (umapKeyAnas.find(strKey) == end(umapKeyAnas)) {
                 vstr vstrAnas;
                 vstrAnas.push_back(strs[i]);
@@ -58,7 +71,7 @@ private:
                 umapKeyAnas[strKey].push_back(strs[i]);
             }
         }
-        
+
         vvstr vvstrAns(umapKeyAnas.size());
         int cnt = 0;
         for (auto it = begin(umapKeyAnas); it!=end(umapKeyAnas); ++it) {

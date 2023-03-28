@@ -1,5 +1,5 @@
 ---
-title: 
+title: 623. Add One Row to Tree
 layout: post
 tags:
 - cpp
@@ -23,7 +23,7 @@ tags:
         }
         return root;
     }
-    
+
     void DFS(TreeNode* cur, const int val, const int depth) {
         if (nullptr == cur) return;
         if (1 == depth) {
@@ -32,7 +32,7 @@ tags:
             node = new TreeNode(val, nullptr, cur->right);
             cur->right= node;
         }
-        
+
         if (nullptr != cur->left) DFS(cur->left, val, depth-1);
         if (nullptr != cur->right) DFS(cur->right, val, depth-1);
     }

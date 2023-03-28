@@ -1,5 +1,5 @@
 ---
-title: Reverse Linked List
+title: 206. Reverse Linked List
 layout: post
 tags:
 - cpp
@@ -30,4 +30,3 @@ tags:
 ### GitHub
 
 - [ReverseList](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/ReverseList>){:target="_blank"}
-

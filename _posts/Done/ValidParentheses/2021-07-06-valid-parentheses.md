@@ -1,5 +1,5 @@
 ---
-title: Valid Parentheses
+title: 20. Valid Parentheses
 layout: post
 tags:
 - cpp

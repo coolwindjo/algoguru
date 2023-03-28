@@ -1,3 +1,5 @@
 #1 [[bat, ], [tan, nat, ], [eat, tea, ate, ], ]
 #2 []
 #3 [[a, ], ]
+#4 [[ba, ], [adc, ], [cde, dec, ], [abc, bca, ], ]
+#5 [[adc, ], [bb, ], [cdc, ccd, ], [aba, baa, ], ]

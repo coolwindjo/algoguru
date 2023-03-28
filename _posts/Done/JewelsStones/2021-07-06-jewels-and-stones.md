@@ -1,5 +1,5 @@
 ---
-title: Jewels and Stones
+title: 771. Jewels and Stones
 layout: post
 tags:
 - cpp

@@ -1,4 +1,5 @@
 ---
+title: 35. Search Insert Position
 layout: post
 tags:
 - cpp

@@ -1,5 +1,5 @@
 ---
-title: Richest Customer Wealth
+title: 1672. Richest Customer Wealth
 layout: post
 tags:
 - cpp

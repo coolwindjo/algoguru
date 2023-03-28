@@ -1,5 +1,5 @@
 ---
-title: Shuffle the Array
+title: 1470. Shuffle the Array
 layout: post
 tags:
 - cpp

@@ -1,5 +1,5 @@
 ---
-title: Valid Square
+title: 593. Valid Square
 layout: post
 tags:
 - cpp

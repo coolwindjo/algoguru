@@ -1,5 +1,5 @@
 ---
-title: Number of Good Pairs
+title: 1512. Number of Good Pairs
 layout: post
 tags:
 - cpp

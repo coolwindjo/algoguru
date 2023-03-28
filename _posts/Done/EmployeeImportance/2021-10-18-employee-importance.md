@@ -1,5 +1,5 @@
 ---
-title: 
+title: 690. Employee Importance
 layout: post
 tags:
 - cpp
@@ -19,16 +19,16 @@ tags:
         for (Employee* pEmp : employees) {
             hashE.emplace(make_pair(pEmp->id, pEmp));
         }
-        
+
         return DFS(id, hashE);
     }
-    
+
     int DFS(const int id, const unordered_map<int, Employee*>& hashE) {
         if (hashE.empty()) return 0;
-        
+
         auto it = hashE.find(id);
         if (it == end(hashE))  return 0;
-        
+
         int sumImp = 0;
         for (int subId : it->second->subordinates) {
             sumImp += DFS(subId, hashE);

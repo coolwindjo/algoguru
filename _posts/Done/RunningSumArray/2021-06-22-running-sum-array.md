@@ -1,5 +1,5 @@
 ---
-title: Running Sum of 1d Array
+title: 1480. Running Sum of 1d Array
 layout: post
 tags:
 - cpp

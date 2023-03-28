@@ -1,5 +1,5 @@
 ---
-title: Range Sum of BST
+title: 938. Range Sum of BST
 layout: post
 tags:
 - cpp
@@ -81,4 +81,3 @@ TreeNode* BFSBuildBST(const vector<string> vstrVal) {
 ### GitHub
 
 - [RangeSumBST](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/RangeSumBST>){:target="_blank"}
-

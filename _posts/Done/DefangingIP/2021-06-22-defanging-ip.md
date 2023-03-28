@@ -1,5 +1,5 @@
 ---
-title: Defanging an IP Address
+title: 1108. Defanging an IP Address
 layout: post
 tags:
 - cpp
@@ -47,4 +47,3 @@ tags:
 ### GitHub
 
 - [DefangingIP](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/DefangingIP>){:target="_blank"}
-

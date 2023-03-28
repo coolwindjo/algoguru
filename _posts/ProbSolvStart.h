@@ -173,6 +173,7 @@ typedef long long ll;
 constexpr int INF = 987654321;  // INF < 1e9 < 2e30 < INT_MAX
 
 typedef vector<string> vstr;
+typedef vector<vstr> vvstr;
 typedef pair<int, int> ii;
 typedef vector<ii> vii;
 typedef vector<vii> vvii;

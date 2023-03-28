@@ -1,5 +1,5 @@
 ---
-title: Subrectangle Queries
+title: 1476. Subrectangle Queries
 layout: post
 tags:
 - cpp

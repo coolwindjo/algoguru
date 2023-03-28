@@ -1,5 +1,5 @@
 ---
-title: Longest Consecutive Sequence
+title: 128. Longest Consecutive Sequence
 layout: post
 tags:
 - cpp

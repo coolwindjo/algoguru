@@ -1,5 +1,5 @@
 ---
-title: All Possible Full Binary Trees
+title: 894. All Possible Full Binary Trees
 layout: post
 tags:
 - cpp
@@ -23,16 +23,16 @@ typedef vector<TreeNode*> vTN;
         m_vTN = BST(n);
         return m_vTN;
     }
-    
+
     vector<TreeNode*> BST(int n) {
         if (n <= 0) return {};
         if (n == 1) return {new TreeNode(0)};
-        
+
         const auto it = hashN.find(n);
         if (it != end(hashN)) {
             return it->second;
         }
-        
+
         // n >= 3
         vTN vTNs;
         for (int i=1; i<(n-1); i+=2) {          // 3    5   5   7   7   7

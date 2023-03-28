@@ -1,5 +1,5 @@
 ---
-title: How Many Numbers Are Smaller Than the Current Number
+title: 1365. How Many Numbers Are Smaller Than the Current Number
 layout: post
 tags:
 - cpp

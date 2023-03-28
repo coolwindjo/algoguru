@@ -1,5 +1,5 @@
 ---
-title: 
+title: 797. All Paths From Source to Target
 layout: post
 tags:
 - cpp
@@ -18,7 +18,7 @@ tags:
         DFS(vviAns, vi(), 0, graph);
         return vviAns;
     }
-    
+
     void DFS(vvi& vviResult, vi viPath, const int cur, vvi& vviGraph) {
         if (vviGraph.size() == 0) return;
         if ((cur < 0) || (cur >= vviGraph.size())) return;
@@ -27,7 +27,7 @@ tags:
         if (cur == vviGraph.size()-1) {
             vviResult.push_back(viPath);
         }
-        
+
         for (int next : vviGraph[cur]) {
             DFS(vviResult, viPath, next, vviGraph);
         }
@@ -38,4 +38,3 @@ tags:
 ### GitHub
 
 - [AllPathsSourceTarget](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/AllPathsSourceTarget>){:target="_blank"}
-

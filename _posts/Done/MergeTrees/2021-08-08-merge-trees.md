@@ -1,5 +1,5 @@
 ---
-title: Merge Two Binary Trees
+title: 617. Merge Two Binary Trees
 layout: post
 tags:
 - cpp
@@ -157,4 +157,3 @@ void PrintBST(TreeNode* root, int cnt) {
 ### GitHub
 
 - [MergeTrees](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/MergeTrees>){:target="_blank"}
-

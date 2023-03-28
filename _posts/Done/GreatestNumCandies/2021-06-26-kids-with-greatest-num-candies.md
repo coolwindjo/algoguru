@@ -1,5 +1,5 @@
 ---
-title: Kids With the Greatest Number of Candies
+title: 1431. Kids With the Greatest Number of Candies
 layout: post
 tags:
 - cpp
@@ -33,4 +33,3 @@ tags:
 ### GitHub
 
 - [GreatestNumCandies](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/GreatestNumCandies>){:target="_blank"}
-

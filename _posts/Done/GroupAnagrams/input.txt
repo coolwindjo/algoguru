@@ -1,4 +1,6 @@
-3
+5
 ["eat","tea","tan","ate","nat","bat"]
 [""]
 ["a"]
+["abc","cde","bca","adc","dec","ba"]
+["aba","cdc","baa","adc","ccd","bb"]
