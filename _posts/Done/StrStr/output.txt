@@ -1,15 +1,15 @@
 #1 0, 0, 0, 
-0KMP() takes [0.043136] ms.
-0Rolling Hash() takes [0.00099] ms.
-0STD() takes [0.000805] ms.
+0KMP() takes [0.03178] ms.
+0Rolling Hash() takes [0.000731] ms.
+0STD() takes [0.001234] ms.
 
 #2 0, 0, 0, 0, 0, 
--1KMP() takes [0.002074] ms.
--1Rolling Hash() takes [0.000635] ms.
--1STD() takes [0.000168] ms.
+-1KMP() takes [0.001968] ms.
+-1Rolling Hash() takes [0.000565] ms.
+-1STD() takes [0.000204] ms.
 
 #3 0, 0, 0, 1, 2, 0, 
-7KMP() takes [0.001573] ms.
-7Rolling Hash() takes [0.000826] ms.
-7STD() takes [0.000169] ms.
+7KMP() takes [0.001543] ms.
+7Rolling Hash() takes [0.000867] ms.
+7STD() takes [0.000158] ms.
 

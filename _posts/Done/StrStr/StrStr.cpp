@@ -128,10 +128,10 @@ private:
 
         for (int i=0, j=0, lim=INF; i < t &&lim>0;--lim) {
             if (T[i] == P[j]) {i++, j++;}
-            if (j == p) return i-j;
-            if (i < t && T[i] != P[j]) {
-                j ? j = lps[j-1] : i++;
+            else {
+                if (i < t) j ? j = lps[j-1] : i++;
             }
+            if (j == p) return i-j;
         }
 
         return -1;
