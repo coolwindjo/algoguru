@@ -1,14 +1,18 @@
-# See here for image contents: https://github.com/microsoft/vscode-dev-containers/tree/v0.177.0/containers/cpp/.devcontainer/base.Dockerfile
+FROM mcr.microsoft.com/devcontainers/cpp:1-ubuntu-22.04
 
-# [Choice] Debian / Ubuntu version: debian-10, debian-9, ubuntu-20.04, ubuntu-18.04
-ARG VARIANT="ubuntu-20.04"
-FROM mcr.microsoft.com/vscode/devcontainers/cpp:0-${VARIANT}
+ARG REINSTALL_CMAKE_VERSION_FROM_SOURCE="none"
+
+# Optionally install the cmake for vcpkg
+COPY ./reinstall-cmake.sh /tmp/
+
+RUN if [ "${REINSTALL_CMAKE_VERSION_FROM_SOURCE}" != "none" ]; then \
+        chmod +x /tmp/reinstall-cmake.sh && /tmp/reinstall-cmake.sh ${REINSTALL_CMAKE_VERSION_FROM_SOURCE}; \
+    fi \
+    && rm -f /tmp/reinstall-cmake.sh
+
+# [Optional] Uncomment this section to install additional vcpkg ports.
+# RUN su vscode -c "${VCPKG_ROOT}/vcpkg install <your-port-name-here>"
 
 # [Optional] Uncomment this section to install additional packages.
-	# --no-install-recommends \
-RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && apt-get install -q -y \
-	build-essential \
-	gdb g++-10 \
-	clang lldb \
-	python3 \
-	&& apt-get clean && rm -rf /var/lib/apt/lists/*
+# RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
+#     && apt-get -y install --no-install-recommends <your-package-list-here>
