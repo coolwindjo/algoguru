@@ -195,7 +195,7 @@ typedef vector<vi> vvi;
             return x == y and x == ' ';
         });
         cout << "2) line: " << line <<endl;
-        line.erase(newEnd, end(line));
+        line.erase(newEnd-1, end(line));
         cout << "3) line: " << line <<endl;
 #else
         line.erase(unique(begin(line), end(line),
