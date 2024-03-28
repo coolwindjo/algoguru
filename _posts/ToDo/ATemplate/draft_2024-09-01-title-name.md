@@ -51,6 +51,7 @@ tags:
 - binary-search
 - radix-conversion
 - back_inserter
+- binning
 
 ---
 
