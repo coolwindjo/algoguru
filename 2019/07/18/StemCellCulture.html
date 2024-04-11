@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<!--
+    Type on Strap jekyll theme v2.4.5
+    Theme free for personal and commercial use under the MIT license
+    https://github.com/sylhare/Type-on-Strap/blob/master/LICENSE
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=5">
+
+    <!-- Theme Mode-->
+    
+    <script>
+        const isAutoTheme = true;
+        document.documentElement.setAttribute('data-theme', sessionStorage.getItem('theme'))
+    </script>
+    
+
+    <!-- Main JS (navbar.js, katex_init.js and masonry_init.js)-->
+    <script defer src="/algoguru/assets/js/main.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/algoguru/assets/css/main.css">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/algoguru/assets/img/cls.png" type="image/x-icon">
+
+    
+
+    <!-- KaTeX 0.15.2 -->
+    
+    <script defer src="/algoguru/assets/js/vendor/katex.min.js"></script>
+    <script defer src="/algoguru/assets/js/vendor/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+    
+
+    <!-- Mermaid 9.1.1 -->
+    
+    <script defer src="/algoguru/assets/js/vendor/mermaid.min.js" onload="mermaid.initialize({
+      startOnLoad:true,
+      theme: 'default',
+    });"></script>
+    
+
+    <!-- Simple Jekyll Search 1.10.0 -->
+    <script src="/algoguru/assets/js/vendor/simple-jekyll-search.min.js" type="text/javascript"></script>
+
+    <!-- Google Analytics / Cookie Consent -->
+    <script>
+      const cookieName = 'cookie-notice-dismissed-https://coolwindjo.github.io';
+      const isCookieConsent = 'false';
+      const analyticsName = '';
+      const analyticsNameGA4 = '';
+    </script>
+
+    
+    
+
+    <!-- seo tags -->
+    <meta property="og:image" content="https://coolwindjo.github.io/algoguru/assets/img/pexels/cls63amg_running.jpeg">
+    
+    <meta property="og:type" content="website" />
+    
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Stem Cell Culture | Cool Wind on prob_solv</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="Stem Cell Culture" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="https://www.swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWXRJ8EKe48DFAUo Source explicit CProbSolve(const int N, const int M, const int K) { (void)memset(&amp;(g_arMap[0][0]), 0, sizeof(g_arMap)); m_initRowsN = N; m_initColsM = M; m_timeLimitK = K; m_mapMaxRows = INIT_MAP_OFFSET + m_initRowsN + INIT_MAP_OFFSET; m_mapMaxCols = INIT_MAP_OFFSET + m_initColsM + INIT_MAP_OFFSET; m_mapRowRange.first = m_mapMaxRows; m_mapRowRange.second = 0; m_mapColRange.first = m_mapMaxCols; m_mapColRange.second = 0; FOR(row, m_initRowsN) { FOR(col, m_initColsM) { int val = 0; cin &gt;&gt; val; if (val &gt; 0) { g_arMap[0][row + INIT_MAP_OFFSET][col + INIT_MAP_OFFSET] = val; g_arMap[1][row + INIT_MAP_OFFSET][col + INIT_MAP_OFFSET] = val; _UpdateRange(row + INIT_MAP_OFFSET, col + INIT_MAP_OFFSET); } } } _Solve(); } void _BFSwithGenerations() { queue&lt;i_ii&gt; arqLifePos[2]; FOR_INC(row, m_mapRowRange.first, m_mapRowRange.second + 1) { FOR_INC(col, m_mapColRange.first, m_mapColRange.second + 1) { const int val = g_arMap[0][row][col]; if (val &gt; 0) { arqLifePos[0].push(i_ii(2 * val, (ii(row, col)))); } } } // repeat the loop until time limit vector&lt;i_ii&gt; vPrevExtendedCells; FOR(gen, m_timeLimitK) { const int i = gen % 2; const int ni = (gen + 1) % 2; if (!vPrevExtendedCells.empty()) { // update the map and the queue with previously extended cells _UpdateMapAndQueue(vPrevExtendedCells, arqLifePos[i]); } // visit all the stem cells in the current queue while (!arqLifePos[i].empty()) { const i_ii life_pos = arqLifePos[i].front(); arqLifePos[i].pop(); const int row = life_pos.second.first; const int col = life_pos.second.second; // getting old const int life = life_pos.first - 1; if (life &lt;= 0) { // dies g_arMap[0][row][col] = -1; continue; } // still alive: push into the next queue arqLifePos[ni].push(i_ii(life, ii(row, col))); const int val = g_arMap[0][row][col]; if (life &gt; val) continue; // now active! // for extention, the map is going to be updated in the next loop FOR(dir, eDIR_LEN) { const int nextRow = row + DIR[dir][0]; const int nextCol = col + DIR[dir][1]; P_IFNOT(!OOR(nextRow, 0, m_mapMaxRows - 1), nextRow); P_IFNOT(!OOR(nextCol, 0, m_mapMaxCols - 1), nextCol); if (g_arMap[0][nextRow][nextCol] != 0) continue; // previously empty cell if (val &gt; g_arMap[1][nextRow][nextCol]) { g_arMap[1][nextRow][nextCol] = val; _UpdateRange(nextRow, nextCol); // extention candidates which will get old from the next after the next generation vPrevExtendedCells.push_back(i_ii((2 * val) + 1, ii(nextRow, nextCol))); } } } // while (!m_arqLifePos[i].empty()) } // FOR(gen, m_timeLimitK) } void _UpdateMapAndQueue(vector&lt;i_ii&gt; &amp;vPrevExtendedCellsOut, queue&lt;i_ii&gt; &amp;qLifePosOut) { while (!vPrevExtendedCellsOut.empty()) { const i_ii life_pos = vPrevExtendedCellsOut.back(); vPrevExtendedCellsOut.pop_back(); const int row = life_pos.second.first; const int col = life_pos.second.second; const int val = g_arMap[1][row][col]; if (life_pos.first == (2 * val) + 1) { // resultant extentions g_arMap[0][row][col] = val; // it start to get old from the next generation qLifePosOut.push(life_pos); } } } Source with respective queues for each life time #pragma GCC optimize(&quot;O3&quot;) #include &lt;iostream&gt; #include &lt;algorithm&gt; #include &lt;memory.h&gt; using namespace std;   #define BASE 151   struct p {     int r, x, y; };   int map[360][360]; p q[11][2][2001]; // life time, switching by 2, cell of each life time   int main() {     ios::sync_with_stdio(false); cin.tie(0);     register int t, tc, N, M, K, s, dx[] = { 0,0,1,-1 }, dy[] = { 1,-1,0,0 }, idx[11][2] = { 0, };           cin &gt;&gt; t;     for (tc = 1; tc &lt;= t; ++tc) {         register int i, j, k, l, nx, ny, ans, siz, ni, tt;         memset(map, 0, sizeof(map));         memset(idx, 0, sizeof(idx));         cin &gt;&gt; N &gt;&gt; M &gt;&gt; K;         ans = 0;         for (i = 0; i &lt; N; ++i) for (j = 0; j &lt; M; ++j) {             nx = i + BASE; ny = j + BASE;             cin &gt;&gt; tt;             if (tt)                 q[tt][0][idx[tt][0]++] = { 2 * tt, nx, ny };             map[nx][ny] = tt;         }         s = 0; // for generations         for (i = 0; i &lt;= K; ++i) { // for each life time             for (j = 10; j &gt;= 1; --j) {                 siz = idx[j][i % 2];                 ni = (i + 1) % 2;                 idx[j][ni] = 0; // for each cell of each life time                 for (k = 0; k &lt; siz; ++k) {                     p &amp;x = q[j][i%2][k];                     if (x.r &gt; j) {                         if (map[x.x][x.y] &gt; 0) {                             ans++;                             map[x.x][x.y] *= -1;                         }                         q[j][ni][idx[j][ni]++] = { x.r - 1,x.x,x.y };                     }                     else if (x.r == j) {                         q[j][ni][idx[j][ni]++] = { x.r - 1,x.x,x.y };                         for (l = 0; l &lt; 4; ++l) {                             nx = x.x + dx[l];                             ny = x.y + dy[l];                             if (map[nx][ny]) continue;                             map[nx][ny] = j;                             q[j][ni][idx[j][ni]++] = { 2 * j,nx,ny };                         }                     }                     else if (j &gt; x.r &amp;&amp; x.r)                         q[j][ni][idx[j][ni]++] = { x.r - 1,x.x,x.y };                     else                         ans--;                 }             }         }         cout &lt;&lt; &#39;#&#39; &lt;&lt; tc &lt;&lt; &#39; &#39; &lt;&lt; ans &lt;&lt; &#39;\n&#39;;     }     return 0; } GitHub StemCellCulture" />
+<meta property="og:description" content="https://www.swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWXRJ8EKe48DFAUo Source explicit CProbSolve(const int N, const int M, const int K) { (void)memset(&amp;(g_arMap[0][0]), 0, sizeof(g_arMap)); m_initRowsN = N; m_initColsM = M; m_timeLimitK = K; m_mapMaxRows = INIT_MAP_OFFSET + m_initRowsN + INIT_MAP_OFFSET; m_mapMaxCols = INIT_MAP_OFFSET + m_initColsM + INIT_MAP_OFFSET; m_mapRowRange.first = m_mapMaxRows; m_mapRowRange.second = 0; m_mapColRange.first = m_mapMaxCols; m_mapColRange.second = 0; FOR(row, m_initRowsN) { FOR(col, m_initColsM) { int val = 0; cin &gt;&gt; val; if (val &gt; 0) { g_arMap[0][row + INIT_MAP_OFFSET][col + INIT_MAP_OFFSET] = val; g_arMap[1][row + INIT_MAP_OFFSET][col + INIT_MAP_OFFSET] = val; _UpdateRange(row + INIT_MAP_OFFSET, col + INIT_MAP_OFFSET); } } } _Solve(); } void _BFSwithGenerations() { queue&lt;i_ii&gt; arqLifePos[2]; FOR_INC(row, m_mapRowRange.first, m_mapRowRange.second + 1) { FOR_INC(col, m_mapColRange.first, m_mapColRange.second + 1) { const int val = g_arMap[0][row][col]; if (val &gt; 0) { arqLifePos[0].push(i_ii(2 * val, (ii(row, col)))); } } } // repeat the loop until time limit vector&lt;i_ii&gt; vPrevExtendedCells; FOR(gen, m_timeLimitK) { const int i = gen % 2; const int ni = (gen + 1) % 2; if (!vPrevExtendedCells.empty()) { // update the map and the queue with previously extended cells _UpdateMapAndQueue(vPrevExtendedCells, arqLifePos[i]); } // visit all the stem cells in the current queue while (!arqLifePos[i].empty()) { const i_ii life_pos = arqLifePos[i].front(); arqLifePos[i].pop(); const int row = life_pos.second.first; const int col = life_pos.second.second; // getting old const int life = life_pos.first - 1; if (life &lt;= 0) { // dies g_arMap[0][row][col] = -1; continue; } // still alive: push into the next queue arqLifePos[ni].push(i_ii(life, ii(row, col))); const int val = g_arMap[0][row][col]; if (life &gt; val) continue; // now active! // for extention, the map is going to be updated in the next loop FOR(dir, eDIR_LEN) { const int nextRow = row + DIR[dir][0]; const int nextCol = col + DIR[dir][1]; P_IFNOT(!OOR(nextRow, 0, m_mapMaxRows - 1), nextRow); P_IFNOT(!OOR(nextCol, 0, m_mapMaxCols - 1), nextCol); if (g_arMap[0][nextRow][nextCol] != 0) continue; // previously empty cell if (val &gt; g_arMap[1][nextRow][nextCol]) { g_arMap[1][nextRow][nextCol] = val; _UpdateRange(nextRow, nextCol); // extention candidates which will get old from the next after the next generation vPrevExtendedCells.push_back(i_ii((2 * val) + 1, ii(nextRow, nextCol))); } } } // while (!m_arqLifePos[i].empty()) } // FOR(gen, m_timeLimitK) } void _UpdateMapAndQueue(vector&lt;i_ii&gt; &amp;vPrevExtendedCellsOut, queue&lt;i_ii&gt; &amp;qLifePosOut) { while (!vPrevExtendedCellsOut.empty()) { const i_ii life_pos = vPrevExtendedCellsOut.back(); vPrevExtendedCellsOut.pop_back(); const int row = life_pos.second.first; const int col = life_pos.second.second; const int val = g_arMap[1][row][col]; if (life_pos.first == (2 * val) + 1) { // resultant extentions g_arMap[0][row][col] = val; // it start to get old from the next generation qLifePosOut.push(life_pos); } } } Source with respective queues for each life time #pragma GCC optimize(&quot;O3&quot;) #include &lt;iostream&gt; #include &lt;algorithm&gt; #include &lt;memory.h&gt; using namespace std;   #define BASE 151   struct p {     int r, x, y; };   int map[360][360]; p q[11][2][2001]; // life time, switching by 2, cell of each life time   int main() {     ios::sync_with_stdio(false); cin.tie(0);     register int t, tc, N, M, K, s, dx[] = { 0,0,1,-1 }, dy[] = { 1,-1,0,0 }, idx[11][2] = { 0, };           cin &gt;&gt; t;     for (tc = 1; tc &lt;= t; ++tc) {         register int i, j, k, l, nx, ny, ans, siz, ni, tt;         memset(map, 0, sizeof(map));         memset(idx, 0, sizeof(idx));         cin &gt;&gt; N &gt;&gt; M &gt;&gt; K;         ans = 0;         for (i = 0; i &lt; N; ++i) for (j = 0; j &lt; M; ++j) {             nx = i + BASE; ny = j + BASE;             cin &gt;&gt; tt;             if (tt)                 q[tt][0][idx[tt][0]++] = { 2 * tt, nx, ny };             map[nx][ny] = tt;         }         s = 0; // for generations         for (i = 0; i &lt;= K; ++i) { // for each life time             for (j = 10; j &gt;= 1; --j) {                 siz = idx[j][i % 2];                 ni = (i + 1) % 2;                 idx[j][ni] = 0; // for each cell of each life time                 for (k = 0; k &lt; siz; ++k) {                     p &amp;x = q[j][i%2][k];                     if (x.r &gt; j) {                         if (map[x.x][x.y] &gt; 0) {                             ans++;                             map[x.x][x.y] *= -1;                         }                         q[j][ni][idx[j][ni]++] = { x.r - 1,x.x,x.y };                     }                     else if (x.r == j) {                         q[j][ni][idx[j][ni]++] = { x.r - 1,x.x,x.y };                         for (l = 0; l &lt; 4; ++l) {                             nx = x.x + dx[l];                             ny = x.y + dy[l];                             if (map[nx][ny]) continue;                             map[nx][ny] = j;                             q[j][ni][idx[j][ni]++] = { 2 * j,nx,ny };                         }                     }                     else if (j &gt; x.r &amp;&amp; x.r)                         q[j][ni][idx[j][ni]++] = { x.r - 1,x.x,x.y };                     else                         ans--;                 }             }         }         cout &lt;&lt; &#39;#&#39; &lt;&lt; tc &lt;&lt; &#39; &#39; &lt;&lt; ans &lt;&lt; &#39;\n&#39;;     }     return 0; } GitHub StemCellCulture" />
+<link rel="canonical" href="https://coolwindjo.github.io/algoguru/2019/07/18/StemCellCulture.html" />
+<meta property="og:url" content="https://coolwindjo.github.io/algoguru/2019/07/18/StemCellCulture.html" />
+<meta property="og:site_name" content="Cool Wind on prob_solv" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-07-18T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Stem Cell Culture" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2019-07-18T00:00:00+00:00","datePublished":"2019-07-18T00:00:00+00:00","description":"https://www.swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWXRJ8EKe48DFAUo Source explicit CProbSolve(const int N, const int M, const int K) { (void)memset(&amp;(g_arMap[0][0]), 0, sizeof(g_arMap)); m_initRowsN = N; m_initColsM = M; m_timeLimitK = K; m_mapMaxRows = INIT_MAP_OFFSET + m_initRowsN + INIT_MAP_OFFSET; m_mapMaxCols = INIT_MAP_OFFSET + m_initColsM + INIT_MAP_OFFSET; m_mapRowRange.first = m_mapMaxRows; m_mapRowRange.second = 0; m_mapColRange.first = m_mapMaxCols; m_mapColRange.second = 0; FOR(row, m_initRowsN) { FOR(col, m_initColsM) { int val = 0; cin &gt;&gt; val; if (val &gt; 0) { g_arMap[0][row + INIT_MAP_OFFSET][col + INIT_MAP_OFFSET] = val; g_arMap[1][row + INIT_MAP_OFFSET][col + INIT_MAP_OFFSET] = val; _UpdateRange(row + INIT_MAP_OFFSET, col + INIT_MAP_OFFSET); } } } _Solve(); } void _BFSwithGenerations() { queue&lt;i_ii&gt; arqLifePos[2]; FOR_INC(row, m_mapRowRange.first, m_mapRowRange.second + 1) { FOR_INC(col, m_mapColRange.first, m_mapColRange.second + 1) { const int val = g_arMap[0][row][col]; if (val &gt; 0) { arqLifePos[0].push(i_ii(2 * val, (ii(row, col)))); } } } // repeat the loop until time limit vector&lt;i_ii&gt; vPrevExtendedCells; FOR(gen, m_timeLimitK) { const int i = gen % 2; const int ni = (gen + 1) % 2; if (!vPrevExtendedCells.empty()) { // update the map and the queue with previously extended cells _UpdateMapAndQueue(vPrevExtendedCells, arqLifePos[i]); } // visit all the stem cells in the current queue while (!arqLifePos[i].empty()) { const i_ii life_pos = arqLifePos[i].front(); arqLifePos[i].pop(); const int row = life_pos.second.first; const int col = life_pos.second.second; // getting old const int life = life_pos.first - 1; if (life &lt;= 0) { // dies g_arMap[0][row][col] = -1; continue; } // still alive: push into the next queue arqLifePos[ni].push(i_ii(life, ii(row, col))); const int val = g_arMap[0][row][col]; if (life &gt; val) continue; // now active! // for extention, the map is going to be updated in the next loop FOR(dir, eDIR_LEN) { const int nextRow = row + DIR[dir][0]; const int nextCol = col + DIR[dir][1]; P_IFNOT(!OOR(nextRow, 0, m_mapMaxRows - 1), nextRow); P_IFNOT(!OOR(nextCol, 0, m_mapMaxCols - 1), nextCol); if (g_arMap[0][nextRow][nextCol] != 0) continue; // previously empty cell if (val &gt; g_arMap[1][nextRow][nextCol]) { g_arMap[1][nextRow][nextCol] = val; _UpdateRange(nextRow, nextCol); // extention candidates which will get old from the next after the next generation vPrevExtendedCells.push_back(i_ii((2 * val) + 1, ii(nextRow, nextCol))); } } } // while (!m_arqLifePos[i].empty()) } // FOR(gen, m_timeLimitK) } void _UpdateMapAndQueue(vector&lt;i_ii&gt; &amp;vPrevExtendedCellsOut, queue&lt;i_ii&gt; &amp;qLifePosOut) { while (!vPrevExtendedCellsOut.empty()) { const i_ii life_pos = vPrevExtendedCellsOut.back(); vPrevExtendedCellsOut.pop_back(); const int row = life_pos.second.first; const int col = life_pos.second.second; const int val = g_arMap[1][row][col]; if (life_pos.first == (2 * val) + 1) { // resultant extentions g_arMap[0][row][col] = val; // it start to get old from the next generation qLifePosOut.push(life_pos); } } } Source with respective queues for each life time #pragma GCC optimize(&quot;O3&quot;) #include &lt;iostream&gt; #include &lt;algorithm&gt; #include &lt;memory.h&gt; using namespace std;   #define BASE 151   struct p {     int r, x, y; };   int map[360][360]; p q[11][2][2001]; // life time, switching by 2, cell of each life time   int main() {     ios::sync_with_stdio(false); cin.tie(0);     register int t, tc, N, M, K, s, dx[] = { 0,0,1,-1 }, dy[] = { 1,-1,0,0 }, idx[11][2] = { 0, };           cin &gt;&gt; t;     for (tc = 1; tc &lt;= t; ++tc) {         register int i, j, k, l, nx, ny, ans, siz, ni, tt;         memset(map, 0, sizeof(map));         memset(idx, 0, sizeof(idx));         cin &gt;&gt; N &gt;&gt; M &gt;&gt; K;         ans = 0;         for (i = 0; i &lt; N; ++i) for (j = 0; j &lt; M; ++j) {             nx = i + BASE; ny = j + BASE;             cin &gt;&gt; tt;             if (tt)                 q[tt][0][idx[tt][0]++] = { 2 * tt, nx, ny };             map[nx][ny] = tt;         }         s = 0; // for generations         for (i = 0; i &lt;= K; ++i) { // for each life time             for (j = 10; j &gt;= 1; --j) {                 siz = idx[j][i % 2];                 ni = (i + 1) % 2;                 idx[j][ni] = 0; // for each cell of each life time                 for (k = 0; k &lt; siz; ++k) {                     p &amp;x = q[j][i%2][k];                     if (x.r &gt; j) {                         if (map[x.x][x.y] &gt; 0) {                             ans++;                             map[x.x][x.y] *= -1;                         }                         q[j][ni][idx[j][ni]++] = { x.r - 1,x.x,x.y };                     }                     else if (x.r == j) {                         q[j][ni][idx[j][ni]++] = { x.r - 1,x.x,x.y };                         for (l = 0; l &lt; 4; ++l) {                             nx = x.x + dx[l];                             ny = x.y + dy[l];                             if (map[nx][ny]) continue;                             map[nx][ny] = j;                             q[j][ni][idx[j][ni]++] = { 2 * j,nx,ny };                         }                     }                     else if (j &gt; x.r &amp;&amp; x.r)                         q[j][ni][idx[j][ni]++] = { x.r - 1,x.x,x.y };                     else                         ans--;                 }             }         }         cout &lt;&lt; &#39;#&#39; &lt;&lt; tc &lt;&lt; &#39; &#39; &lt;&lt; ans &lt;&lt; &#39;\\n&#39;;     }     return 0; } GitHub StemCellCulture","headline":"Stem Cell Culture","mainEntityOfPage":{"@type":"WebPage","@id":"https://coolwindjo.github.io/algoguru/2019/07/18/StemCellCulture.html"},"url":"https://coolwindjo.github.io/algoguru/2019/07/18/StemCellCulture.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <!-- RSS -->
+    <link rel="alternate" type="application/atom+xml" title="Cool Wind on prob_solv" href="https://coolwindjo.github.io/algoguru/feed.xml"/>
+    <link type="application/atom+xml" rel="alternate" href="https://coolwindjo.github.io/algoguru/feed.xml" title="Cool Wind on prob_solv" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:title" content="Stem Cell Culture">
+    <meta name="twitter:description" content="https://www.swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWXRJ8EKe48DFAUoSource	explicit CProbSolve(const int N, const int M, const i...">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://coolwindjo.github.io/algoguru/assets/img/pexels/cls63amg_running.jpeg">
+    <meta name="twitter:image:alt" content="Stem Cell Culture">
+</head>
+
+  <body>
+    <header class="site-header">
+
+    <!-- Logo and title -->
+	<div class="branding">
+        
+		<a href="/algoguru/">
+			<img alt="logo img" class="avatar" src="/algoguru/assets/img/cls.png" loading="lazy"/>
+		</a>
+        
+        <a class="site-title" aria-label="Cool Wind on prob_solv" href="/algoguru/">
+        Cool Wind on prob_solv
+		</a>
+	</div>
+
+    <!-- Toggle menu -->
+    <nav class="clear">
+    <a aria-label="pull" id="pull" class="toggle" href="#">
+    <i class="fas fa-bars fa-lg"></i>
+    </a>
+
+    <!-- Menu -->
+    <ul class="hide">
+        
+
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="About" title="About" href="/algoguru/about/">
+                     About 
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Gallery" title="Gallery" href="/algoguru/gallery/">
+                     Gallery 
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Portfolio" title="Portfolio" href="/algoguru/portfolio/">
+                     Portfolio 
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Search" title="Search" href="/algoguru/search/">
+                     <i class="fas fa-search" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            <li class="separator"> | </li>
+            <li>
+                <a class="clear" aria-label="Tags" title="Tags" href="/algoguru/tags/">
+                     <i class="fas fa-tags" aria-hidden="true"></i>
+                    
+                </a>
+            </li>
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+            
+            
+        
+
+        
+        <li class="separator"> | </li>
+        <li><a id="theme-toggle" title="Stem Cell Culture " aria-label="Stem Cell Culture" onclick="themeToggle()"></a></li>
+        
+    </ul>
+
+	</nav>
+</header>
+
+    <div class="content">
+      <article >
+  <header id="main" style="">
+    <div class="title-padder">
+      
+      <h1 id="Stem+Cell+Culture" class="title">Stem Cell Culture</h1>
+      
+
+
+<div class="post-info">
+    <p class="meta">
+      
+      
+      July 18, 2019
+    </p></div>
+
+      
+    </div>
+  </header>
+
+  <section class="post-content">
+  
+      <p><a href="https://www.swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWXRJ8EKe48DFAUo" target="_blank">https://www.swexpertacademy.com/main/code/problem/problemDetail.do?contestProbId=AWXRJ8EKe48DFAUo</a></p>
+
+<h3 id="source">Source</h3>
+
+<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp">	<span class="k">explicit</span> <span class="nf">CProbSolve</span><span class="p">(</span><span class="k">const</span> <span class="kt">int</span> <span class="n">N</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="n">M</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="n">K</span><span class="p">)</span> <span class="p">{</span>
+		<span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">memset</span><span class="p">(</span><span class="o">&amp;</span><span class="p">(</span><span class="n">g_arMap</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]),</span> <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">g_arMap</span><span class="p">));</span>
+		<span class="n">m_initRowsN</span> <span class="o">=</span> <span class="n">N</span><span class="p">;</span>
+		<span class="n">m_initColsM</span> <span class="o">=</span> <span class="n">M</span><span class="p">;</span>
+		<span class="n">m_timeLimitK</span> <span class="o">=</span> <span class="n">K</span><span class="p">;</span>
+		<span class="n">m_mapMaxRows</span> <span class="o">=</span> <span class="n">INIT_MAP_OFFSET</span> <span class="o">+</span> <span class="n">m_initRowsN</span> <span class="o">+</span> <span class="n">INIT_MAP_OFFSET</span><span class="p">;</span>
+		<span class="n">m_mapMaxCols</span> <span class="o">=</span> <span class="n">INIT_MAP_OFFSET</span> <span class="o">+</span> <span class="n">m_initColsM</span> <span class="o">+</span> <span class="n">INIT_MAP_OFFSET</span><span class="p">;</span>
+		<span class="n">m_mapRowRange</span><span class="p">.</span><span class="n">first</span> <span class="o">=</span> <span class="n">m_mapMaxRows</span><span class="p">;</span>
+		<span class="n">m_mapRowRange</span><span class="p">.</span><span class="n">second</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+		<span class="n">m_mapColRange</span><span class="p">.</span><span class="n">first</span> <span class="o">=</span> <span class="n">m_mapMaxCols</span><span class="p">;</span>
+		<span class="n">m_mapColRange</span><span class="p">.</span><span class="n">second</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+		<span class="n">FOR</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">m_initRowsN</span><span class="p">)</span> <span class="p">{</span>
+			<span class="n">FOR</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">m_initColsM</span><span class="p">)</span> <span class="p">{</span>
+				<span class="kt">int</span> <span class="n">val</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+				<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">val</span><span class="p">;</span>
+				<span class="k">if</span> <span class="p">(</span><span class="n">val</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+					<span class="n">g_arMap</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">row</span> <span class="o">+</span> <span class="n">INIT_MAP_OFFSET</span><span class="p">][</span><span class="n">col</span> <span class="o">+</span> <span class="n">INIT_MAP_OFFSET</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span><span class="p">;</span>
+					<span class="n">g_arMap</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">row</span> <span class="o">+</span> <span class="n">INIT_MAP_OFFSET</span><span class="p">][</span><span class="n">col</span> <span class="o">+</span> <span class="n">INIT_MAP_OFFSET</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span><span class="p">;</span>
+					<span class="n">_UpdateRange</span><span class="p">(</span><span class="n">row</span> <span class="o">+</span> <span class="n">INIT_MAP_OFFSET</span><span class="p">,</span> <span class="n">col</span> <span class="o">+</span> <span class="n">INIT_MAP_OFFSET</span><span class="p">);</span>
+				<span class="p">}</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+
+		<span class="n">_Solve</span><span class="p">();</span>
+	<span class="p">}</span>
+
+	<span class="kt">void</span> <span class="n">_BFSwithGenerations</span><span class="p">()</span> <span class="p">{</span>
+		<span class="n">queue</span><span class="o">&lt;</span><span class="n">i_ii</span><span class="o">&gt;</span> <span class="n">arqLifePos</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+
+		<span class="n">FOR_INC</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">m_mapRowRange</span><span class="p">.</span><span class="n">first</span><span class="p">,</span> <span class="n">m_mapRowRange</span><span class="p">.</span><span class="n">second</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+			<span class="n">FOR_INC</span><span class="p">(</span><span class="n">col</span><span class="p">,</span> <span class="n">m_mapColRange</span><span class="p">.</span><span class="n">first</span><span class="p">,</span> <span class="n">m_mapColRange</span><span class="p">.</span><span class="n">second</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+				<span class="k">const</span> <span class="kt">int</span> <span class="n">val</span> <span class="o">=</span> <span class="n">g_arMap</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">row</span><span class="p">][</span><span class="n">col</span><span class="p">];</span>
+				<span class="k">if</span> <span class="p">(</span><span class="n">val</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+					<span class="n">arqLifePos</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">push</span><span class="p">(</span><span class="n">i_ii</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">val</span><span class="p">,</span> <span class="p">(</span><span class="n">ii</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">))));</span>
+				<span class="p">}</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+
+		<span class="c1">// repeat the loop until time limit
+</span>
+		<span class="n">vector</span><span class="o">&lt;</span><span class="n">i_ii</span><span class="o">&gt;</span> <span class="n">vPrevExtendedCells</span><span class="p">;</span>
+		<span class="n">FOR</span><span class="p">(</span><span class="n">gen</span><span class="p">,</span> <span class="n">m_timeLimitK</span><span class="p">)</span> <span class="p">{</span>
+			<span class="k">const</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">gen</span> <span class="o">%</span> <span class="mi">2</span><span class="p">;</span>
+			<span class="k">const</span> <span class="kt">int</span> <span class="n">ni</span> <span class="o">=</span> <span class="p">(</span><span class="n">gen</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span><span class="p">;</span>
+
+			<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">vPrevExtendedCells</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
+				<span class="c1">// update the map and the queue with previously extended cells
+</span>
+				<span class="n">_UpdateMapAndQueue</span><span class="p">(</span><span class="n">vPrevExtendedCells</span><span class="p">,</span> <span class="n">arqLifePos</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+			<span class="p">}</span>
+
+			<span class="c1">// visit all the stem cells in the current queue
+</span>
+			<span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">arqLifePos</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
+				<span class="k">const</span> <span class="n">i_ii</span> <span class="n">life_pos</span> <span class="o">=</span> <span class="n">arqLifePos</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">front</span><span class="p">();</span> <span class="n">arqLifePos</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">pop</span><span class="p">();</span>
+				<span class="k">const</span> <span class="kt">int</span> <span class="n">row</span> <span class="o">=</span> <span class="n">life_pos</span><span class="p">.</span><span class="n">second</span><span class="p">.</span><span class="n">first</span><span class="p">;</span>
+				<span class="k">const</span> <span class="kt">int</span> <span class="n">col</span> <span class="o">=</span> <span class="n">life_pos</span><span class="p">.</span><span class="n">second</span><span class="p">.</span><span class="n">second</span><span class="p">;</span>
+
+				<span class="c1">// getting old
+</span>
+				<span class="k">const</span> <span class="kt">int</span> <span class="n">life</span> <span class="o">=</span> <span class="n">life_pos</span><span class="p">.</span><span class="n">first</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+				<span class="k">if</span> <span class="p">(</span><span class="n">life</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+					<span class="c1">// dies
+</span>
+					<span class="n">g_arMap</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">row</span><span class="p">][</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+					<span class="k">continue</span><span class="p">;</span>
+				<span class="p">}</span>
+
+				<span class="c1">// still alive: push into the next queue
+</span>
+				<span class="n">arqLifePos</span><span class="p">[</span><span class="n">ni</span><span class="p">].</span><span class="n">push</span><span class="p">(</span><span class="n">i_ii</span><span class="p">(</span><span class="n">life</span><span class="p">,</span> <span class="n">ii</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">)));</span>
+				<span class="k">const</span> <span class="kt">int</span> <span class="n">val</span> <span class="o">=</span> <span class="n">g_arMap</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">row</span><span class="p">][</span><span class="n">col</span><span class="p">];</span>
+				<span class="k">if</span> <span class="p">(</span><span class="n">life</span> <span class="o">&gt;</span> <span class="n">val</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
+
+				<span class="c1">// now active!
+</span>
+				<span class="c1">// for extention, the map is going to be updated in the next loop
+</span>
+				<span class="n">FOR</span><span class="p">(</span><span class="n">dir</span><span class="p">,</span> <span class="n">eDIR_LEN</span><span class="p">)</span> <span class="p">{</span>
+					<span class="k">const</span> <span class="kt">int</span> <span class="n">nextRow</span> <span class="o">=</span> <span class="n">row</span> <span class="o">+</span> <span class="kt">DIR</span><span class="p">[</span><span class="n">dir</span><span class="p">][</span><span class="mi">0</span><span class="p">];</span>
+					<span class="k">const</span> <span class="kt">int</span> <span class="n">nextCol</span> <span class="o">=</span> <span class="n">col</span> <span class="o">+</span> <span class="kt">DIR</span><span class="p">[</span><span class="n">dir</span><span class="p">][</span><span class="mi">1</span><span class="p">];</span>
+					<span class="n">P_IFNOT</span><span class="p">(</span><span class="o">!</span><span class="n">OOR</span><span class="p">(</span><span class="n">nextRow</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">m_mapMaxRows</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span> <span class="n">nextRow</span><span class="p">);</span>
+					<span class="n">P_IFNOT</span><span class="p">(</span><span class="o">!</span><span class="n">OOR</span><span class="p">(</span><span class="n">nextCol</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">m_mapMaxCols</span> <span class="o">-</span> <span class="mi">1</span><span class="p">),</span> <span class="n">nextCol</span><span class="p">);</span>
+					<span class="k">if</span> <span class="p">(</span><span class="n">g_arMap</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">nextRow</span><span class="p">][</span><span class="n">nextCol</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="k">continue</span><span class="p">;</span>
+
+					<span class="c1">// previously empty cell
+</span>
+					<span class="k">if</span> <span class="p">(</span><span class="n">val</span> <span class="o">&gt;</span> <span class="n">g_arMap</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">nextRow</span><span class="p">][</span><span class="n">nextCol</span><span class="p">])</span> <span class="p">{</span>
+						<span class="n">g_arMap</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">nextRow</span><span class="p">][</span><span class="n">nextCol</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span><span class="p">;</span>
+						<span class="n">_UpdateRange</span><span class="p">(</span><span class="n">nextRow</span><span class="p">,</span> <span class="n">nextCol</span><span class="p">);</span>
+
+						<span class="c1">// extention candidates which will get old from the next after the next generation
+</span>
+						<span class="n">vPrevExtendedCells</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">i_ii</span><span class="p">((</span><span class="mi">2</span> <span class="o">*</span> <span class="n">val</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">ii</span><span class="p">(</span><span class="n">nextRow</span><span class="p">,</span> <span class="n">nextCol</span><span class="p">)));</span>
+					<span class="p">}</span>
+				<span class="p">}</span>
+			<span class="p">}</span>	<span class="c1">// while (!m_arqLifePos[i].empty())
+</span>
+
+		<span class="p">}</span> <span class="c1">// FOR(gen, m_timeLimitK)
+</span>
+	<span class="p">}</span>
+
+	<span class="kt">void</span> <span class="n">_UpdateMapAndQueue</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">i_ii</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">vPrevExtendedCellsOut</span><span class="p">,</span> <span class="n">queue</span><span class="o">&lt;</span><span class="n">i_ii</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">qLifePosOut</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">vPrevExtendedCellsOut</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
+			<span class="k">const</span> <span class="n">i_ii</span> <span class="n">life_pos</span> <span class="o">=</span> <span class="n">vPrevExtendedCellsOut</span><span class="p">.</span><span class="n">back</span><span class="p">();</span> <span class="n">vPrevExtendedCellsOut</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
+			<span class="k">const</span> <span class="kt">int</span> <span class="n">row</span> <span class="o">=</span> <span class="n">life_pos</span><span class="p">.</span><span class="n">second</span><span class="p">.</span><span class="n">first</span><span class="p">;</span>
+			<span class="k">const</span> <span class="kt">int</span> <span class="n">col</span> <span class="o">=</span> <span class="n">life_pos</span><span class="p">.</span><span class="n">second</span><span class="p">.</span><span class="n">second</span><span class="p">;</span>
+			<span class="k">const</span> <span class="kt">int</span> <span class="n">val</span> <span class="o">=</span> <span class="n">g_arMap</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">row</span><span class="p">][</span><span class="n">col</span><span class="p">];</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">life_pos</span><span class="p">.</span><span class="n">first</span> <span class="o">==</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">val</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+				<span class="c1">// resultant extentions
+</span>
+				<span class="n">g_arMap</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">row</span><span class="p">][</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span><span class="p">;</span>
+
+				<span class="c1">// it start to get old from the next generation
+</span>
+				<span class="n">qLifePosOut</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">life_pos</span><span class="p">);</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+	<span class="p">}</span></code></pre></figure>
+
+<h2 id="source-with-respective-queues-for-each-life-time">Source with respective queues for each life time</h2>
+
+<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="cp">#pragma GCC optimize("O3")
+#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="c1">
+</span><span class="cp">
+#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="c1">
+</span><span class="cp">
+#include</span> <span class="cpf">&lt;memory.h&gt;</span><span class="c1">
+</span><span class="cp">
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="err"> </span>
+<span class="cp">#define BASE 151
+</span><span class="err"> </span>
+<span class="k">struct</span> <span class="nc">p</span> <span class="p">{</span>
+<span class="err">    </span><span class="kt">int</span> <span class="n">r</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="err"> </span>
+<span class="kt">int</span> <span class="n">map</span><span class="p">[</span><span class="mi">360</span><span class="p">][</span><span class="mi">360</span><span class="p">];</span>
+<span class="n">p</span> <span class="n">q</span><span class="p">[</span><span class="mi">11</span><span class="p">][</span><span class="mi">2</span><span class="p">][</span><span class="mi">2001</span><span class="p">];</span>	<span class="c1">// life time, switching by 2, cell of each life time
+</span>
+<span class="err"> </span>
+<span class="kt">int</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+<span class="err">    </span><span class="n">ios</span><span class="o">::</span><span class="n">sync_with_stdio</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span> <span class="n">cin</span><span class="p">.</span><span class="n">tie</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="err">    </span><span class="k">register</span> <span class="kt">int</span> <span class="n">t</span><span class="p">,</span> <span class="n">tc</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">dx</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span> <span class="p">},</span> <span class="n">dy</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span> <span class="p">},</span> <span class="n">idx</span><span class="p">[</span><span class="mi">11</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">0</span><span class="p">,</span> <span class="p">};</span>
+<span class="err">     </span>
+<span class="err">    </span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">t</span><span class="p">;</span>
+<span class="err">    </span><span class="k">for</span> <span class="p">(</span><span class="n">tc</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">tc</span> <span class="o">&lt;=</span> <span class="n">t</span><span class="p">;</span> <span class="o">++</span><span class="n">tc</span><span class="p">)</span> <span class="p">{</span>
+<span class="err">        </span><span class="k">register</span> <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">nx</span><span class="p">,</span> <span class="n">ny</span><span class="p">,</span> <span class="n">ans</span><span class="p">,</span> <span class="n">siz</span><span class="p">,</span> <span class="n">ni</span><span class="p">,</span> <span class="n">tt</span><span class="p">;</span>
+<span class="err">        </span><span class="n">memset</span><span class="p">(</span><span class="n">map</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">map</span><span class="p">));</span>
+<span class="err">        </span><span class="n">memset</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">idx</span><span class="p">));</span>
+<span class="err">        </span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">N</span> <span class="o">&gt;&gt;</span> <span class="n">M</span> <span class="o">&gt;&gt;</span> <span class="n">K</span><span class="p">;</span>
+<span class="err">        </span><span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="err">        </span><span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="p">(</span><span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">M</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="p">{</span>
+<span class="err">            </span><span class="n">nx</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">BASE</span><span class="p">;</span> <span class="n">ny</span> <span class="o">=</span> <span class="n">j</span> <span class="o">+</span> <span class="n">BASE</span><span class="p">;</span>
+<span class="err">            </span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">tt</span><span class="p">;</span>
+<span class="err">            </span><span class="k">if</span> <span class="p">(</span><span class="n">tt</span><span class="p">)</span>
+<span class="err">                </span><span class="n">q</span><span class="p">[</span><span class="n">tt</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="n">idx</span><span class="p">[</span><span class="n">tt</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">tt</span><span class="p">,</span> <span class="n">nx</span><span class="p">,</span> <span class="n">ny</span> <span class="p">};</span>
+<span class="err">            </span><span class="n">map</span><span class="p">[</span><span class="n">nx</span><span class="p">][</span><span class="n">ny</span><span class="p">]</span> <span class="o">=</span> <span class="n">tt</span><span class="p">;</span>
+<span class="err">        </span><span class="p">}</span>
+<span class="err">        </span><span class="n">s</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+		<span class="c1">// for generations
+</span>
+<span class="err">        </span><span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">K</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+			<span class="c1">// for each life time
+</span>
+<span class="err">            </span><span class="k">for</span> <span class="p">(</span><span class="n">j</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">;</span> <span class="o">--</span><span class="n">j</span><span class="p">)</span> <span class="p">{</span>
+<span class="err">                </span><span class="n">siz</span> <span class="o">=</span> <span class="n">idx</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">i</span> <span class="o">%</span> <span class="mi">2</span><span class="p">];</span>
+<span class="err">                </span><span class="n">ni</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span><span class="p">;</span>
+<span class="err">                </span><span class="n">idx</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">ni</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+				<span class="c1">// for each cell of each life time
+</span>
+<span class="err">                </span><span class="k">for</span> <span class="p">(</span><span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">siz</span><span class="p">;</span> <span class="o">++</span><span class="n">k</span><span class="p">)</span> <span class="p">{</span>
+<span class="err">                    </span><span class="n">p</span> <span class="o">&amp;</span><span class="n">x</span> <span class="o">=</span> <span class="n">q</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">i</span><span class="o">%</span><span class="mi">2</span><span class="p">][</span><span class="n">k</span><span class="p">];</span>
+<span class="err">                    </span><span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">r</span> <span class="o">&gt;</span> <span class="n">j</span><span class="p">)</span> <span class="p">{</span>
+<span class="err">                        </span><span class="k">if</span> <span class="p">(</span><span class="n">map</span><span class="p">[</span><span class="n">x</span><span class="p">.</span><span class="n">x</span><span class="p">][</span><span class="n">x</span><span class="p">.</span><span class="n">y</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+<span class="err">                            </span><span class="n">ans</span><span class="o">++</span><span class="p">;</span>
+<span class="err">                            </span><span class="n">map</span><span class="p">[</span><span class="n">x</span><span class="p">.</span><span class="n">x</span><span class="p">][</span><span class="n">x</span><span class="p">.</span><span class="n">y</span><span class="p">]</span> <span class="o">*=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+<span class="err">                        </span><span class="p">}</span>
+<span class="err">                        </span><span class="n">q</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">ni</span><span class="p">][</span><span class="n">idx</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">ni</span><span class="p">]</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="n">x</span><span class="p">.</span><span class="n">r</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span><span class="n">x</span><span class="p">.</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">.</span><span class="n">y</span> <span class="p">};</span>
+<span class="err">                    </span><span class="p">}</span>
+<span class="err">                    </span><span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">r</span> <span class="o">==</span> <span class="n">j</span><span class="p">)</span> <span class="p">{</span>
+<span class="err">                        </span><span class="n">q</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">ni</span><span class="p">][</span><span class="n">idx</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">ni</span><span class="p">]</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="n">x</span><span class="p">.</span><span class="n">r</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span><span class="n">x</span><span class="p">.</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">.</span><span class="n">y</span> <span class="p">};</span>
+<span class="err">                        </span><span class="k">for</span> <span class="p">(</span><span class="n">l</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">l</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">;</span> <span class="o">++</span><span class="n">l</span><span class="p">)</span> <span class="p">{</span>
+<span class="err">                            </span><span class="n">nx</span> <span class="o">=</span> <span class="n">x</span><span class="p">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">dx</span><span class="p">[</span><span class="n">l</span><span class="p">];</span>
+<span class="err">                            </span><span class="n">ny</span> <span class="o">=</span> <span class="n">x</span><span class="p">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">dy</span><span class="p">[</span><span class="n">l</span><span class="p">];</span>
+<span class="err">                            </span><span class="k">if</span> <span class="p">(</span><span class="n">map</span><span class="p">[</span><span class="n">nx</span><span class="p">][</span><span class="n">ny</span><span class="p">])</span> <span class="k">continue</span><span class="p">;</span>
+<span class="err">                            </span><span class="n">map</span><span class="p">[</span><span class="n">nx</span><span class="p">][</span><span class="n">ny</span><span class="p">]</span> <span class="o">=</span> <span class="n">j</span><span class="p">;</span>
+<span class="err">                            </span><span class="n">q</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">ni</span><span class="p">][</span><span class="n">idx</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">ni</span><span class="p">]</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">j</span><span class="p">,</span><span class="n">nx</span><span class="p">,</span><span class="n">ny</span> <span class="p">};</span>
+<span class="err">                        </span><span class="p">}</span>
+<span class="err">                    </span><span class="p">}</span>
+<span class="err">                    </span><span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">j</span> <span class="o">&gt;</span> <span class="n">x</span><span class="p">.</span><span class="n">r</span> <span class="o">&amp;&amp;</span> <span class="n">x</span><span class="p">.</span><span class="n">r</span><span class="p">)</span>
+<span class="err">                        </span><span class="n">q</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">ni</span><span class="p">][</span><span class="n">idx</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">ni</span><span class="p">]</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="n">x</span><span class="p">.</span><span class="n">r</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span><span class="n">x</span><span class="p">.</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">.</span><span class="n">y</span> <span class="p">};</span>
+<span class="err">                    </span><span class="k">else</span>
+<span class="err">                        </span><span class="n">ans</span><span class="o">--</span><span class="p">;</span>
+<span class="err">                </span><span class="p">}</span>
+<span class="err">            </span><span class="p">}</span>
+<span class="err">        </span><span class="p">}</span>
+<span class="err">        </span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="sc">'#'</span> <span class="o">&lt;&lt;</span> <span class="n">tc</span> <span class="o">&lt;&lt;</span> <span class="sc">' '</span> <span class="o">&lt;&lt;</span> <span class="n">ans</span> <span class="o">&lt;&lt;</span> <span class="sc">'\n'</span><span class="p">;</span>
+<span class="err">    </span><span class="p">}</span>
+<span class="err">    </span><span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<h3 id="github">GitHub</h3>
+
+<ul>
+  <li><a href="https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/StemCellCulture" target="_blank">StemCellCulture</a></li>
+</ul>
+
+<p><img src="/algoguru/assets/img/posting/stem_cell_culture.png" alt="StemCellCulture" /></p>
+
+    
+  </section>
+
+  <!-- Social media shares -->
+  
+
+<div class="share-buttons">
+    <ul class="share-buttons">
+        <li class="meta">Share</li>
+        
+        <li>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://coolwindjo.github.io/algoguru/2019/07/18/StemCellCulture.html" target="_blank"
+               title=" Facebook">
+                <i class="fab fa-facebook-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Facebook</span>
+            </a>
+        </li>
+         
+        <li>
+            <a href="https://twitter.com/intent/tweet?text=Stem+Cell+Culture%20https%3A%2F%2Fcoolwindjo.github.io%2Falgoguru%2F2019%2F07%2F18%2FStemCellCulture.html"
+               target="_blank" title="">
+                <i class="fab fa-twitter-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Tweet</span>
+            </a>
+        </li>
+            
+        <li>
+            <a href="https://www.reddit.com/submit?url=https://coolwindjo.github.io/algoguru/2019/07/18/StemCellCulture.html&title=Stem+Cell+Culture%20%7C%20Cool+Wind+on+prob_solv"
+               target="_blank" title=" Reddit">
+                <i class="fab fa-reddit-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Share on Reddit</span>
+            </a>
+        </li>
+           
+        <li>
+            <a href="mailto:?subject=Stem Cell Culture%20%7C%20Cool Wind on prob_solv&body=https://coolwindjo.github.io/algoguru/2019/07/18/StemCellCulture.html"
+               target="_blank" title="">
+                <i class="fas fa-envelope-square fa-2x" aria-hidden="true"></i>
+                <span class="sr-only">Email</span></a>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+
+   <!-- Tag list -->
+  
+  
+
+
+  <div class="tag-list">
+    <ul>
+      
+        <li class="meta">Tags</li>
+      
+
+      
+        <li><a class="button" href="/algoguru/tags#bfs-with-generations">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> bfs-with-generations</p>
+        </a></li>
+      
+        <li><a class="button" href="/algoguru/tags#cpp">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> cpp</p>
+        </a></li>
+      
+        <li><a class="button" href="/algoguru/tags#simple-implementation">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> simple-implementation</p>
+        </a></li>
+      
+        <li><a class="button" href="/algoguru/tags#std-queue">
+          <p><i class="fas fa-tag fa-fw fa-sm"></i> std-queue</p>
+        </a></li>
+      
+    </ul>
+  </div>
+
+
+
+</article>
+
+<!-- Post navigation -->
+
+<div id="post-nav">
+    
+    <div id="previous-post">
+        <a alt="Road Construction" href="/algoguru/2019/07/18/RoadConstruction.html">
+            <p>Previous post</p>
+            Road Construction
+        </a>
+    </div>
+    
+
+    
+    <div id="next-post">
+        <a alt="Game 2048" href="/algoguru/2019/07/17/Game-Two-Zero-Four-Eight.html">
+            <p>Next post</p>
+            Game 2048
+        </a>
+    </div>
+    
+</div>
+
+
+
+<!--Utterances-->
+
+
+<!-- Cusdis -->
+
+
+<!-- Disqus -->
+
+
+<!-- To change color of links in the page -->
+<style>
+  header#main {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+  }
+
+  
+
+  
+</style>
+
+    </div>
+    <footer class="site-footer">
+    <p class="text">
+        Copyright © 2019-2023 @ <a href="https://github.com/coolwindjo">CoolWind</a>. All rights reserved. Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
+</p>
+            <div class="footer-icons">
+                <ul>
+                <!-- Social icons from Font Awesome, if enabled -->
+                
+<li>
+    <a feed.xml href="/algoguru/feed.xml"
+       title="Follow RSS feed"
+       target="_blank">
+        <span class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+        </span>
+    </a>
+</li>
+
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        
+        
+        
+        
+        <li>
+            <a href="https://github.com/coolwindjo"
+               title="Follow on Github"
+               target="_blank"
+               rel="noopener">
+            <span class="fa-stack fa-lg">
+              <i class="fas fa-circle fa-stack-2x"></i>
+              <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+            </a>
+        </li>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+                </ul>
+            </div>
+</footer>
+
+
+
+  </body>
+</html>
