@@ -1,44 +1,42 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/cpp
 {
-	"name": "C++",
+	"name": "C++20 Dev Container",
 	"build": {
 		"dockerfile": "Dockerfile"
 	},
-	"runArgs": [ "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined"],
 
-	// Set *default* container specific settings.json values on container create.
-	"settings": {
-		"terminal.integrated.shell.linux": "/bin/bash",
-		"python.pythonPath": "/opt/conda/bin/python",
-		"python.linting.enabled": true,
-		"python.linting.pylintEnabled": true,
-		"python.formatting.autopep8Path": "/opt/conda/bin/autopep8",
-		"python.formatting.blackPath": "/opt/conda/bin/black",
-		"python.formatting.yapfPath": "/opt/conda/bin/yapf",
-		"python.linting.banditPath": "/opt/conda/bin/bandit",
-		"python.linting.flake8Path": "/opt/conda/bin/flake8",
-		"python.linting.mypyPath": "/opt/conda/bin/mypy",
-		"python.linting.pycodestylePath": "/opt/conda/bin/pycodestyle",
-		"python.linting.pydocstylePath": "/opt/conda/bin/pydocstyle",
-		"python.linting.pylintPath": "/opt/conda/bin/pylint"
+	// Required for debugging with GDB
+	"runArgs": ["--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined"],
+
+	// VS Code settings for the container
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"C_Cpp.default.cppStandard": "c++20",
+				"C_Cpp.default.compilerPath": "/usr/bin/g++"
+			},
+			"extensions": [
+				"ms-vscode.cpptools",
+				"ms-vscode.cpptools-extension-pack",
+				"ms-python.python",
+				"ms-python.debugpy"
+			]
+		}
 	},
 
-	// Add the IDs of extensions you want installed when the container is created.
-	"extensions": [
-		"ms-python.python",
-		"ms-vscode.cpptools",
-		"ms-vscode.cpptools-extension-pack"
-	],
+	// Install Python for scripting and debugging
+	"features": {
+		"ghcr.io/devcontainers/features/python:1": {
+			"version": "3.12"
+		}
+	}
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	"forwardPorts": [8888]
+	// "forwardPorts": [8888],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "gcc -v",
-
-	// Configure tool-specific properties.
-	// "customizations": {},
 
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
