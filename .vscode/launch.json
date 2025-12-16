@@ -1,20 +1,10 @@
 {
     // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
-    "inputs": [
-        {
-            "id": "debuggerChoice",
-            "type": "pickString",
-            "description": "Select debugger",
-            "options": ["gdb", "lldb"],
-            "default": "lldb"
-        }
-    ],
     "configurations": [
         // ============================================================
-        // C++ Debugging (LLDB - Recommended for macOS)
+        // C++ (LLDB) - macOS
         // ============================================================
         {
             "name": "C++ (lldb)",
@@ -31,7 +21,7 @@
         },
 
         // ============================================================
-        // C++ Debugging (GDB)
+        // C++ (GDB) - Linux / Docker / WSL
         // ============================================================
         {
             "name": "C++ (gdb)",
@@ -64,39 +54,6 @@
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal"
-        },
-
-        // ============================================================
-        // WSL/Pipe Launch (GDB via WSL)
-        // ============================================================
-        {
-            "name": "C++ (gdb via WSL)",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "${workspaceFolder}/${fileBasenameNoExtension}.exe",
-            "args": ["<", "input.txt", ">", "output.txt"],
-            "stopAtEntry": false,
-            "cwd": "${workspaceFolder}/",
-            "environment": [],
-            "externalConsole": false,
-            "pipeTransport": {
-                "debuggerPath": "/usr/bin/gdb",
-                "pipeProgram": "${env:windir}\\system32\\bash.exe",
-                "pipeArgs": ["-c"],
-                "pipeCwd": "${workspaceFolder}/${relativeFileDirname}"
-            },
-            "MIMode": "gdb",
-            "sourceFileMap": {
-                "/mnt/c": "c:\\"
-            },
-            "setupCommands": [
-                {
-                    "description": "Enable pretty-printing for gdb",
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-                }
-            ],
-            "preLaunchTask": "build C++"
         }
     ]
 }
