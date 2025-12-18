@@ -27,4 +27,4 @@ tags:
 
 ### GitHub
 
-- [RunningSumArray](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/RunningSumArray>){:target="_blank"}
+- [RunningSumArray](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/RunningSumArray>){:target="_blank"}

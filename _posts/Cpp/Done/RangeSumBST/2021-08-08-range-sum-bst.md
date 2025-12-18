@@ -80,4 +80,4 @@ TreeNode* BFSBuildBST(const vector<string> vstrVal) {
 
 ### GitHub
 
-- [RangeSumBST](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/RangeSumBST>){:target="_blank"}
+- [RangeSumBST](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/RangeSumBST>){:target="_blank"}

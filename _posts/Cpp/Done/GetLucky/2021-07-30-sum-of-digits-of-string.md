@@ -36,4 +36,4 @@ tags:
 
 ### GitHub
 
-- [GetLucky](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/GetLucky>){:target="_blank"}
+- [GetLucky](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/GetLucky>){:target="_blank"}

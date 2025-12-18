@@ -48,4 +48,4 @@ tags:
 
 ### GitHub
 
-- [AddStrings](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/AddStrings>){:target="_blank"}
+- [AddStrings](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/AddStrings>){:target="_blank"}

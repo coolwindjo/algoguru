@@ -37,4 +37,4 @@ tags:
 
 ### GitHub
 
-- [AllPathsSourceTarget](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/AllPathsSourceTarget>){:target="_blank"}
+- [AllPathsSourceTarget](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/AllPathsSourceTarget>){:target="_blank"}

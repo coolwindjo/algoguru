@@ -41,6 +41,6 @@ tags:
 
 ### GitHub
 
-- [AddOneRow](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/AddOneRow>){:target="_blank"}
+- [AddOneRow](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/AddOneRow>){:target="_blank"}
 
 ![AddOneRow]({{ "/assets/img/posting/add_one_row.png" | relative_url }})

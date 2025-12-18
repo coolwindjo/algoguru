@@ -39,4 +39,4 @@ tags:
 
 ### GitHub
 
-- [CountBits](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/CountBits>){:target="_blank"}
+- [CountBits](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/CountBits>){:target="_blank"}

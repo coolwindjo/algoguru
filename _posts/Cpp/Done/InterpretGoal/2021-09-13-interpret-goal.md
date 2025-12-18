@@ -36,4 +36,4 @@ tags:
 
 ### GitHub
 
-- [InterpretGoal](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/InterpretGoal>){:target="_blank"}
+- [InterpretGoal](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/InterpretGoal>){:target="_blank"}

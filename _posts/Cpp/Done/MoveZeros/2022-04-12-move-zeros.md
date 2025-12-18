@@ -33,6 +33,6 @@ tags:
 
 ### GitHub
 
-- [MoveZeros](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/MoveZeros>){:target="_blank"}
+- [MoveZeros](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/MoveZeros>){:target="_blank"}
 
 ![MoveZeros]({{ "/assets/img/posting/move_zeros.png" | relative_url }})

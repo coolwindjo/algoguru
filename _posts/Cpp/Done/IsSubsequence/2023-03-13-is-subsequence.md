@@ -35,6 +35,6 @@ tags:
 
 ### GitHub
 
-- [IsSubsequence](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/IsSubsequence>){:target="_blank"}
+- [IsSubsequence](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/IsSubsequence>){:target="_blank"}
 
 ![IsSubsequence]({{ "/assets/img/posting/IsSubsequence.png" | relative_url }})

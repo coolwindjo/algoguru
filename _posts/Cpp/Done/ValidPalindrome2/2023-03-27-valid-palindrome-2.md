@@ -69,4 +69,4 @@ tags:
 
 ### GitHub
 
-- [ValidPalindrome2](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/ValidPalindrome2>){:target="_blank"}
+- [ValidPalindrome2](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/ValidPalindrome2>){:target="_blank"}

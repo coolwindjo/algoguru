@@ -29,4 +29,4 @@ tags:
 
 ### GitHub
 
-- [ReverseList](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/ReverseList>){:target="_blank"}
+- [ReverseList](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/ReverseList>){:target="_blank"}

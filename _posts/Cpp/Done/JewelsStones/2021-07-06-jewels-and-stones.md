@@ -29,6 +29,6 @@ tags:
 
 ### GitHub
 
-- [JewelsStones](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/JewelsStones>){:target="_blank"}
+- [JewelsStones](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/JewelsStones>){:target="_blank"}
 
 ![JewelsStones]({{ "/assets/img/posting/jewels_stones.png" | relative_url }})

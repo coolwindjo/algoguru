@@ -5,7 +5,7 @@ tags:
 - cpp
 - dijkstra
 - std-priority-queue
-- 
+-
 ---
 
 <https://codepro.lge.com/exam/18/국내-기출-연습문제/quiz/36>{:target="_blank"}
@@ -75,6 +75,6 @@ tags:
 
 ### GitHub
 
-- [RoadConstruction](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/RoadConstruction>){:target="_blank"}
+- [RoadConstruction](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/RoadConstruction>){:target="_blank"}
 
 ![RoadConstruction]({{ "/assets/img/posting/road_construction.png" | relative_url }})

@@ -26,12 +26,12 @@ li::iterator it = numL.begin();
 
 FOR(i, N){
     int chosen = (curS+constM)%curN;
-    
+
     advance(it, chosen);
     cout << *it << " ";
     numL.erase(it);
     it = numL.begin();
-    
+
     curS = chosen;
     curN = numL.size();
 }
@@ -39,6 +39,6 @@ FOR(i, N){
 
 ### GitHub
 
-- [CircleListOrder](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/CircleListOrder>){:target="_blank"}
+- [CircleListOrder](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/CircleListOrder>){:target="_blank"}
 
 ![CircleListOrder]({{ "/assets/img/posting/circlelist_order.png" | relative_url }})

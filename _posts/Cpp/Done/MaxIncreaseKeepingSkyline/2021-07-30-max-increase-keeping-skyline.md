@@ -46,6 +46,6 @@ tags:
 
 ### GitHub
 
-- [MaxIncreaseKeepingSkyline](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/MaxIncreaseKeepingSkyline>){:target="_blank"}
+- [MaxIncreaseKeepingSkyline](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/MaxIncreaseKeepingSkyline>){:target="_blank"}
 
 ![MaxIncreaseKeepingSkyline]({{ "/assets/img/posting/max_increase_keeping_skyline.png" | relative_url }})

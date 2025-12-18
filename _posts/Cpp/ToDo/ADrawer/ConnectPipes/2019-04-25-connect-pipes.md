@@ -80,6 +80,6 @@ void BFS(const ii start){
 
 ### GitHub
 
-- [ConnectPipes](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/ConnectPipes>){:target="_blank"}
+- [ConnectPipes](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/ConnectPipes>){:target="_blank"}
 
 ![ConnectPipes]({{ "/assets/img/posting/connect_pipes.png" | relative_url }})

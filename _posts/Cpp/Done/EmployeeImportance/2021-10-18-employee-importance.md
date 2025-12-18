@@ -40,6 +40,6 @@ tags:
 
 ### GitHub
 
-- [EmployeeImportance](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/EmployeeImportance>){:target="_blank"}
+- [EmployeeImportance](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/EmployeeImportance>){:target="_blank"}
 
 ![EmployeeImportance]({{ "/assets/img/posting/employee_importance.png" | relative_url }})

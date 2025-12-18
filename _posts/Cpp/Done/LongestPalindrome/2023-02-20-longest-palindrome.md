@@ -36,6 +36,6 @@ tags:
 
 ### GitHub
 
-- [LongestPalindrome](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/LongestPalindrome>){:target="_blank"}
+- [LongestPalindrome](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/LongestPalindrome>){:target="_blank"}
 
 ![LongestPalindrome]({{ "/assets/img/posting/longest_palindrome.png" | relative_url }})

@@ -29,4 +29,4 @@ tags:
 
 ### GitHub
 
-- [MinPartitions](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/MinPartitions>){:target="_blank"}
+- [MinPartitions](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/MinPartitions>){:target="_blank"}

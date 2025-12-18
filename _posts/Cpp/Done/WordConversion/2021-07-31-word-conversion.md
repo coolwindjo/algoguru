@@ -17,14 +17,14 @@ tags:
 
     int solution(string begin, string target, vector<string> words) {
         int answer = 51;
-        
+
         hashstr hashWords;
         int cnt = 0;
         DFS(answer, hashWords, cnt, begin, target, words);
         if (answer == 51) {
             answer = 0;
         }
-        
+
         return answer;
     }
 
@@ -48,13 +48,13 @@ tags:
             // Stop if the count number is bigger than minimum count
             return;
         }
-        
+
         if (target.compare(curWord) == 0) {
             // We found the target string then, stop and store the minimum count
             minCntOut = cnt;
             return;
         }
-        
+
         for (int i=0; i<words.size(); ++i) {
             const string nextWord = words[i];
             auto it = hashWords.find(nextWord);
@@ -82,4 +82,4 @@ tags:
 
 ### GitHub
 
-- [WordConversion](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/WordConversion>){:target="_blank"}
+- [WordConversion](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/WordConversion>){:target="_blank"}

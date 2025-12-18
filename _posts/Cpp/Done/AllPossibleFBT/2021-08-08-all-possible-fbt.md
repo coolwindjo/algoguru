@@ -91,6 +91,6 @@ void PrintBST(TreeNode* root, int cnt) {
 
 ### GitHub
 
-- [AllPossibleFBT](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/AllPossibleFBT>){:target="_blank"}
+- [AllPossibleFBT](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/AllPossibleFBT>){:target="_blank"}
 
 ![AllPossibleFBT]({{ "/assets/img/posting/all_possible_fbt.png" | relative_url }})

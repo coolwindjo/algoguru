@@ -32,6 +32,6 @@ tags:
 
 ### GitHub
 
-- [NumberGoodPairs](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/NumberGoodPairs>){:target="_blank"}
+- [NumberGoodPairs](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/NumberGoodPairs>){:target="_blank"}
 
 ![NumberGoodPairs]({{ "/assets/img/posting/number_of_good_pairs.png" | relative_url }})

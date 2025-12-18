@@ -66,6 +66,6 @@ tags:
 
 ### GitHub
 
-- [LongestSubstringWithoutRepeatingCharacters](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/LongestSubstringWithoutRepeatingCharacters>){:target="_blank"}
+- [LongestSubstringWithoutRepeatingCharacters](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/LongestSubstringWithoutRepeatingCharacters>){:target="_blank"}
 
 ![LongestSubstringWithoutRepeatingCharacters]({{ "/assets/img/posting/LongestSubstringWithoutRepeatingCharacters.png" | relative_url }})

@@ -118,6 +118,6 @@ tags:
 
 ### GitHub
 
-- [AvoidFlood](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/AvoidFlood>){:target="_blank"}
+- [AvoidFlood](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/AvoidFlood>){:target="_blank"}
 
 ![AvoidFlood]({{ "/assets/img/posting/avoid_flood.png" | relative_url }})

@@ -46,4 +46,4 @@ tags:
 
 ### GitHub
 
-- [DefangingIP](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/DefangingIP>){:target="_blank"}
+- [DefangingIP](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/DefangingIP>){:target="_blank"}

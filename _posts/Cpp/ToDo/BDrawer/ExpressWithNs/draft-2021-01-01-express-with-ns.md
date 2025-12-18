@@ -1,5 +1,5 @@
 ---
-title: 
+title:
 layout: post
 tags:
 - cpp
@@ -112,6 +112,6 @@ tags:
 
 ### GitHub
 
-- [ExpressWithNs](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/ExpressWithNs>){:target="_blank"}
+- [ExpressWithNs](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/ExpressWithNs>){:target="_blank"}
 
 ![ExpressWithNs]({{ "/assets/img/posting/title_name.png" | relative_url }})

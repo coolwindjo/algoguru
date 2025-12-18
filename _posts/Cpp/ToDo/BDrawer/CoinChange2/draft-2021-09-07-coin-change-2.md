@@ -57,6 +57,6 @@ tags:
 
 ### GitHub
 
-- [CoinChange2](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/CoinChange2>){:target="_blank"}
+- [CoinChange2](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/CoinChange2>){:target="_blank"}
 
 ![CoinChange2]({{ "/assets/img/posting/title_name.png" | relative_url }})

@@ -43,4 +43,4 @@ int main()
 
 ### GitHub
 
-- [Temperatures](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/Temperatures>){:target="_blank"}
+- [Temperatures](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/Temperatures>){:target="_blank"}

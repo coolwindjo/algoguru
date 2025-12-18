@@ -93,6 +93,6 @@ tags:
 
 ### GitHub
 
-- [ValidSquare](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/ValidSquare>){:target="_blank"}
+- [ValidSquare](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/ValidSquare>){:target="_blank"}
 
 ![ValidSquare]({{ "/assets/img/posting/valid_square.png" | relative_url }})

@@ -32,4 +32,4 @@ tags:
 
 ### GitHub
 
-- [GreatestNumCandies](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/GreatestNumCandies>){:target="_blank"}
+- [GreatestNumCandies](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/GreatestNumCandies>){:target="_blank"}

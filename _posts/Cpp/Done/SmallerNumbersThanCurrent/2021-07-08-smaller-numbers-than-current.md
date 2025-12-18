@@ -45,6 +45,6 @@ tags:
 
 ### GitHub
 
-- [SmallerNumbersThanCurrent](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/SmallerNumbersThanCurrent>){:target="_blank"}
+- [SmallerNumbersThanCurrent](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/SmallerNumbersThanCurrent>){:target="_blank"}
 
 ![SmallerNumbersThanCurrent]({{ "/assets/img/posting/smaller_numbers_than_current.png" | relative_url }})

@@ -54,6 +54,6 @@ tags:
 
 ### GitHub
 
-- [MB2_StringChange](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/MB2_StringChange>){:target="_blank"}
+- [MB2_StringChange](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/MB2_StringChange>){:target="_blank"}
 
 ![MB2_StringChange]({{ "/assets/img/posting/mb2_string_change.png" | relative_url }})

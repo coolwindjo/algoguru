@@ -46,6 +46,6 @@ tags:
 
 ### GitHub
 
-- [ValidParentheses](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/ValidParentheses>){:target="_blank"}
+- [ValidParentheses](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/ValidParentheses>){:target="_blank"}
 
 ![ValidParentheses]({{ "/assets/img/posting/valid-parentheses.png" | relative_url }})

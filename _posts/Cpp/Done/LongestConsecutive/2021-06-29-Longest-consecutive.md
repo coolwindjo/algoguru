@@ -50,4 +50,4 @@ tags:
 
 ### GitHub
 
-- [LongestConsecutive](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/LongestConsecutive>){:target="_blank"}
+- [LongestConsecutive](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/LongestConsecutive>){:target="_blank"}

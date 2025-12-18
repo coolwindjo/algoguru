@@ -57,4 +57,4 @@ tags:
 
 ### GitHub
 
-- [LGSW_Coupon](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/LGSW_Coupon>){:target="_blank"}
+- [LGSW_Coupon](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/LGSW_Coupon>){:target="_blank"}

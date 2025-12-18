@@ -65,6 +65,6 @@ tags:
 
 ### GitHub
 
-- [InsertDeleteGetRandomO1](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/InsertDeleteGetRandomO1>){:target="_blank"}
+- [InsertDeleteGetRandomO1](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/InsertDeleteGetRandomO1>){:target="_blank"}
 
 ![InsertDeleteGetRandomO1]({{ "/assets/img/posting/InsertDeleteGetRandomO1.png" | relative_url }})

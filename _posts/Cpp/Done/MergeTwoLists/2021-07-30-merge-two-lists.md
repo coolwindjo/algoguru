@@ -55,4 +55,4 @@ tags:
 
 ### GitHub
 
-- [MergeTwoLists](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/MergeTwoLists>){:target="_blank"}
+- [MergeTwoLists](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/MergeTwoLists>){:target="_blank"}

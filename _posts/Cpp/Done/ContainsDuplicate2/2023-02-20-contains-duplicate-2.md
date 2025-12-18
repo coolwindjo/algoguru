@@ -26,6 +26,6 @@ tags:
 
 ### GitHub
 
-- [ContainsDuplicate2](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/ContainsDuplicate2>){:target="_blank"}
+- [ContainsDuplicate2](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/ContainsDuplicate2>){:target="_blank"}
 
 ![ContainsDuplicate2]({{ "/assets/img/posting/contains_duplicate_2.png" | relative_url }})

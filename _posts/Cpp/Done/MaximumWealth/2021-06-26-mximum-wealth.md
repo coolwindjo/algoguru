@@ -31,4 +31,4 @@ tags:
 
 ### GitHub
 
-- [MaximumWealth](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/MaximumWealth>){:target="_blank"}
+- [MaximumWealth](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/MaximumWealth>){:target="_blank"}

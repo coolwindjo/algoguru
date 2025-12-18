@@ -93,6 +93,6 @@ tags:
 
 ### GitHub
 
-- [SearchRotatedSorted](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/SearchRotatedSorted>){:target="_blank"}
+- [SearchRotatedSorted](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/SearchRotatedSorted>){:target="_blank"}
 
 ![SearchRotatedSorted]({{ "/assets/img/posting/rotated_sorted.png" | relative_url }})

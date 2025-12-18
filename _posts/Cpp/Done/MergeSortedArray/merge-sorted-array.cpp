@@ -6,8 +6,8 @@
 #include "../../ProbSolvStart.h"
 
 #if 0
-#pragma GCC optimize("O1") 
-#endif 
+#pragma GCC optimize("O1")
+#endif
 
 class ProbSolv
 {
@@ -65,7 +65,7 @@ public:
     ~ProbSolv(){}
 
 private:
-    void _Solve() { 
+    void _Solve() {
         merge(nums1_, m_, nums2_, n_);
         FOR(i, nums1_.size()) {
             cout << nums1_[i] << " ";
@@ -73,6 +73,18 @@ private:
     }  // _Solve()
 
     void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
+        int i=m-1;
+        int j=n-1;
+        int k=m+n-1;
+        while (k>0) {
+            nums1[k--] = nums1[i] > nums2[j]? nums1[i--] : nums2[j--];
+            if (i<0 || j<0 || k<0) break;
+        }
+        for (;i>=0&&k>=0;i--) nums1[k--] = nums1[i];
+        for (;j>=0&&k>=0;j--) nums1[k--] = nums2[j];
+    }
+
+    void merge_depre(vector<int>& nums1, int m, vector<int>& nums2, int n) {
         int j = 0;
         if (n == 0) return;
         for(int i=0; i<m+n; i++) {

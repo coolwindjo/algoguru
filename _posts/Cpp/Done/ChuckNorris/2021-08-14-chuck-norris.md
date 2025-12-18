@@ -60,6 +60,6 @@ tags:
 
 ### GitHub
 
-- [ChuckNorris](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/ChuckNorris>){:target="_blank"}
+- [ChuckNorris](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/ChuckNorris>){:target="_blank"}
 
 ![ChuckNorris]({{ "/assets/img/posting/chuck_norris.png" | relative_url }})

@@ -44,6 +44,6 @@ tags:
 
 ### GitHub
 
-- [MaxAreaContainWater](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/MaxAreaContainWater>){:target="_blank"}
+- [MaxAreaContainWater](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/MaxAreaContainWater>){:target="_blank"}
 
 ![MaxAreaContainWater]({{ "/assets/img/posting/max_area_contain_water.png" | relative_url }})

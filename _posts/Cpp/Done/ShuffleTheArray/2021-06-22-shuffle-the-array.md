@@ -51,4 +51,4 @@ tags:
 
 ### GitHub
 
-- [ShuffleTheArray](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/ShuffleTheArray>){:target="_blank"}
+- [ShuffleTheArray](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/ShuffleTheArray>){:target="_blank"}

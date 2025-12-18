@@ -116,6 +116,6 @@ tags:
 
 ### GitHub
 
-- [LGSW_SafePlaces](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/LGSW_SafePlaces>){:target="_blank"}
+- [LGSW_SafePlaces](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/LGSW_SafePlaces>){:target="_blank"}
 
 ![LGSW_SafePlaces]({{ "/assets/img/posting/lgsw_safe_places.png" | relative_url }})

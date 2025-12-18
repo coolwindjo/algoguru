@@ -56,6 +56,6 @@ tags:
 
 ### GitHub
 
-- [LetterCombinations](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/LetterCombinations>){:target="_blank"}
+- [LetterCombinations](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/LetterCombinations>){:target="_blank"}
 
 ![LetterCombinations]({{ "/assets/img/posting/letter_combinations.png" | relative_url }})

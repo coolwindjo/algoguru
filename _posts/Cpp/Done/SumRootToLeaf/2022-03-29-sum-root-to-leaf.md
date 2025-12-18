@@ -55,4 +55,4 @@ tags:
 
 ### GitHub
 
-- [SumRootToLeaf](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/SumRootToLeaf>){:target="_blank"}
+- [SumRootToLeaf](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/SumRootToLeaf>){:target="_blank"}

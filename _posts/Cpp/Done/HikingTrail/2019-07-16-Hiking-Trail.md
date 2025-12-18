@@ -73,6 +73,6 @@ tags:
 
 ### GitHub
 
-- [HikingTrail](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/HikingTrail>){:target="_blank"}
+- [HikingTrail](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/HikingTrail>){:target="_blank"}
 
 ![HikingTrail]({{ "/assets/img/posting/hiking_trail.png" | relative_url }})

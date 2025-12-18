@@ -41,6 +41,6 @@ tags:
 
 ### GitHub
 
-- [IsomorphicStrings](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/IsomorphicStrings>){:target="_blank"}
+- [IsomorphicStrings](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/IsomorphicStrings>){:target="_blank"}
 
 ![IsomorphicStrings]({{ "/assets/img/posting/IsomorphicStrings.png" | relative_url }})

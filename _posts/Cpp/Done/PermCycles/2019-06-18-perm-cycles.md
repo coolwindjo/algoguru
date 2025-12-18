@@ -44,6 +44,6 @@ tags:
 
 ### GitHub
 
-- [PermCycles](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/PermCycles>){:target="_blank"}
+- [PermCycles](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/PermCycles>){:target="_blank"}
 
 ![PermCycles]({{ "/assets/img/posting/perm_cycles.png" | relative_url }})

@@ -156,4 +156,4 @@ void PrintBST(TreeNode* root, int cnt) {
 
 ### GitHub
 
-- [MergeTrees](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/MergeTrees>){:target="_blank"}
+- [MergeTrees](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/MergeTrees>){:target="_blank"}

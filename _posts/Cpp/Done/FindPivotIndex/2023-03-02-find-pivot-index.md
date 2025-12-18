@@ -36,6 +36,6 @@ tags:
 
 ### GitHub
 
-- [FindPivotIndex](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/FindPivotIndex>){:target="_blank"}
+- [FindPivotIndex](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/FindPivotIndex>){:target="_blank"}
 
 ![FindPivotIndex]({{ "/assets/img/posting/find_pivot_index.png" | relative_url }})

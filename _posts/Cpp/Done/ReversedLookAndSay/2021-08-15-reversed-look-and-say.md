@@ -60,4 +60,4 @@ tags:
 
 ### GitHub
 
-- [ReversedLookAndSay](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/ReversedLookAndSay>){:target="_blank"}
+- [ReversedLookAndSay](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/ReversedLookAndSay>){:target="_blank"}

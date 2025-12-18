@@ -58,6 +58,6 @@ int FindMaxLengthWithFlip(const vector<vii> &vviiCandLists)
 
 ### GitHub
 
-- [LED_OnOffPattern](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/LED_OnOffPattern>){:target="_blank"}
+- [LED_OnOffPattern](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/LED_OnOffPattern>){:target="_blank"}
 
 ![LED_OnOffPattern]({{ "/assets/img/posting/led_onoffpattern.png" | relative_url }})

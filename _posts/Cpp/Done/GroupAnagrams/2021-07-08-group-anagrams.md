@@ -58,7 +58,7 @@ tags:
 
 ### GitHub
 
-- [GroupAnagrams](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/GroupAnagrams>){:target="_blank"}
+- [GroupAnagrams](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/GroupAnagrams>){:target="_blank"}
 
 ![GroupAnagrams]({{ "/assets/img/posting/group_anagrams.png" | relative_url }})
 ![GroupAnagramsMemo]({{ "/assets/img/posting/group_anagrams_memo.png" | relative_url }})

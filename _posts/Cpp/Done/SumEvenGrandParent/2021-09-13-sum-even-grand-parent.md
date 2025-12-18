@@ -56,4 +56,4 @@ tags:
 
 ### GitHub
 
-- [SumEvenGrandParent](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/SumEvenGrandParent>){:target="_blank"}
+- [SumEvenGrandParent](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/SumEvenGrandParent>){:target="_blank"}

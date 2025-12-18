@@ -39,4 +39,4 @@ tags:
 
 ### GitHub
 
-- [SearchInsertPosition](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/SearchInsertPosition>){:target="_blank"}
+- [SearchInsertPosition](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/SearchInsertPosition>){:target="_blank"}

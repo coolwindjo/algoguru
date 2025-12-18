@@ -68,4 +68,4 @@ tags:
 
 ### GitHub
 
-- [LGSW_Compile](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/LGSW_Compile>){:target="_blank"}
+- [LGSW_Compile](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/LGSW_Compile>){:target="_blank"}

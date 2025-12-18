@@ -38,4 +38,4 @@ tags:
 
 ### GitHub
 
-- [SubrectangleQueries](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/SubrectangleQueries>){:target="_blank"}
+- [SubrectangleQueries](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/SubrectangleQueries>){:target="_blank"}

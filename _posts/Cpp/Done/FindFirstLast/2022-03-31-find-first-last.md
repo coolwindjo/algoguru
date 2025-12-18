@@ -79,4 +79,4 @@ tags:
 
 ### GitHub
 
-- [FindFirstLast](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Done/FindFirstLast>){:target="_blank"}
+- [FindFirstLast](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/FindFirstLast>){:target="_blank"}
