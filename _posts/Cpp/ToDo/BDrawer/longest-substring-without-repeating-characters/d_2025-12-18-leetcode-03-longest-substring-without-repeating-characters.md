@@ -1,5 +1,4 @@
 ---
-title: 3. Longest Substring Without Repeating Characters
 layout: post
 tags:
 - cpp
@@ -51,21 +50,33 @@ tags:
 - binary-search
 - radix-conversion
 - back_inserter
-
+- binning
 ---
 
-<https://leetcode.com/problems/longest-substring-without-repeating-characters/>{:target="_blank"}
+# LeetCode Problem Link
+<https://leetcode.com/problems/title_name>{:target="_blank"}
 
-### Source
+# Intuition
+<!-- Describe your first thoughts on how to solve this problem. -->
 
+# Approach
+<!-- Describe your approach to solving the problem. -->
+
+# Complexity
+- Time complexity:
+<!-- Add your time complexity here, e.g. $$O(n)$$ -->
+
+- Space complexity:
+<!-- Add your space complexity here, e.g. $$O(n)$$ -->
+
+# Code
 ```cpp
-
 
 
 ```
 
 ### GitHub
 
-- [LongestSubstringWithoutRepeatingCharacters](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/LongestSubstringWithoutRepeatingCharacters>){:target="_blank"}
+- [title_name](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/title_name>){:target="_blank"}
 
-![LongestSubstringWithoutRepeatingCharacters]({{ "/assets/img/posting/LongestSubstringWithoutRepeatingCharacters.png" | relative_url }})
+![title_name]({{ "/assets/img/posting/title_name.png" | relative_url }})

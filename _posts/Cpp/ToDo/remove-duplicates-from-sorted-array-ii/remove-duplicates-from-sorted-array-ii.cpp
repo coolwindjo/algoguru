@@ -6,15 +6,14 @@
 #include "../../ProbSolvStart.h"
 
 #if 0
-#pragma GCC optimize("O1") 
-#endif 
+#pragma GCC optimize("O1")
+#endif
 
 class ProbSolv
 {
 public:
     ProbSolv()
     {
-        
         _Solve();
     }
     ~ProbSolv(){}

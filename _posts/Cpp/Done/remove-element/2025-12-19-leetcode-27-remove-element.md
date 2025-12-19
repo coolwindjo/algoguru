@@ -4,6 +4,8 @@ tags:
 - cpp
 - simple-implementation
 - two-pointers
+- std-erase
+- std-remove
 ---
 
 # LeetCode Problem Link
@@ -80,9 +82,10 @@ $$O(1)$$
 class Solution {
 public:
     int removeElement(vector<int>& nums, int val) {
+#if 1
         nums.erase(std::remove(nums.begin(), nums.end(), val), nums.end());
         return nums.size();
-#if 0
+#else
         int w=0;
         int r=0;
         bool found = false;
@@ -111,6 +114,6 @@ public:
 
 ### GitHub
 
-- [remove-element](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/remove-element>){:target="_blank"}
+- ToDo: [remove-element](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/remove-element>){:target="_blank"}
 
 ![remove-element]({{ "/assets/img/posting/remove-element.png" | relative_url }})
