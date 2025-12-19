@@ -19,7 +19,7 @@ tags:
         nums.erase(std::unique(begin(nums), end(nums)), end(nums));
         return nums.size()
 ```
-- then start from the logic remove-element (Erase Remove Idiom)
+- then start from the logic remove-element (Erase Remove Idiom) [Leetcode 27 Remove Element]({{ site.baseurl }}{% link _posts/Cpp/Done/remove-element/2025-12-19-leetcode-27-remove-element.md %}){:target="_blank"}
 ```cpp
         int w=0;
         for (int r=0;r<nums.size(); ++r) {
@@ -59,6 +59,7 @@ tags:
         return w
 ```
 - come up with an idea that the first element is always unique!
+- use latter pointer to fetch the unchanged value! => not `[r-1]`, but `[w-1]`
 
 
 # Complexity
@@ -68,7 +69,7 @@ $$O(n)$$
 
 - Space complexity:
 <!-- Add your space complexity here, e.g. $$O(n)$$ -->
-$$O(n)$$
+$$O(1)$$
 
 # Code
 ```cpp
@@ -79,11 +80,10 @@ public:
         nums.erase(std::unique(begin(nums), end(nums)), end(nums));
         return nums.size();
 #else
-        if (empty(nums)) return 0;
         int r=1;
         int w=1;
         for (;r<nums.size(); ++r) {
-            if (nums[r-1] != nums[r]) {
+            if (nums[w-1] < nums[r]) {
                 nums[w++] = nums[r];
             }
         }
@@ -96,6 +96,4 @@ public:
 
 ### GitHub
 
-- [remove-duplicates-from-sorted-array](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/remove-duplicates-from-sorted-array>){:target="_blank"}
-
-![remove-duplicates-from-sorted-array]({{ "/assets/img/posting/remove-duplicates-from-sorted-array.png" | relative_url }})
+- ToDo: [remove-duplicates-from-sorted-array](<https://github.com/coolwindjo/algoguru/tree/master/_posts/Cpp/Done/remove-duplicates-from-sorted-array>){:target="_blank"}
