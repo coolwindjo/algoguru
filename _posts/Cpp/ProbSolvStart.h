@@ -174,7 +174,7 @@ void DFSDelete(TreeNode** pRoot) {
 #define OOR(x, min, max) (((x) < (min) || (x) > (max)))
 
 static const int WarnIfNot(const int condFlag, const char* condition){
- 	if (condFlag == 0) {
+    if (condFlag == 0) {
         cout << "Warning: [" << condition << "] is violated!\n";
     }
     return condFlag;
@@ -334,6 +334,14 @@ vector<int> create_bins(const vector<int>& data, int bin_size) {
     return bins;
 }
 
+// Correct way to erase inside a loop
+for (auto it = nums.begin(); it != nums.end(); /* no increment here */) {
+    if (*it == val) {
+        it = nums.erase(it); // 반환값을 반드시 받아야 함 (자동으로 다음 요소를 가리킴)
+    } else {
+        ++it; // 삭제하지 않을 때만 수동으로 전진
+    }
+}
 
 // Two pointers: one input, opposite ends
 int fn(vector<int>& arr) {

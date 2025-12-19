@@ -26,13 +26,13 @@ First, let's talk about the time complexity of common operations, split by data 
 
 Given `n = arr.length`,
 
-- Add or remove element at the end: O(1)O(1) [amortized](https://stackoverflow.com/questions/33044883/why-is-the-time-complexity-of-pythons-list-append-method-o1)
-- Add or remove element from arbitrary index: O(n)O(n)
-- Access or modify element at arbitrary index: O(1)O(1)
-- Check if element exists: O(n)O(n)
-- Two pointers: O(n⋅k)O(n⋅k), where kk is the work done at each iteration, includes sliding window
-- Building a prefix sum: O(n)O(n)
-- Finding the sum of a subarray given a prefix sum: O(1)O(1)
+- Add or remove element at the end: O(1) [amortized](https://stackoverflow.com/questions/33044883/why-is-the-time-complexity-of-pythons-list-append-method-o1)
+- Add or remove element from arbitrary index: O(n)
+- Access or modify element at arbitrary index: O(1)
+- Check if element exists: O(n)
+- Two pointers: O(n⋅k), where kk is the work done at each iteration, includes sliding window
+- Building a prefix sum: O(n)
+- Finding the sum of a subarray given a prefix sum: O(1)
 
 ---
 
@@ -40,12 +40,12 @@ Given `n = arr.length`,
 
 Given `n = s.length`,
 
-- Add or remove character: O(n)O(n)
-- Access element at arbitrary index: O(1)O(1)
-- Concatenation between two strings: O(n+m)O(n+m), where mm is the length of the other string
-- Create substring: O(m)O(m), where mm is the length of the substring
-- Two pointers: O(n⋅k)O(n⋅k), where kk is the work done at each iteration, includes sliding window
-- Building a string from joining an array, stringbuilder, etc.: O(n)O(n)
+- Add or remove character: O(n)
+- Access element at arbitrary index: O(1)
+- Concatenation between two strings: O(n+m), where mm is the length of the other string
+- Create substring: O(m), where mm is the length of the substring
+- Two pointers: O(n⋅k), where kk is the work done at each iteration, includes sliding window
+- Building a string from joining an array, stringbuilder, etc.: O(n)
 
 ---
 
@@ -53,13 +53,13 @@ Given `n = s.length`,
 
 Given nn as the number of nodes in the linked list,
 
-- Add or remove element given pointer before add/removal location: O(1)O(1)
-- Add or remove element given pointer at add/removal location: O(1)O(1) if doubly linked
-- Add or remove element at arbitrary position without pointer: O(n)O(n)
-- Access element at arbitrary position without pointer: O(n)O(n)
-- Check if element exists: O(n)O(n)
-- Reverse between position `i` and `j`: O(j−i)O(j−i)
-- Detect a cycle: O(n)O(n) using fast-slow pointers or hash map
+- Add or remove element given pointer before add/removal location: O(1)
+- Add or remove element given pointer at add/removal location: O(1) if doubly linked
+- Add or remove element at arbitrary position without pointer: O(n)
+- Access element at arbitrary position without pointer: O(n)
+- Check if element exists: O(n)
+- Reverse between position `i` and `j`: O(j−i)
+- Detect a cycle: O(n) using fast-slow pointers or hash map
 
 ---
 
@@ -67,13 +67,13 @@ Given nn as the number of nodes in the linked list,
 
 Given `n = dic.length`,
 
-- Add or remove key-value pair: O(1)O(1)
-- Check if key exists: O(1)O(1)
-- Check if value exists: O(n)O(n)
-- Access or modify value associated with key: O(1)O(1)
-- Iterate over all keys, values, or both: O(n)O(n)
+- Add or remove key-value pair: O(1)
+- Check if key exists: O(1)
+- Check if value exists: O(n)
+- Access or modify value associated with key: O(1)
+- Iterate over all keys, values, or both: O(n)
 
-> Note: the O(1)O(1) operations are constant relative to `n`. In reality, the hashing algorithm might be expensive. For example, if your keys are strings, then it will cost O(m)O(m) where mm is the length of the string. The operations only take constant time relative to the size of the hash map.
+> Note: the O(1) operations are constant relative to `n`. In reality, the hashing algorithm might be expensive. For example, if your keys are strings, then it will cost O(m) where mm is the length of the string. The operations only take constant time relative to the size of the hash map.
 
 ---
 
@@ -81,8 +81,8 @@ Given `n = dic.length`,
 
 Given `n = set.length`,
 
-- Add or remove element: O(1)O(1)
-- Check if element exists: O(1)O(1)
+- Add or remove element: O(1)
+- Check if element exists: O(1)
 
 > The above note applies here as well.
 
@@ -94,11 +94,11 @@ Stack operations are dependent on their implementation. A stack is only required
 
 Given `n = stack.length`,
 
-- Push element: O(1)O(1)
-- Pop element: O(1)O(1)
-- Peek (see element at top of stack): O(1)O(1)
-- Access or modify element at arbitrary index: O(1)O(1)
-- Check if element exists: O(n)O(n)
+- Push element: O(1)
+- Pop element: O(1)
+- Peek (see element at top of stack): O(1)
+- Access or modify element at arbitrary index: O(1)
+- Check if element exists: O(n)
 
 ---
 
@@ -108,13 +108,13 @@ Queue operations are dependent on their implementation. A queue is only required
 
 Given `n = queue.length`,
 
-- Enqueue element: O(1)O(1)
-- Dequeue element: O(1)O(1)
-- Peek (see element at front of queue): O(1)O(1)
-- Access or modify element at arbitrary index: O(n)O(n)
-- Check if element exists: O(n)O(n)
+- Enqueue element: O(1)
+- Dequeue element: O(1)
+- Peek (see element at front of queue): O(1)
+- Access or modify element at arbitrary index: O(n)
+- Check if element exists: O(n)
 
-> Note: most programming languages implement queues in a more sophisticated manner than a simple doubly linked list. Depending on implementation, accessing elements by index may be faster than O(n)O(n), or O(n)O(n) but with a significant constant divisor.
+> Note: most programming languages implement queues in a more sophisticated manner than a simple doubly linked list. Depending on implementation, accessing elements by index may be faster than O(n), or O(n) but with a significant constant divisor.
 
 ---
 
@@ -122,7 +122,7 @@ Given `n = queue.length`,
 
 Given nn as the number of nodes in the tree,
 
-Most algorithms will run in O(n⋅k)O(n⋅k) time, where kk is the work done at each node, usually O(1)O(1). This is just a general rule and not always the case. We are assuming here that BFS is implemented with an efficient queue.
+Most algorithms will run in O(n⋅k) time, where kk is the work done at each node, usually O(1). This is just a general rule and not always the case. We are assuming here that BFS is implemented with an efficient queue.
 
 ---
 
@@ -130,8 +130,8 @@ Most algorithms will run in O(n⋅k)O(n⋅k) time, where kk is the work done
 
 Given nn as the number of nodes in the tree,
 
-- Add or remove element: O(n)O(n) worst case, O(log⁡n)O(logn) average case
-- Check if element exists: O(n)O(n) worst case, O(log⁡n)O(logn) average case
+- Add or remove element: O(n) worst case, O(log⁡n) average case
+- Check if element exists: O(n) worst case, O(log⁡n) average case
 
 The average case is when the tree is well balanced - each depth is close to full. The worst case is when the tree is just a straight line.
 
@@ -141,26 +141,26 @@ The average case is when the tree is well balanced - each depth is close to full
 
 Given `n = heap.length` and talking about min heaps,
 
-- Add an element: O(log⁡n)O(logn)
-- Delete the minimum element: O(log⁡n)O(logn)
-- Find the minimum element: O(1)O(1)
-- Check if element exists: O(n)O(n)
+- Add an element: O(log⁡n)
+- Delete the minimum element: O(log⁡n)
+- Find the minimum element: O(1)
+- Check if element exists: O(n)
 
 ---
 
 **Binary search**
 
-Binary search runs in O(log⁡n)O(logn) in the worst case, where nn is the size of your initial search space.
+Binary search runs in O(log⁡n) in the worst case, where nn is the size of your initial search space.
 
 ---
 
 **Miscellaneous**
 
-- Sorting: O(n⋅log⁡n)O(n⋅logn), where nn is the size of the data being sorted
-- DFS and BFS on a graph: O(n⋅k+e)O(n⋅k+e), where nn is the number of nodes, ee is the number of edges, and kk is the work done at each node (excluding iterating over edges)
-- DFS and BFS space complexity: typically O(n)O(n), but if it's in a graph, might be O(n+e)O(n+e) to store the graph
-- Dynamic programming time complexity: O(n⋅k)O(n⋅k), where nn is the number of states and kk is the work done at each state
-- Dynamic programming space complexity: O(n)O(n), where nn is the number of states
+- Sorting: O(n⋅log⁡n), where nn is the size of the data being sorted
+- DFS and BFS on a graph: O(n⋅k+e), where nn is the number of nodes, ee is the number of edges, and kk is the work done at each node (excluding iterating over edges)
+- DFS and BFS space complexity: typically O(n), but if it's in a graph, might be O(n+e) to store the graph
+- Dynamic programming time complexity: O(n⋅k), where nn is the number of states and kk is the work done at each state
+- Dynamic programming space complexity: O(n), where nn is the number of states
 
 ---
 
@@ -172,7 +172,7 @@ The constraints of a problem can be considered as hints because they indicate an
 
 **n <= 10**
 
-The expected time complexity likely has a factorial or an exponential with a base larger than `2` - O(n2⋅n!)O(n2⋅n!) or O(4n)O(4n) for example.
+The expected time complexity likely has a factorial or an exponential with a base larger than `2` - O(n2⋅n!) or O(4n) for example.
 
 You should think about backtracking or any brute-force-esque recursive algorithm. `n <= 10` is extremely small and usually **any** algorithm that correctly finds the answer will be fast enough.
 
@@ -180,7 +180,7 @@ You should think about backtracking or any brute-force-esque recursive algorithm
 
 **10 < n <= 20**
 
-The expected time complexity likely involves O(2n)O(2n). Any higher base or a factorial will be too slow (320320 = ~3.5 billion, and 20!20! is much larger). A 2n2n usually implies that given a collection of elements, you are considering all subsets/subsequences - for each element, there are two choices: take it or don't take it.
+The expected time complexity likely involves O(2n). Any higher base or a factorial will be too slow (320320 = ~3.5 billion, and 20!20! is much larger). A 2n2n usually implies that given a collection of elements, you are considering all subsets/subsequences - for each element, there are two choices: take it or don't take it.
 
 Again, this bound is very small, so most algorithms that are correct will probably be fast enough. Consider backtracking and recursion.
 
@@ -188,9 +188,9 @@ Again, this bound is very small, so most algorithms that are correct will probab
 
 **20 < n <= 100**
 
-At this point, exponentials will be too slow. The upper bound will likely involve O(n3)O(n3).
+At this point, exponentials will be too slow. The upper bound will likely involve O(n3).
 
-Problems marked as "easy" on LeetCode usually have this bound, which can be deceiving. There may be solutions that run in O(n)O(n), but the small bound allows brute force solutions to pass (finding the linear time solution might not be considered as "easy").
+Problems marked as "easy" on LeetCode usually have this bound, which can be deceiving. There may be solutions that run in O(n), but the small bound allows brute force solutions to pass (finding the linear time solution might not be considered as "easy").
 
 Consider brute force solutions that involve nested loops. If you come up with a brute force solution, try analyzing the algorithm to find what steps are "slow", and try to improve on those steps using tools like hash maps or heaps.
 
@@ -198,17 +198,17 @@ Consider brute force solutions that involve nested loops. If you come up with a 
 
 **100 < n <= 1,000**
 
-In this range, a quadratic time complexity O(n2)O(n2) should be sufficient, as long as the constant factor isn't too large.
+In this range, a quadratic time complexity O(n2) should be sufficient, as long as the constant factor isn't too large.
 
-Similar to the previous range, you should consider nested loops. The difference between this range and the previous one is that O(n2)O(n2) is usually the expected/optimal time complexity in this range, and it might not be possible to improve.
+Similar to the previous range, you should consider nested loops. The difference between this range and the previous one is that O(n2) is usually the expected/optimal time complexity in this range, and it might not be possible to improve.
 
 ---
 
 **1,000 < n < 100,000**
 
-n<=105n<=105 is the most common constraint you will see on LeetCode. In this range, the slowest acceptable **common** time complexity is O(n⋅log⁡n)O(n⋅logn), although a linear time approach O(n)O(n) is commonly the goal.
+n<=105n<=105 is the most common constraint you will see on LeetCode. In this range, the slowest acceptable **common** time complexity is O(n⋅log⁡n), although a linear time approach O(n) is commonly the goal.
 
-In this range, ask yourself if sorting the input or using a heap can be helpful. If not, then aim for an O(n)O(n) algorithm. Nested loops that run in O(n2)O(n2) are unacceptable - you will probably need to make use of a technique learned in this course to simulate a nested loop's behavior in O(1)O(1) or O(log⁡n)O(logn):
+In this range, ask yourself if sorting the input or using a heap can be helpful. If not, then aim for an O(n) algorithm. Nested loops that run in O(n2) are unacceptable - you will probably need to make use of a technique learned in this course to simulate a nested loop's behavior in O(1) or O(log⁡n):
 
 - Hash map
 - A two pointers implementation like sliding window
@@ -217,27 +217,27 @@ In this range, ask yourself if sorting the input or using a heap can be helpful.
 - Heap
 - A combination of any of the above
 
-If you have an O(n)O(n) algorithm, the constant factor can be reasonably large (around 40). One common theme for string problems involves looping over the characters of the alphabet at each iteration resulting in a time complexity of O(26n)O(26n).
+If you have an O(n) algorithm, the constant factor can be reasonably large (around 40). One common theme for string problems involves looping over the characters of the alphabet at each iteration resulting in a time complexity of O(26n).
 
 ---
 
 **100,000 < n < 1,000,000**
 
-n<=106n<=106 is a rare constraint, and will likely require a time complexity of O(n)O(n). In this range, O(n⋅log⁡n)O(n⋅logn) is usually safe as long as it has a small constant factor. You will very likely need to incorporate a hash map in some way.
+n<=106n<=106 is a rare constraint, and will likely require a time complexity of O(n). In this range, O(n⋅log⁡n) is usually safe as long as it has a small constant factor. You will very likely need to incorporate a hash map in some way.
 
 ---
 
 **1,000,000 < n**
 
-With huge inputs, typically in the range of 109109 or more, the most common acceptable time complexity will be logarithmic O(log⁡n)O(logn) or constant O(1)O(1). In these problems, you must either significantly reduce your search space at each iteration (usually binary search) or use clever tricks to find information in constant time (like with math or a clever use of hash maps).
+With huge inputs, typically in the range of 109109 or more, the most common acceptable time complexity will be logarithmic O(log⁡n) or constant O(1). In these problems, you must either significantly reduce your search space at each iteration (usually binary search) or use clever tricks to find information in constant time (like with math or a clever use of hash maps).
 
-> Other time complexities are possible like O(n)O(n​), but this is very rare and will usually only be seen in very advanced problems.
+> Other time complexities are possible like O(n), but this is very rare and will usually only be seen in very advanced problems.
 
 ---
 
 ### Sorting algorithms
 
-All major programming languages have a built-in method for sorting. It is usually correct to assume and say sorting costs O(n⋅log⁡n)O(n⋅logn), where nn is the number of elements being sorted. For completeness, here is a chart that lists many common sorting algorithms and their completeness. The algorithm implemented by a programming language varies; for example, Python uses Timsort but in C++, the specific algorithm is not mandated and varies.
+All major programming languages have a built-in method for sorting. It is usually correct to assume and say sorting costs O(n⋅log⁡n), where nn is the number of elements being sorted. For completeness, here is a chart that lists many common sorting algorithms and their completeness. The algorithm implemented by a programming language varies; for example, Python uses Timsort but in C++, the specific algorithm is not mandated and varies.
 
 ![sorting algorithm complexities](https://leetcode.com/explore/interview/card/cheatsheets/720/resources/Figures/DSA/Chapter_11/sorting.png)  
 
@@ -309,7 +309,7 @@ Questions you should be prepared to answer:
 
 - Time and space complexity, average and worst case.
 - Why did you choose this data structure, algorithm, or logic?
-- Do you think the algorithm could be improved in terms of complexity? If they ask you this, then the answer is _usually_ yes, especially if your algorithm is slower than O(n)O(n).
+- Do you think the algorithm could be improved in terms of complexity? If they ask you this, then the answer is _usually_ yes, especially if your algorithm is slower than O(n).
 
 ---
 

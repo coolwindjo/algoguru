@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Technical Whiteboard Interviews - General Strategy
-color: Ivory
+color: RebeccaPurple
 tags: [interview, cheetsheet]
 author: coolwindjo
 excerpt_separator: <!--more-->
@@ -44,7 +44,7 @@ Once you get into the coding questions, communication is key. A candidate who ne
 
 If you start writing code and the interviewer just wanted a quick chitchat answer before moving on to the "real" question, they'll get frustrated. Just ask, "Should we write code for this?"
 
-**Make it feel like you're on a team**. The interviewer wants to know what it feels like to work through a problem with you, so make the interview feel collaborative. Use "we" instead of "I," as in, "If we did a breadth-first search we'd get an answer in O(n)O(n) time." If you get to choose between coding on paper and coding on a whiteboard, always choose the whiteboard. That way you'll be situated next to the interviewer, facing the problem (rather than across from her at a table).
+**Make it feel like you're on a team**. The interviewer wants to know what it feels like to work through a problem with you, so make the interview feel collaborative. Use "we" instead of "I," as in, "If we did a breadth-first search we'd get an answer in O(n) time." If you get to choose between coding on paper and coding on a whiteboard, always choose the whiteboard. That way you'll be situated next to the interviewer, facing the problem (rather than across from her at a table).
 
 **Think out loud.** Seriously. Say, "Let's try doing it this way—not sure yet if it'll work." If you're stuck, just say what you're thinking. Say what might work. Say what you thought could work and why it doesn't work. This also goes for trivial chitchat questions. When asked to explain Javascript closures, "It's something to do with scope and putting stuff in a function" will probably get you 90% credit.
 
@@ -68,8 +68,8 @@ Sometimes you'll get stuck. Relax. It doesn't mean you've failed. Keep in mind t
 
 **Think about the bounds on space and runtime.** If you're not sure if you can optimize your solution, think about it out loud. For example:
 
-- "I have to at least look at all of the items, so I can't do better than O(n)O(n)."
-- "The brute force approach is to test all possibilities, which is O(n2)O(n​2​​)."
+- "I have to at least look at all of the items, so I can't do better than O(n)."
+- "The brute force approach is to test all possibilities, which is O(n2)."
 - "The answer will contain n2n​2​​ items, so I must at least spend that amount of time."
 
 **Apply a common _algorithmic pattern_.** There are a few _patterns_ that come up again and again in the answers to these questions. Once you know the patterns, designing an algorithm is just a matter of trying a few of them and seeing which one sticks.

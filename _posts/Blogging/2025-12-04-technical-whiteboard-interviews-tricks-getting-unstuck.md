@@ -63,9 +63,9 @@ Sometimes interviewers leave the question deliberately vague because they want y
 
 **4) Establish bounds on space and runtime.** Think _out loud_ about the parameters of the problem. Try to get a sense for how fast your algorithm _could possibly_ be:
 
-- “I have to at least look at all the items, so I can’t do better than O(n)O(n) time”.
+- “I have to at least look at all the items, so I can’t do better than O(n) time”.
 - “The brute force approach is to test all possibilities, which is  
-    O(n2)O(n​2​​) time. So the question is whether or not I can beat that time.”
+    O(n2) time. So the question is whether or not I can beat that time.”
 - “The answer will contain n2n​2​​ items, so I must at least spend that amount of time.”
 
 ## When All Else Fails

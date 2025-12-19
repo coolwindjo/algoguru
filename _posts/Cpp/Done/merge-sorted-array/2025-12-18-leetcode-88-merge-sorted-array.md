@@ -1,5 +1,4 @@
 ---
-title: 88. Merge Sorted Array
 layout: post
 tags:
 - cpp
