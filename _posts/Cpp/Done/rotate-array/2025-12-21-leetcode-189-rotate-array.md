@@ -6,6 +6,7 @@ tags:
 - cyclic-replacement
 - std::reverse
 - std::rotate
+- mathematics
 ---
 
 # LeetCode Problem Link
@@ -97,8 +98,7 @@ public:
         std::reverse(begin(nums), begin(nums)+k);
         std::reverse(begin(nums)+k, end(nums));
 #endif
-#else
-#if 1
+#endif
 #if 1
         size_t cycles = std::gcd(n, k);
         for (size_t start=0; start<cycles; ++start) {
@@ -112,7 +112,8 @@ public:
                 val = tmp;
             } while (cur != start);
         }
-#else
+#endif
+#if 0
         size_t start = 0;
         size_t cnt = 0;
         while (cnt<n) {
@@ -129,7 +130,7 @@ public:
             start++;
         }
 #endif
-#else
+#if 0
         size_t start = 0;
         int val = nums[start];
         size_t cur = start;
@@ -146,7 +147,6 @@ public:
                 cur = prv;
             }
         }
-#endif
 #endif
     }
 };
