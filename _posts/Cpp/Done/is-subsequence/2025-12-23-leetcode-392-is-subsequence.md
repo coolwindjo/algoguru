@@ -2,7 +2,6 @@
 layout: post
 tags:
 - cpp
-- simple-implementation
 - two-pointers
 - std-upper_bound
 ---

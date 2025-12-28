@@ -2,7 +2,6 @@
 layout: post
 tags:
 - cpp
-- simple-implementation
 - string-manipulation
 - std-unordered-map
 
@@ -54,7 +53,8 @@ public:
         for (auto ch : ransomNote) {
             if (!freq[ch-'a']--) return false;
         }
-#else
+#endif
+#if 0
         std::unordered_map<char, int> hashmap;
         for (auto ch : magazine) {
             hashmap[ch]++;
